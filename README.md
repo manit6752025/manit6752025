@@ -1,10 +1,10 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=220&section=header&text=Manit-Labs&fontSize=80&animation=fadeIn"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=220&section=header&text=NexTech%20Core&fontSize=80&animation=fadeIn"/>
 
 # 👋 Hi, I'm Manit Arora
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=25&duration=3000&pause=1000&center=true&vCenter=true&width=800&lines=Manit-Labs;Open+Source+Developer;WiFi+%26+Networking+Tools;Linux+%7C+OpenWrt+%7C+React+%7C+Python" />
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=25&duration=3000&pause=1000&center=true&vCenter=true&width=850&lines=NexTech+Core;Open+Source+Networking+Tools;WiFi+%26+Network+Engineering;Linux+%7C+OpenWrt+%7C+React+%7C+Python" />
 
 <br>
 
@@ -20,42 +20,55 @@
 
 ```yaml
 name: Manit Arora
-organization: Manit-Labs
+organization: NexTech Core
 location: Sydney, Australia
 
 role:
   - Open Source Developer
-  - Networking Enthusiast
+  - Network Software Developer
   - Linux & Embedded Systems Developer
 
 focus:
+  - Network engineering
   - WiFi analysis tools
   - OpenWrt development
-  - Network monitoring
+  - Wireless diagnostics
   - React dashboards
   - Python automation
   - Embedded Linux
-  - Raspberry Pi projects
-  - Hardware integration
+  - Hardware networking
 ```
 
 ---
 
 # 🛠️ What I Do
 
-I design and build open-source software focused on networking, wireless systems, Linux and embedded platforms.
+I build open-source networking software and tools focused on wireless systems, Linux infrastructure and embedded platforms.
 
-My projects combine:
+My work combines:
 
-- Modern React interfaces
+- Network monitoring tools
+- WiFi analysis systems
+- OpenWrt firmware development
+- Embedded Linux solutions
+- React-based dashboards
 - Python backend services
-- Linux networking tools
-- OpenWrt firmware
-- Raspberry Pi deployments
-- Wireless diagnostics
 - Hardware and software integration
 
-I enjoy building tools that make complex systems easier to monitor, understand and manage.
+The goal of NexTech Core is to create powerful, accessible tools that help people understand, manage and improve their networks.
+
+---
+
+# 🌐 NexTech Core
+
+NexTech Core develops open-source technology for:
+
+- 📡 Wireless networking
+- 🌐 Network diagnostics
+- 🖥️ Linux systems
+- 📦 Embedded devices
+- 🔧 Router platforms
+- 🚀 Automation tools
 
 ---
 
@@ -71,23 +84,23 @@ I enjoy building tools that make complex systems easier to monitor, understand a
 
 Real-time WiFi diagnostic dashboard built with React and Python.
 
-Features:
+### Features
 
 - 📡 Live WiFi scanning
-- 📊 PHY and link statistics
+- 📊 PHY layer statistics
+- 📈 Link monitoring
 - 🔍 Device discovery
 - 🚨 Rogue AP detection
-- 📈 Signal history
 - 🗺️ WiFi heatmaps
-- 🌐 Speed testing
+- 🌐 Network speed testing
 - 📱 Responsive dashboard
-- 🐍 Python backend API
+- 🐍 Python API backend
 
 ---
 
-# 💻 Tech Stack
+# 💻 Technology Stack
 
-## Languages
+## Programming Languages
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 
@@ -109,9 +122,7 @@ Features:
 
 ---
 
-## Backend & Systems
-
-![Python Backend](https://img.shields.io/badge/Python_Backend-3776AB?style=for-the-badge&logo=python)
+## Systems & Networking
 
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 
@@ -119,13 +130,15 @@ Features:
 
 ![Raspberry Pi](https://img.shields.io/badge/Raspberry_Pi-A22846?style=for-the-badge&logo=raspberrypi)
 
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker)
+
 ---
 
-## Tools
+## Development Tools
 
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git)
 
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker)
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github)
 
 ![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visualstudiocode)
 
@@ -165,31 +178,28 @@ Features:
 
 ---
 
-# 🌎 Open To
+# 🚀 Open To
 
 | Area | Status |
 |-|-|
-| Open Source Projects | ✅ Available |
+| Open Source Collaboration | ✅ Welcome |
 | Networking Projects | ✅ Interested |
 | OpenWrt Development | ✅ Interested |
+| Embedded Systems | ✅ Interested |
 | Hardware Projects | ✅ Interested |
-| Collaboration | ✅ Welcome |
 
 ---
 
-# 📌 Current Projects
+# 📌 Current Work
 
-## 📡 WiFi Analyzer Pro
+### 📡 WiFi Analyzer Pro
+Advanced wireless diagnostics platform using React + Python.
 
-Python + React wireless diagnostics platform.
+### 🌐 Network Engineering Tools
+Building utilities for monitoring, analysing and improving networks.
 
-## 🌐 OpenWrt & Embedded Linux
-
-Building tools and experiments around routers, networking hardware and embedded systems.
-
-## 🖥️ Network Monitoring
-
-Creating dashboards and utilities for understanding network performance.
+### 📦 Embedded Linux
+Experimenting with routers, OpenWrt and embedded platforms.
 
 ---
 
@@ -201,13 +211,13 @@ https://github.com/manit6752025
 
 Organization:
 
-https://github.com/Manit-Labs
+https://github.com/NexTech-Core
 
 ---
 
 <div align="center">
 
-⭐ If you like my projects, consider starring them!
+⭐ If you like my projects, consider giving them a star!
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=120&section=footer"/>
 
