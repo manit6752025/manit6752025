@@ -1,10 +1,10 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=220&section=header&text=NexTech%20Core&fontSize=80&animation=fadeIn"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=220&section=header&text=NetCore%20Technologies&fontSize=80&animation=fadeIn"/>
 
 # 👋 Hi, I'm Manit Arora
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=25&duration=3000&pause=1000&center=true&vCenter=true&width=850&lines=NexTech+Core;Open+Source+Networking+Tools;WiFi+%26+Network+Engineering;Linux+%7C+OpenWrt+%7C+React+%7C+Python" />
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=25&duration=3000&pause=1000&center=true&vCenter=true&width=850&lines=NetCore+Technologies;Open+Source+Networking+Tools;WiFi+%26+Network+Engineering;Linux+%7C+OpenWrt+%7C+React+%7C+Python" />
 
 <br>
 
@@ -19,9 +19,9 @@
 # 🚀 About Me
 
 ```yaml
-name: Manit Arora
-organization: NetCore Technologies
-location: Sydney, Australia
+Name: Manit Arora
+Organization: NetCore Technologies
+Location: Sydney, Australia
 
 Role:
   - Open Source Developer
@@ -211,7 +211,7 @@ https://github.com/manit6752025
 
 Organization:
 
-https://github.com/NexTech-Core
+https://github.com/NetCore-Technologies
 
 ---
 
