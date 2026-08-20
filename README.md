@@ -23,12 +23,12 @@ name: Manit Arora
 organization: NetCore Technologies
 location: Sydney, Australia
 
-role:
+Role:
   - Open Source Developer
   - Network Software Developer
   - Linux & Embedded Systems Developer
 
-focus:
+Focus:
   - Network engineering
   - WiFi analysis tools
   - OpenWrt development
@@ -55,13 +55,13 @@ My work combines:
 - Python backend services
 - Hardware and software integration
 
-The goal of NexTech Core is to create powerful, accessible tools that help people understand, manage and improve their networks.
+The goal of NetCore Technologies is to create powerful, accessible tools that help people understand, manage and improve their networks.
 
 ---
 
-# 🌐 NexTech Core
+# 🌐 NetCore Technologies
 
-NexTech Core develops open-source technology for:
+NetCore Technologies develops open-source technology for:
 
 - 📡 Wireless networking
 - 🌐 Network diagnostics
@@ -76,7 +76,7 @@ NexTech Core develops open-source technology for:
 
 ## 📡 WiFi Analyzer Pro
 
-<a href="https://github.com/manit6752025/wifi-analyzer-pro">
+<a href="https://github.com/NetCore-Technologies/wifi-analyzer-pro">
 
 <img src="https://github-readme-stats.vercel.app/api/pin/?username=manit6752025&repo=wifi-analyzer-pro&theme=tokyonight"/>
 
