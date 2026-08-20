@@ -20,7 +20,7 @@
 
 ```yaml
 name: Manit Arora
-organization: NexTech Core
+organization: NetCore Technologies
 location: Sydney, Australia
 
 role:
