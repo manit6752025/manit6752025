@@ -1,172 +1,280 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=220&section=header&text=NetCore%20Technologies&fontSize=80&animation=fadeIn"/>
-
-# 👋 Hi, I'm Manit Arora
-
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=25&duration=3000&pause=1000&center=true&vCenter=true&width=850&lines=NetCore+Technologies;Open+Source+Networking+Tools;WiFi+%26+Network+Engineering;Linux+%7C+OpenWrt+%7C+React+%7C+Python" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:020617,50:0f172a,100:1d4ed8&height=230&section=header&text=NETCORE%20TECHNOLOGIES&fontSize=58&fontColor=ffffff&fontAlignY=34&desc=FOUNDED%20BY%20MANIT%20ARORA&descAlignY=57&descSize=16&animation=fadeIn" width="100%"/>
 
 <br>
 
-[![GitHub followers](https://img.shields.io/github/followers/manit6752025?style=for-the-badge&logo=github)](https://github.com/manit6752025)
-[![GitHub Stars](https://img.shields.io/github/stars/manit6752025?style=for-the-badge&logo=github)](https://github.com/manit6752025)
-[![Profile Views](https://komarev.com/ghpvc/?username=manit6752025&style=for-the-badge)](https://github.com/manit6752025)
+# ⚡ Manit Arora
+
+### Founder • Developer • Systems & Networking Engineer
+
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=23&duration=2800&pause=900&color=38BDF8&center=true&vCenter=true&width=950&lines=Founder+of+NetCore+Technologies;Building+Networking+%26+AI+Infrastructure;OpenWrt+%7C+Linux+%7C+React+%7C+Python;Turning+complex+systems+into+powerful+tools" />
+
+<br>
+
+<a href="https://github.com/manit6752025">
+<img src="https://img.shields.io/github/followers/manit6752025?style=for-the-badge&logo=github&label=FOLLOWERS">
+</a>
+
+<a href="https://github.com/manit6752025?tab=repositories">
+<img src="https://img.shields.io/github/stars/manit6752025?style=for-the-badge&logo=github&label=STARS">
+</a>
+
+<a href="https://github.com/NetCore-Technologies">
+<img src="https://img.shields.io/badge/NetCore%20Technologies-000000?style=for-the-badge&logo=github&logoColor=white">
+</a>
 
 </div>
 
 ---
 
-# 🚀 About Me
+# 👋 About Me
 
 ```yaml
 Name: Manit Arora
 Organization: NetCore Technologies
-Location: Sydney, Australia
-
 Role:
+  - Founder
   - Open Source Developer
-  - Network Software Developer
-  - Linux & Embedded Systems Developer
+  - Network & Systems Developer
 
 Focus:
-  - Network engineering
-  - WiFi analysis tools
-  - OpenWrt development
-  - Wireless diagnostics
-  - React dashboards
-  - Python automation
-  - Embedded Linux
-  - Hardware networking
+  - Artificial Intelligence
+  - Networking
+  - WiFi
+  - OpenWrt
+  - Linux
+  - Embedded Systems
+  - Developer Tools
+  - Automation
+
+Build Philosophy:
+  Understand → Build → Break → Improve → Share
 ```
 
----
+I'm the founder of **NetCore Technologies**, where I work on open-source software, networking infrastructure, systems engineering and emerging AI technologies.
 
-# 🛠️ What I Do
-
-I build open-source networking software and tools focused on wireless systems, Linux infrastructure and embedded platforms.
-
-My work combines:
-
-- Network monitoring tools
-- WiFi analysis systems
-- OpenWrt firmware development
-- Embedded Linux solutions
-- React-based dashboards
-- Python backend services
-- Hardware and software integration
-
-The goal of NetCore Technologies is to create powerful, accessible tools that help people understand, manage and improve their networks.
+I enjoy working on projects that sit close to the system — where software, hardware, networking and performance all meet.
 
 ---
 
 # 🌐 NetCore Technologies
 
-NetCore Technologies develops open-source technology for:
+<div align="center">
 
-- 📡 Wireless networking
-- 🌐 Network diagnostics
-- 🖥️ Linux systems
-- 📦 Embedded devices
-- 🔧 Router platforms
-- 🚀 Automation tools
+```text
+                    NETCORE TECHNOLOGIES
+                             │
+             ┌───────────────┼───────────────┐
+             │               │               │
+             ▼               ▼               ▼
+            🤖              🌐              🧠
+           AI            NETWORKING       SYSTEMS
+             │               │               │
+             └───────────────┼───────────────┘
+                             │
+                             ▼
+                         🚀 TOOLS
+```
+
+### Building open technology for intelligent infrastructure.
+
+</div>
+
+NetCore Technologies is my long-term engineering platform for building:
+
+**AI infrastructure · Networking software · Embedded systems · Developer tools · Open-source platforms**
 
 ---
 
-# 🔥 Featured Project
+# 🚀 What I'm Building
 
-## 📡 WiFi Analyzer Pro
+## 🌐 QuantumGrid OS
 
-<a href="https://github.com/NetCore-Technologies/wifi-analyzer-pro">
+A networking platform focused on pushing router and network infrastructure further.
 
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=manit6752025&repo=wifi-analyzer-pro&theme=tokyonight"/>
+### Exploring
 
+```text
+⚡ High-performance networking
+📡 Advanced Wi-Fi
+📶 5G / cellular networking
+🎮 Low-latency gaming optimisation
+🔐 Network security
+📊 Real-time monitoring
+🧠 Intelligent network management
+🧩 Hardware acceleration
+```
+
+### Vision
+
+> Build a networking platform that gives users significantly more control over their infrastructure.
+
+**Repository**
+
+<a href="https://github.com/NetCore-Technologies/QuantumGrid-OS">
+<img src="https://img.shields.io/badge/⚡%20QUANTUMGRID%20OS-EXPLORE-2563eb?style=for-the-badge">
 </a>
 
-Real-time WiFi diagnostic dashboard built with React and Python.
+---
+
+# 📡 WiFi Analyzer Pro
+
+A real-time wireless diagnostics platform combining a **Python backend** with a **React dashboard**.
 
 ### Features
 
-- 📡 Live WiFi scanning
-- 📊 PHY layer statistics
-- 📈 Link monitoring
-- 🔍 Device discovery
-- 🚨 Rogue AP detection
-- 🗺️ WiFi heatmaps
-- 🌐 Network speed testing
-- 📱 Responsive dashboard
-- 🐍 Python API backend
+| System          | Capability                   |
+| --------------- | ---------------------------- |
+| 📡 Wireless     | WiFi scanning & AP discovery |
+| 📊 Analytics    | Signal & network analysis    |
+| 🔍 Diagnostics  | PHY / link information       |
+| 🚨 Security     | Rogue AP detection           |
+| 🧠 Intelligence | Smart channel analysis       |
+| ⚡ Testing       | Network speed testing        |
+| 📈 Monitoring   | Real-time dashboard          |
+| 📁 Export       | CSV / JSON data              |
+
+<a href="https://github.com/manit6752025/wifi-analyzer-pro">
+<img src="https://img.shields.io/badge/📡%20WIFI%20ANALYZER%20PRO-VIEW%20PROJECT-0f766e?style=for-the-badge">
+</a>
 
 ---
 
-# 💻 Technology Stack
+# 🤖 AI
 
-## Programming Languages
+One of the directions I'm most interested in is making **AI infrastructure more understandable and accessible**.
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+I want to explore the complete stack rather than treating AI as a black box.
 
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+```text
+                    APPLICATION
+                         │
+                         ▼
+                       AGENTS
+                         │
+                         ▼
+                    AI RUNTIME
+                         │
+                         ▼
+                     INFERENCE
+                         │
+                         ▼
+                       MODEL
+                         │
+                         ▼
+                      SYSTEM
+                         │
+                         ▼
+                     HARDWARE
+```
 
-![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)
+### Areas I'm exploring
 
-![Shell](https://img.shields.io/badge/Linux_Shell-121011?style=for-the-badge&logo=gnu-bash)
-
----
-
-## Frontend
-
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react)
-
-![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite)
-
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38BDF8?style=for-the-badge&logo=tailwindcss)
-
----
-
-## Systems & Networking
-
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
-
-![OpenWrt](https://img.shields.io/badge/OpenWrt-00B5E2?style=for-the-badge&logo=openwrt)
-
-![Raspberry Pi](https://img.shields.io/badge/Raspberry_Pi-A22846?style=for-the-badge&logo=raspberrypi)
-
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker)
+`Local AI` · `Agents` · `Inference` · `Automation` · `AI tooling` · `Private AI`
 
 ---
 
-## Development Tools
+# 🧠 Engineering Philosophy
 
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git)
+I like technology that can be **opened up and understood**.
 
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github)
+```text
+             DON'T JUST USE IT
+                     │
+                     ▼
+               UNDERSTAND IT
+                     │
+                     ▼
+                 MODIFY IT
+                     │
+                     ▼
+                  BREAK IT
+                     │
+                     ▼
+                IMPROVE IT
+                     │
+                     ▼
+                 SHARE IT
+```
 
-![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visualstudiocode)
+I care about:
+
+**⚡ Performance**
+Make it fast.
+
+**🔐 Security**
+Build defensively.
+
+**🧩 Modularity**
+Keep systems extensible.
+
+**📖 Transparency**
+Understand what's happening underneath.
+
+**🌍 Open Source**
+Let people build on top of the work.
 
 ---
 
-# 📊 GitHub Analytics
+# 🛠️ Technology Stack
 
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api?username=manit6752025&show_icons=true&theme=tokyonight"/>
+### Languages
+
+<img src="https://skillicons.dev/icons?i=python,c,cpp,rust,typescript,javascript,bash&theme=dark" />
 
 <br><br>
 
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=manit6752025&theme=tokyonight"/>
+### Frontend & Backend
+
+<img src="https://skillicons.dev/icons?i=react,vite,nodejs,tailwind&theme=dark" />
 
 <br><br>
 
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=manit6752025&layout=compact&theme=tokyonight"/>
+### Systems & Infrastructure
+
+<img src="https://skillicons.dev/icons?i=linux,docker,github,githubactions&theme=dark" />
 
 </div>
 
 ---
 
-# 🏆 GitHub Trophies
+# 🌐 Areas of Interest
+
+```text
+┌─────────────────────────────────────────────────────┐
+│                  MANIT ARORA                        │
+├─────────────────────────────────────────────────────┤
+│                                                     │
+│  🤖 Artificial Intelligence                         │
+│  🌐 Computer Networking                             │
+│  📡 Wireless / WiFi                                 │
+│  📶 5G / Cellular                                  │
+│  🧠 Linux & Systems                                 │
+│  📦 Embedded Linux                                  │
+│  🔧 OpenWrt                                         │
+│  🎮 Low-Latency Systems                             │
+│  🔐 Cybersecurity & Network Visibility              │
+│  🛠️ Developer Tooling                              │
+│                                                     │
+└─────────────────────────────────────────────────────┘
+```
+
+---
+
+# 📊 GitHub
 
 <div align="center">
 
-<img src="https://github-profile-trophy.vercel.app/?username=manit6752025&theme=tokyonight&row=1&column=6"/>
+<img src="https://github-readme-stats.vercel.app/api?username=manit6752025&show_icons=true&hide_border=true&theme=tokyonight&bg_color=00000000&include_all_commits=true&count_private=true" height="180"/>
+
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=manit6752025&layout=compact&hide_border=true&theme=tokyonight&bg_color=00000000" height="180"/>
+
+<br><br>
+
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=manit6752025&theme=tokyonight&hide_border=true" />
 
 </div>
 
@@ -174,51 +282,114 @@ Real-time WiFi diagnostic dashboard built with React and Python.
 
 # 📈 Contribution Activity
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=manit6752025&theme=tokyo-night"/>
+<div align="center">
+
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=manit6752025&theme=github-compact&hide_border=true&area=true" width="100%"/>
+
+</div>
 
 ---
 
-# 🚀 Open To
+# 🧪 Currently Working On
 
-| Area | Status |
-|-|-|
-| Open Source Collaboration | ✅ Welcome |
-| Networking Projects | ✅ Interested |
-| OpenWrt Development | ✅ Interested |
-| Embedded Systems | ✅ Interested |
-| Hardware Projects | ✅ Interested |
+```text
+[████████████████░░░░] NETCORE DEVELOPMENT
+```
 
----
+### ⚡ QuantumGrid OS
 
-# 📌 Current Work
+Advanced networking and router infrastructure.
 
 ### 📡 WiFi Analyzer Pro
-Advanced wireless diagnostics platform using React + Python.
 
-### 🌐 Network Engineering Tools
-Building utilities for monitoring, analysing and improving networks.
+Wireless intelligence and diagnostics.
 
-### 📦 Embedded Linux
-Experimenting with routers, OpenWrt and embedded platforms.
+### 🤖 AI Infrastructure
+
+Exploring local AI, agents and intelligent tooling.
+
+### 🌐 Network Engineering
+
+Building tools for analysing and understanding modern networks.
+
+### 🧠 Embedded Systems
+
+Linux, OpenWrt and hardware-focused experimentation.
 
 ---
 
-# 📫 Contact
+# 🗺️ Long-Term Vision
 
-GitHub:
+I want NetCore Technologies to grow into an ecosystem covering:
 
-https://github.com/manit6752025
+```text
+             AI
+              │
+              ▼
+        INTELLIGENT SYSTEMS
+              │
+              ▼
+        NETWORKING ENGINE
+              │
+       ┌──────┴──────┐
+       ▼             ▼
+      WIFI           5G
+       │             │
+       └──────┬──────┘
+              ▼
+         EMBEDDED OS
+              │
+              ▼
+        DEVELOPER TOOLS
+```
 
-Organization:
+The long-term goal is to build **open infrastructure that connects AI, systems and networking**.
 
-https://github.com/NetCore-Technologies
+---
+
+# 🌍 Open Source
+
+I'm a strong believer in building in public.
+
+You can:
+
+⭐ Star projects
+🍴 Fork repositories
+🐛 Report issues
+💡 Suggest ideas
+🔧 Submit improvements
+🚀 Build your own projects on top
+
+The best technology gets better when more people can experiment with it.
+
+---
+
+# 📫 Connect
+
+<div align="center">
+
+<a href="https://github.com/manit6752025">
+<img src="https://img.shields.io/badge/GitHub-manit6752025-181717?style=for-the-badge&logo=github">
+</a>
+
+<a href="https://github.com/NetCore-Technologies">
+<img src="https://img.shields.io/badge/NetCore%20Technologies-GitHub-181717?style=for-the-badge&logo=github">
+</a>
+
+</div>
 
 ---
 
 <div align="center">
 
-⭐ If you like my projects, consider giving them a star!
+# ⚡ BUILD. UNDERSTAND. OWN.
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=120&section=footer"/>
+### Founder of NetCore Technologies
+
+**AI × Networks × Systems × Open Source**
+
+<br>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:020617,50:0f172a,100:1d4ed8&height=130&section=footer" width="100%"/>
 
 </div>
