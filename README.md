@@ -1,395 +1,221 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:020617,50:0f172a,100:1d4ed8&height=230&section=header&text=NETCORE%20TECHNOLOGIES&fontSize=58&fontColor=ffffff&fontAlignY=34&desc=FOUNDED%20BY%20MANIT%20ARORA&descAlignY=57&descSize=16&animation=fadeIn" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&height=220&section=header&text=MANIT%20ARORA&fontSize=58&fontColor=FFFFFF&fontAlignY=38&desc=AI%20%7C%20NETWORKING%20%7C%20LINUX%20%7C%20SYSTEMS%20ENGINEERING&descAlignY=61&descSize=15&animation=fadeIn&color=0:04050A,30:0B1020,58:4779FF,82:9560E7,100:DB285F" width="100%" alt="Manit Arora" />
 
 <br>
 
-# ⚡ Manit Arora
+<img src="https://readme-typing-svg.demolab.com?font=Space+Grotesk&weight=600&size=24&duration=3000&pause=900&color=FFFFFF&center=true&vCenter=true&width=850&lines=Build+AI.+Own+AI.;Building+NetCore+Technologies.;Engineering+networks+and+systems.;Local-first.+Open-source.+Performance-driven." alt="Manit Arora typing animation" />
 
-### Founder • Developer • Systems & Networking Engineer
+<br><br>
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=23&duration=2800&pause=900&color=38BDF8&center=true&vCenter=true&width=950&lines=Founder+of+NetCore+Technologies;Building+Networking+%26+AI+Infrastructure;OpenWrt+%7C+Linux+%7C+React+%7C+Python;Turning+complex+systems+into+powerful+tools" />
+<img src="https://img.shields.io/badge/NETCORE%20TECHNOLOGIES-04050A?style=for-the-badge&labelColor=DB285F&color=9560E7" alt="NetCore Technologies" />
+<img src="https://img.shields.io/badge/AXIOM-04050A?style=for-the-badge&labelColor=9560E7&color=4779FF" alt="AXIOM" />
+<img src="https://img.shields.io/badge/QUANTUMGRID-04050A?style=for-the-badge&labelColor=4779FF&color=19E6FF" alt="QuantumGrid" />
+<img src="https://img.shields.io/badge/OPEN%20SOURCE-04050A?style=for-the-badge&labelColor=42DF9D&color=4779FF" alt="Open Source" />
+
+<br><br>
+
+<strong>Founder / Builder at NetCore Technologies · AI · Networking · Linux · Open Source</strong>
+
+</div>
+
+---
+
+## ◈ About me
+
+I'm **Manit Arora**, building open-source software across AI engineering, networking, Linux and systems tooling.
+
+My work is centred around making complex systems more **observable, controllable, performant and understandable**.
+
+```text
+AI                  AXIOM AI Engineering Platform
+NETWORKING          QuantumGrid OS + Wi-Fi tooling
+LINUX               Systems, automation and infrastructure
+WEB                 React + TypeScript engineering interfaces
+PYTHON              Tooling, automation and AI workflows
+```
+
+---
+
+<div align="center">
+
+# ⚡ AXIOM
+
+### AI ENGINEERING PLATFORM
+
+<img src="https://capsule-render.vercel.app/api?type=rect&height=115&text=AXIOM&fontSize=64&fontColor=FFFFFF&fontAlignY=54&animation=twinkling&color=0:DB285F,38:9560E7,70:4779FF,100:19E6FF" width="92%" alt="AXIOM" />
+
+### <strong>Build AI. Own AI.</strong>
+
+Local-first AI engineering · Models · Datasets · Training · Evaluation · Runtime · MCP · Diagnostics
 
 <br>
 
-<a href="https://github.com/manit6752025">
-<img src="https://img.shields.io/github/followers/manit6752025?style=for-the-badge&logo=github&label=FOLLOWERS">
+<a href="https://github.com/NetCore-Technologies/AXIOM-AI">
+<img src="https://img.shields.io/badge/AXIOM%20REPOSITORY-%23FFFFFF?style=for-the-badge&labelColor=04050A&color=9560E7" alt="AXIOM repository" />
 </a>
 
-<a href="https://github.com/manit6752025?tab=repositories">
-<img src="https://img.shields.io/github/stars/manit6752025?style=for-the-badge&logo=github&label=STARS">
+<a href="https://netcore-technologies.github.io/AXIOM-AI/">
+<img src="https://img.shields.io/badge/AXIOM%20WEBSITE-%23FFFFFF?style=for-the-badge&labelColor=04050A&color=4779FF" alt="AXIOM website" />
+</a>
+
+</div>
+
+---
+
+## ◈ Featured work
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+### ⚡ AXIOM AI
+
+A local-first AI engineering platform designed around one focused Control Center.
+
+**Models · Datasets · Training · Evaluation · Runtime · MCP · Diagnostics**
+
+<a href="https://github.com/NetCore-Technologies/AXIOM-AI">Explore AXIOM →</a>
+
+</td>
+<td width="50%" valign="top">
+
+### ◉ QuantumGrid OS
+
+Performance-focused networking OS engineering for modern routing hardware.
+
+**OpenWrt · Linux · Wi-Fi · Acceleration · Telemetry · Gaming**
+
+<a href="https://github.com/NetCore-Technologies/QuantumGrid-OS">Explore QuantumGrid →</a>
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### ◇ WiFi Analyzer Pro
+
+Real-time Wi-Fi diagnostics and network intelligence.
+
+**Python · React · Wireless Analysis · System Telemetry**
+
+<a href="https://github.com/manit6752025/wifi-analyzer-pro">Explore WiFi Analyzer Pro →</a>
+
+</td>
+<td width="50%" valign="top">
+
+### ◎ NetCore Technologies
+
+The organization behind the projects: open-source networking tools, AI engineering and Linux systems work.
+
+<a href="https://github.com/NetCore-Technologies">Explore NetCore →</a>
+
+</td>
+</tr>
+</table>
+
+---
+
+# ◈ GitHub statistics
+
+<div align="center">
+
+### Contribution graph
+
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=manit6752025&bg_color=04050A&color=FFFFFF&line=4779FF&point=DB285F&area=true&area_color=9560E7&hide_border=true&custom_title=Manit%20Arora%20Contribution%20Graph" width="96%" alt="Manit Arora contribution graph" />
+
+<br>
+
+### Profile stats
+
+<img src="https://github-readme-stats.vercel.app/api?username=manit6752025&show_icons=true&hide_border=true&bg_color=04050A&title_color=FFFFFF&text_color=9AA9BC&icon_color=4779FF&ring_color=DB285F&include_all_commits=true&count_private=true&custom_title=Manit%20Arora%20GitHub%20Stats" height="180" alt="Manit Arora GitHub stats" />
+
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=manit6752025&layout=compact&hide_border=true&bg_color=04050A&title_color=FFFFFF&text_color=9AA9BC&langs_count=8&custom_title=Primary%20Languages" height="180" alt="Manit Arora language statistics" />
+
+<br><br>
+
+### Streak
+
+<img src="https://streak-stats.demolab.com?user=manit6752025&theme=dark&hide_border=true&background=04050A&ring=DB285F&fire=9560E7&currStreakLabel=FFFFFF&sideLabels=FFFFFF&currStreakNum=FFFFFF&sideNums=9AA9BC&dates=637083" width="70%" alt="Manit Arora GitHub streak" />
+
+</div>
+
+---
+
+# ◈ Achievements
+
+<div align="center">
+
+<img src="https://github-profile-trophy.vercel.app/?username=manit6752025&theme=darkhub&no-frame=true&no-bg=true&margin-w=10&column=6" width="96%" alt="Manit Arora GitHub achievements" />
+
+</div>
+
+---
+
+# ◈ Engineering philosophy
+
+<div align="center">
+
+### OWN THE STACK.
+
+### UNDERSTAND THE SYSTEM.
+
+### ENGINEER THE EXPERIENCE.
+
+</div>
+
+```text
+BUILD              Create practical software that solves real engineering problems.
+OBSERVE            Expose what the system is doing instead of hiding it.
+OPTIMIZE           Respect the hardware and remove unnecessary complexity.
+OWN                Prefer local control and software you can inspect.
+OPEN               Build in public and make the work useful to others.
+```
+
+---
+
+## ◈ Technology
+
+<div align="center">
+
+<img src="https://skillicons.dev/icons?i=linux,python,typescript,react,bash,git,github,docker" alt="Manit Arora technology stack" />
+
+<br><br>
+
+`Linux` · `OpenWrt` · `Python` · `React` · `TypeScript` · `C/C++` · `Bash` · `Git`
+
+</div>
+
+---
+
+<div align="center">
+
+## CURRENTLY BUILDING
+
+<img src="https://img.shields.io/badge/AXIOM-AI%20ENGINEERING-04050A?style=for-the-flat-square&labelColor=DB285F&color=9560E7" alt="AXIOM" />
+<img src="https://img.shields.io/badge/QUANTUMGRID-NETWORKING-04050A?style=for-the-flat-square&labelColor=4779FF&color=19E6FF" alt="QuantumGrid" />
+<img src="https://img.shields.io/badge/WIFI%20TOOLS-DIAGNOSTICS-04050A?style=for-the-flat-square&labelColor=42DF9D&color=4779FF" alt="WiFi Tools" />
+
+<br><br>
+
+<a href="https://github.com/manit6752025">
+<img src="https://img.shields.io/badge/GITHUB-%23FFFFFF?style=for-the-badge&labelColor=04050A&color=11121B&logo=github" alt="GitHub profile" />
 </a>
 
 <a href="https://github.com/NetCore-Technologies">
-<img src="https://img.shields.io/badge/NetCore%20Technologies-000000?style=for-the-badge&logo=github&logoColor=white">
+<img src="https://img.shields.io/badge/NETCORE%20TECHNOLOGIES-%23FFFFFF?style=for-the-badge&labelColor=04050A&color=9560E7" alt="NetCore Technologies" />
 </a>
-
-</div>
-
----
-
-# 👋 About Me
-
-```yaml
-Name: Manit Arora
-Organization: NetCore Technologies
-Role:
-  - Founder
-  - Open Source Developer
-  - Network & Systems Developer
-
-Focus:
-  - Artificial Intelligence
-  - Networking
-  - WiFi
-  - OpenWrt
-  - Linux
-  - Embedded Systems
-  - Developer Tools
-  - Automation
-
-Build Philosophy:
-  Understand → Build → Break → Improve → Share
-```
-
-I'm the founder of **NetCore Technologies**, where I work on open-source software, networking infrastructure, systems engineering and emerging AI technologies.
-
-I enjoy working on projects that sit close to the system — where software, hardware, networking and performance all meet.
-
----
-
-# 🌐 NetCore Technologies
-
-<div align="center">
-
-```text
-                    NETCORE TECHNOLOGIES
-                             │
-             ┌───────────────┼───────────────┐
-             │               │               │
-             ▼               ▼               ▼
-            🤖              🌐              🧠
-           AI            NETWORKING       SYSTEMS
-             │               │               │
-             └───────────────┼───────────────┘
-                             │
-                             ▼
-                         🚀 TOOLS
-```
-
-### Building open technology for intelligent infrastructure.
-
-</div>
-
-NetCore Technologies is my long-term engineering platform for building:
-
-**AI infrastructure · Networking software · Embedded systems · Developer tools · Open-source platforms**
-
----
-
-# 🚀 What I'm Building
-
-## 🌐 QuantumGrid OS
-
-A networking platform focused on pushing router and network infrastructure further.
-
-### Exploring
-
-```text
-⚡ High-performance networking
-📡 Advanced Wi-Fi
-📶 5G / cellular networking
-🎮 Low-latency gaming optimisation
-🔐 Network security
-📊 Real-time monitoring
-🧠 Intelligent network management
-🧩 Hardware acceleration
-```
-
-### Vision
-
-> Build a networking platform that gives users significantly more control over their infrastructure.
-
-**Repository**
-
-<a href="https://github.com/NetCore-Technologies/QuantumGrid-OS">
-<img src="https://img.shields.io/badge/⚡%20QUANTUMGRID%20OS-EXPLORE-2563eb?style=for-the-badge">
-</a>
-
----
-
-# 📡 WiFi Analyzer Pro
-
-A real-time wireless diagnostics platform combining a **Python backend** with a **React dashboard**.
-
-### Features
-
-| System          | Capability                   |
-| --------------- | ---------------------------- |
-| 📡 Wireless     | WiFi scanning & AP discovery |
-| 📊 Analytics    | Signal & network analysis    |
-| 🔍 Diagnostics  | PHY / link information       |
-| 🚨 Security     | Rogue AP detection           |
-| 🧠 Intelligence | Smart channel analysis       |
-| ⚡ Testing       | Network speed testing        |
-| 📈 Monitoring   | Real-time dashboard          |
-| 📁 Export       | CSV / JSON data              |
-
-<a href="https://github.com/manit6752025/wifi-analyzer-pro">
-<img src="https://img.shields.io/badge/📡%20WIFI%20ANALYZER%20PRO-VIEW%20PROJECT-0f766e?style=for-the-badge">
-</a>
-
----
-
-# 🤖 AI
-
-One of the directions I'm most interested in is making **AI infrastructure more understandable and accessible**.
-
-I want to explore the complete stack rather than treating AI as a black box.
-
-```text
-                    APPLICATION
-                         │
-                         ▼
-                       AGENTS
-                         │
-                         ▼
-                    AI RUNTIME
-                         │
-                         ▼
-                     INFERENCE
-                         │
-                         ▼
-                       MODEL
-                         │
-                         ▼
-                      SYSTEM
-                         │
-                         ▼
-                     HARDWARE
-```
-
-### Areas I'm exploring
-
-`Local AI` · `Agents` · `Inference` · `Automation` · `AI tooling` · `Private AI`
-
----
-
-# 🧠 Engineering Philosophy
-
-I like technology that can be **opened up and understood**.
-
-```text
-             DON'T JUST USE IT
-                     │
-                     ▼
-               UNDERSTAND IT
-                     │
-                     ▼
-                 MODIFY IT
-                     │
-                     ▼
-                  BREAK IT
-                     │
-                     ▼
-                IMPROVE IT
-                     │
-                     ▼
-                 SHARE IT
-```
-
-I care about:
-
-**⚡ Performance**
-Make it fast.
-
-**🔐 Security**
-Build defensively.
-
-**🧩 Modularity**
-Keep systems extensible.
-
-**📖 Transparency**
-Understand what's happening underneath.
-
-**🌍 Open Source**
-Let people build on top of the work.
-
----
-
-# 🛠️ Technology Stack
-
-<div align="center">
-
-### Languages
-
-<img src="https://skillicons.dev/icons?i=python,c,cpp,rust,typescript,javascript,bash&theme=dark" />
 
 <br><br>
 
-### Frontend & Backend
-
-<img src="https://skillicons.dev/icons?i=react,vite,nodejs,tailwind&theme=dark" />
+<sub>AI · Networking · Linux · OpenWrt · React · Python · Systems Engineering</sub>
 
 <br><br>
 
-### Systems & Infrastructure
-
-<img src="https://skillicons.dev/icons?i=linux,docker,github,githubactions&theme=dark" />
-
-</div>
-
----
-
-# 🌐 Areas of Interest
-
-```text
-┌─────────────────────────────────────────────────────┐
-│                  MANIT ARORA                        │
-├─────────────────────────────────────────────────────┤
-│                                                     │
-│  🤖 Artificial Intelligence                         │
-│  🌐 Computer Networking                             │
-│  📡 Wireless / WiFi                                 │
-│  📶 5G / Cellular                                  │
-│  🧠 Linux & Systems                                 │
-│  📦 Embedded Linux                                  │
-│  🔧 OpenWrt                                         │
-│  🎮 Low-Latency Systems                             │
-│  🔐 Cybersecurity & Network Visibility              │
-│  🛠️ Developer Tooling                              │
-│                                                     │
-└─────────────────────────────────────────────────────┘
-```
-
----
-
-# 📊 GitHub
-
-<div align="center">
-
-<img src="https://github-readme-stats.vercel.app/api?username=manit6752025&show_icons=true&hide_border=true&theme=tokyonight&bg_color=00000000&include_all_commits=true&count_private=true" height="180"/>
-
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=manit6752025&layout=compact&hide_border=true&theme=tokyonight&bg_color=00000000" height="180"/>
-
-<br><br>
-
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=manit6752025&theme=tokyonight&hide_border=true" />
-
-</div>
-
----
-
-# 📈 Contribution Activity
-
-<div align="center">
-
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=manit6752025&theme=github-compact&hide_border=true&area=true" width="100%"/>
-
-</div>
-
----
-
-# 🧪 Currently Working On
-
-```text
-[████████████████░░░░] NETCORE DEVELOPMENT
-```
-
-### ⚡ QuantumGrid OS
-
-Advanced networking and router infrastructure.
-
-### 📡 WiFi Analyzer Pro
-
-Wireless intelligence and diagnostics.
-
-### 🤖 AI Infrastructure
-
-Exploring local AI, agents and intelligent tooling.
-
-### 🌐 Network Engineering
-
-Building tools for analysing and understanding modern networks.
-
-### 🧠 Embedded Systems
-
-Linux, OpenWrt and hardware-focused experimentation.
-
----
-
-# 🗺️ Long-Term Vision
-
-I want NetCore Technologies to grow into an ecosystem covering:
-
-```text
-             AI
-              │
-              ▼
-        INTELLIGENT SYSTEMS
-              │
-              ▼
-        NETWORKING ENGINE
-              │
-       ┌──────┴──────┐
-       ▼             ▼
-      WIFI           5G
-       │             │
-       └──────┬──────┘
-              ▼
-         EMBEDDED OS
-              │
-              ▼
-        DEVELOPER TOOLS
-```
-
-The long-term goal is to build **open infrastructure that connects AI, systems and networking**.
-
----
-
-# 🌍 Open Source
-
-I'm a strong believer in building in public.
-
-You can:
-
-⭐ Star projects
-🍴 Fork repositories
-🐛 Report issues
-💡 Suggest ideas
-🔧 Submit improvements
-🚀 Build your own projects on top
-
-The best technology gets better when more people can experiment with it.
-
----
-
-# 📫 Connect
-
-<div align="center">
-
-<a href="https://github.com/manit6752025">
-<img src="https://img.shields.io/badge/GitHub-manit6752025-181717?style=for-the-badge&logo=github">
-</a>
-
-<a href="https://github.com/NetCore-Technologies">
-<img src="https://img.shields.io/badge/NetCore%20Technologies-GitHub-181717?style=for-the-badge&logo=github">
-</a>
-
-</div>
-
----
-
-<div align="center">
-
-# ⚡ BUILD. UNDERSTAND. OWN.
-
-### Founder of NetCore Technologies
-
-**AI × Networks × Systems × Open Source**
+<strong>Manit Arora</strong>
 
 <br>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:020617,50:0f172a,100:1d4ed8&height=130&section=footer" width="100%"/>
+<em>Build systems worth owning.</em>
 
 </div>
