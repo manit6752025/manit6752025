@@ -8,14 +8,20 @@
 
 <br><br>
 
-<img src="https://img.shields.io/badge/NETCORE%20TECHNOLOGIES-04050A?style=for-the-badge&labelColor=DB285F&color=9560E7" alt="NetCore Technologies" />
-<img src="https://img.shields.io/badge/AXIOM-04050A?style=for-the-badge&labelColor=9560E7&color=4779FF" alt="AXIOM" />
-<img src="https://img.shields.io/badge/QUANTUMGRID-04050A?style=for-the-badge&labelColor=4779FF&color=19E6FF" alt="QuantumGrid" />
+<a href="https://github.com/NetCore-Technologies"><img src="https://img.shields.io/badge/NETCORE%20TECHNOLOGIES-04050A?style=for-the-badge&labelColor=DB285F&color=9560E7" alt="NetCore Technologies" /></a>
+<a href="https://github.com/NetCore-Technologies/AXIOM-AI"><img src="https://img.shields.io/badge/AXIOM-04050A?style=for-the-badge&labelColor=9560E7&color=4779FF" alt="AXIOM" /></a>
+<a href="https://github.com/NetCore-Technologies/QuantumGrid-OS"><img src="https://img.shields.io/badge/QUANTUMGRID%20OS-04050A?style=for-the-badge&labelColor=4779FF&color=19E6FF" alt="QuantumGrid OS" /></a>
 <img src="https://img.shields.io/badge/OPEN%20SOURCE-04050A?style=for-the-badge&labelColor=42DF9D&color=4779FF" alt="Open Source" />
 
 <br><br>
 
 <strong>Founder / Builder at NetCore Technologies · AI · Networking · Linux · Open Source</strong>
+
+<br><br>
+
+<a href="https://github.com/manit6752025?tab=followers"><img src="https://img.shields.io/github/followers/manit6752025?style=flat-square&labelColor=0f172a&color=4779FF&logo=github" alt="Followers" /></a>
+<a href="https://github.com/NetCore-Technologies/QuantumGrid-OS/stargazers"><img src="https://img.shields.io/github/stars/NetCore-Technologies/QuantumGrid-OS?style=flat-square&labelColor=0f172a&color=19E6FF&label=QuantumGrid%20stars" alt="QuantumGrid stars" /></a>
+<a href="https://github.com/NetCore-Technologies/AXIOM-AI/stargazers"><img src="https://img.shields.io/github/stars/NetCore-Technologies/AXIOM-AI?style=flat-square&labelColor=0f172a&color=9560E7&label=AXIOM%20stars" alt="AXIOM stars" /></a>
 
 </div>
 
@@ -31,9 +37,52 @@ My work is centred around making complex systems more **observable, controllable
 AI                  AXIOM AI Engineering Platform
 NETWORKING          QuantumGrid OS + Wi-Fi tooling
 LINUX               Systems, automation and infrastructure
+SECURITY            Network security and bug bounty research
 WEB                 React + TypeScript engineering interfaces
 PYTHON              Tooling, automation and AI workflows
 ```
+
+---
+
+<div align="center">
+
+# ◉ QuantumGrid OS
+
+### PERFORMANCE NETWORKING OS FOR OPENWRT HARDWARE
+
+<img src="https://capsule-render.vercel.app/api?type=rect&height=115&text=QUANTUMGRID%20OS&fontSize=52&fontColor=FFFFFF&fontAlignY=54&animation=twinkling&color=0:4779FF,50:19E6FF,100:9560E7" width="92%" alt="QuantumGrid OS" />
+
+### <strong>Your router, engineered properly.</strong>
+
+OpenWrt · Linux · Wi-Fi · Acceleration · Telemetry · Gaming
+
+<br>
+
+<a href="https://github.com/NetCore-Technologies/QuantumGrid-OS">
+<img src="https://img.shields.io/badge/%E2%AD%90%20STAR%20QUANTUMGRID%20OS-%23FFFFFF?style=for-the-badge&labelColor=04050A&color=19E6FF" alt="Star QuantumGrid OS" />
+</a>
+
+<a href="https://github.com/NetCore-Technologies/QuantumGrid-OS/releases">
+<img src="https://img.shields.io/badge/DOWNLOAD-%23FFFFFF?style=for-the-badge&labelColor=04050A&color=4779FF" alt="Download QuantumGrid OS" />
+</a>
+
+<a href="https://github.com/NetCore-Technologies/QuantumGrid-OS/issues">
+<img src="https://img.shields.io/badge/REPORT%20A%20BUG-%23FFFFFF?style=for-the-badge&labelColor=04050A&color=DB285F" alt="Report a bug" />
+</a>
+
+</div>
+
+<br>
+
+| Why QuantumGrid OS | What it means for you |
+| --- | --- |
+| **Built on OpenWrt** | Open, inspectable and fully under your control |
+| **Performance-first** | Hardware acceleration and tuned defaults, with no bloat |
+| **Wi-Fi focused** | Better wireless behaviour plus real diagnostics |
+| **Telemetry you own** | See what your network is doing instead of guessing |
+| **Gaming-ready** | Low-latency tuning for competitive play |
+
+If you run OpenWrt hardware and want a faster, more transparent network, **[try QuantumGrid OS](https://github.com/NetCore-Technologies/QuantumGrid-OS)** and tell me how it goes. A star helps more people find it.
 
 ---
 
@@ -60,6 +109,14 @@ Local-first AI engineering · Models · Datasets · Training · Evaluation · Ru
 </a>
 
 </div>
+
+Try it in under a minute:
+
+```bash
+python -m pip install --upgrade --pre axiom-all
+axiom version
+axiom system info
+```
 
 ---
 
@@ -116,6 +173,23 @@ The organization behind the projects: open-source networking tools, AI engineeri
 
 ---
 
+# ◈ Achievements
+
+<div align="center">
+
+<img src="https://img.shields.io/badge/2%2C300%2B-GITHUB%20COMMITS-04050A?style=for-the-badge&labelColor=4779FF&color=0f172a" alt="2,300+ GitHub commits" />
+<a href="https://hackerone.com/irule675"><img src="https://img.shields.io/badge/HACKERONE-irule675-04050A?style=for-the-badge&labelColor=DB285F&color=0f172a&logo=hackerone&logoColor=white" alt="HackerOne irule675" /></a>
+<img src="https://img.shields.io/badge/CISCO-CCNA-04050A?style=for-the-badge&labelColor=1BA0D7&color=0f172a&logo=cisco&logoColor=white" alt="Cisco CCNA" />
+<img src="https://img.shields.io/badge/GOOGLE-TPM%20CERTIFICATE-04050A?style=for-the-badge&labelColor=4285F4&color=0f172a&logo=google&logoColor=white" alt="Google TPM certificate" />
+
+<br><br>
+
+<img src="https://github-profile-trophy.vercel.app/?username=manit6752025&theme=darkhub&no-frame=true&no-bg=true&margin-w=10&column=6" width="96%" alt="Manit Arora GitHub trophies" />
+
+</div>
+
+---
+
 # ◈ GitHub statistics
 
 <div align="center">
@@ -137,16 +211,6 @@ The organization behind the projects: open-source networking tools, AI engineeri
 ### Streak
 
 <img src="https://streak-stats.demolab.com?user=manit6752025&theme=dark&hide_border=true&background=04050A&ring=DB285F&fire=9560E7&currStreakLabel=FFFFFF&sideLabels=FFFFFF&currStreakNum=FFFFFF&sideNums=9AA9BC&dates=637083" width="70%" alt="Manit Arora GitHub streak" />
-
-</div>
-
----
-
-# ◈ Achievements
-
-<div align="center">
-
-<img src="https://github-profile-trophy.vercel.app/?username=manit6752025&theme=darkhub&no-frame=true&no-bg=true&margin-w=10&column=6" width="96%" alt="Manit Arora GitHub achievements" />
 
 </div>
 
@@ -192,9 +256,9 @@ OPEN               Build in public and make the work useful to others.
 
 ## CURRENTLY BUILDING
 
-<img src="https://img.shields.io/badge/AXIOM-AI%20ENGINEERING-04050A?style=for-the-flat-square&labelColor=DB285F&color=9560E7" alt="AXIOM" />
-<img src="https://img.shields.io/badge/QUANTUMGRID-NETWORKING-04050A?style=for-the-flat-square&labelColor=4779FF&color=19E6FF" alt="QuantumGrid" />
-<img src="https://img.shields.io/badge/WIFI%20TOOLS-DIAGNOSTICS-04050A?style=for-the-flat-square&labelColor=42DF9D&color=4779FF" alt="WiFi Tools" />
+<img src="https://img.shields.io/badge/AXIOM-AI%20ENGINEERING-04050A?style=flat-square&labelColor=DB285F&color=9560E7" alt="AXIOM" />
+<img src="https://img.shields.io/badge/QUANTUMGRID-NETWORKING-04050A?style=flat-square&labelColor=4779FF&color=19E6FF" alt="QuantumGrid" />
+<img src="https://img.shields.io/badge/WIFI%20TOOLS-DIAGNOSTICS-04050A?style=flat-square&labelColor=42DF9D&color=4779FF" alt="WiFi Tools" />
 
 <br><br>
 
