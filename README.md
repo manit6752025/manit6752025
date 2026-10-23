@@ -9,7 +9,7 @@
 
 <p>
   <a href="https://github.com/manit6752025"><img src="https://img.shields.io/badge/GitHub-manit6752025-181717?style=for-the-badge&logo=github" alt="GitHub profile"/></a>
-  <a href="https://github.com/NetCore-Technologies/AXIOM-AI"><img src="https://img.shields.io/badge/Flagship-AXIOM--AI-6C3BFF?style=for-the-badge&logo=github" alt="AXIOM-AI"/></a>
+  <a href="https://github.com/manit6752025/AXIOM-AI"><img src="https://img.shields.io/badge/Flagship-AXIOM--AI-6C3BFF?style=for-the-badge&logo=github" alt="AXIOM-AI"/></a>
   <a href="https://github.com/manit6752025/wifi-analyzer-pro"><img src="https://img.shields.io/badge/Project-WiFi%20Analyzer-00A6A6?style=for-the-badge&logo=wifi" alt="WiFi Analyzer Pro"/></a>
 </p>
 
