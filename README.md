@@ -1,75 +1,181 @@
 <div align="center">
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=240&section=header&text=MANIT%20ARORA&fontSize=62&fontColor=FFFFFF&fontAlignY=36&desc=AI%20%7C%20NETWORKING%20%7C%20LINUX%20%7C%20SYSTEMS%20ENGINEERING&descAlignY=60&descSize=14&animation=fadeIn&color=0:050816,25:111C3D,52:5146E5,78:9333EA,100:06B6D4" alt="Manit Arora animated profile banner" />
+<!-- Animated header -->
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:090A0F,35:14213D,70:6C3BFF,100:00D4FF&height=220&section=header&text=MANIT%20ARORA&fontSize=54&fontColor=FFFFFF&fontAlignY=36&desc=Building%20things%20that%20make%20technology%20better&descAlignY=57&descSize=17&animation=fadeIn" alt="Animated header banner"/>
 
-<br/>
-
-<img src="https://readme-typing-svg.demolab.com?font=Space+Grotesk&weight=600&size=23&duration=2800&pause=800&color=FFFFFF&center=true&vCenter=true&width=850&lines=Build+AI.+Own+AI.;Building+NetCore+Technologies.;Engineering+networks%2C+systems%2C+and+possibilities.;Local-first.+Open-source.+Performance-minded.;I+run+on+coffee+and+questionable+sleep+schedules.;I+disappear+before+the+deadline.+Usually." alt="Animated introduction" />
-
-<br/><br/>
-
-<a href="https://github.com/NetCore-Technologies">
-<img src="https://img.shields.io/badge/NETCORE%20TECHNOLOGIES-0B1020?style=for-the-badge&logo=github&logoColor=white&labelColor=DB2777" alt="NetCore Technologies"/>
-</a>
-<a href="https://github.com/NetCore-Technologies/AXIOM-AI">
-<img src="https://img.shields.io/badge/AXIOM%20AI-0B1020?style=for-the-badge&logo=github&logoColor=white&labelColor=7C3AED" alt="AXIOM AI"/>
-</a>
-<a href="https://github.com/NetCore-Technologies/QuantumGrid-OS">
-<img src="https://img.shields.io/badge/QUANTUMGRID%20OS-0B1020?style=for-the-badge&logo=linux&logoColor=white&labelColor=0891B2" alt="QuantumGrid OS"/>
+<a href="https://git.io/typing-svg">
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&duration=2800&pause=700&color=00D4FF&center=true&vCenter=true&width=850&lines=AI+systems+%7C+Developer+tools+%7C+Linux;Build.+Break.+Learn.+Improve.;A+random+person+exploring+technological+advancement+and+peace.;I+run+on+coffee+and+late-night+peace.;I+disappear+before+a+deadline.+Sometimes." alt="Animated typing text"/>
 </a>
 
-<br/><br/>
+<p>
+  <a href="https://github.com/manit6752025"><img src="https://img.shields.io/badge/GitHub-manit6752025-181717?style=for-the-badge&logo=github" alt="GitHub profile"/></a>
+  <a href="https://github.com/NetCore-Technologies/AXIOM-AI"><img src="https://img.shields.io/badge/Flagship-AXIOM--AI-6C3BFF?style=for-the-badge&logo=github" alt="AXIOM-AI"/></a>
+  <a href="https://github.com/manit6752025/wifi-analyzer-pro"><img src="https://img.shields.io/badge/Project-WiFi%20Analyzer-00A6A6?style=for-the-badge&logo=wifi" alt="WiFi Analyzer Pro"/></a>
+</p>
 
-<a href="https://github.com/manit6752025?tab=followers">
-<img src="https://img.shields.io/github/followers/manit6752025?style=for-the-badge&logo=github&label=FOLLOWERS&labelColor=111827&color=6366F1" alt="GitHub followers"/>
-</a>
-<a href="https://github.com/manit6752025?tab=repositories">
-<img src="https://img.shields.io/badge/OPEN%20SOURCE-BUILDING%20IN%20PUBLIC-0B1020?style=for-the-badge&logo=opensourceinitiative&logoColor=white&labelColor=059669" alt="Open source"/>
-</a>
-
-<br/><br/>
-
-<strong>AI Engineering · Networking · Linux · Open Source · Systems</strong>
-
-<br/><br/>
-
-<em>A Random Person Exploring The Whereabouts of Technological Advancement and Peace.</em>
-
-<br/>
-
-<sub>Currently powered by ☕ coffee, curiosity, and one more commit.</sub>
+### *“A Random Person Exploring The Whereabouts of Technological Advancement and Peace.”*
 
 </div>
 
 ---
 
-## `whoami` — The human behind the commits
+## `whoami` — Hello, world 👋
 
-Hey! I'm **Manit Arora**, a developer, systems enthusiast, and open-source builder interested in the intersection of AI engineering, networking, Linux, and technological advancement.
+I'm **Manit Arora** — a developer, experimenter, and technology enthusiast who likes figuring out how things work, making them better, and occasionally discovering that the bug was one missing character all along.
 
-I enjoy figuring out how things work, making complicated systems easier to understand, squeezing useful performance out of hardware, and turning ambitious ideas into practical software.
+I spend my time exploring **AI engineering, developer tooling, Python, TypeScript, Linux, networking, and open-source software**. I like projects that do more than look impressive in a screenshot: they should be useful, testable, documented, and connected into a coherent experience.
 
-My philosophy is simple: build useful things, understand the stack, keep learning, and make technology a little better than it was yesterday.
+- 🧠 Building **AXIOM-AI**, an AI experimentation and workflow platform.
+- 🧰 Exploring **QuantumGrid OS** and practical systems/networking ideas.
+- 📡 Interested in Linux, Wi-Fi, DNS, routers, diagnostics, and self-hosted infrastructure.
+- 🛠️ Big on turning ambitious roadmaps into working features — not just checkboxes.
+- 🌙 Most productive when the world gets quiet and the coffee gets suspiciously cold.
+- 🏃 Known to disappear before a deadline. This is either time management or a very advanced stealth feature.
 
-- 🧠 **AI engineering:** Model tooling, datasets, evaluation, local-first workflows, runtimes, and developer tools.
-- 🌐 **Networking:** OpenWrt, Wi-Fi, DNS, router performance, network diagnostics, and telemetry.
-- 🐧 **Linux and systems:** Python, automation, infrastructure, command-line tools, and hardware-aware engineering.
-- 🛠️ **Open source:** Building, debugging, experimenting, documenting, and improving projects in public.
-- 🌌 **Personal research department:** Technological advancement, digital freedom, late-night peace, and the occasional existential debugging session.
-- ☕ **Power management:** Coffee in, questionable sleep out, software shipped.
+> **Current operating mode:** `coffee.service` active · `sleep.service` not found · `deadline.timer` enabled
 
-<details>
-<summary><strong>📟 Human System Diagnostics — click to expand</strong></summary>
+---
+
+## 🚀 Featured projects
+
+<div align="center">
+
+<a href="https://github.com/NetCore-Technologies/AXIOM-AI">
+  <img src="https://img.shields.io/badge/AXIOM--AI-AI%20Engineering%20Platform-6C3BFF?style=for-the-badge&logo=github&logoColor=white" alt="AXIOM-AI"/>
+</a>
+<a href="https://github.com/manit6752025/wifi-analyzer-pro">
+  <img src="https://img.shields.io/badge/WiFi%20Analyzer%20Pro-Wireless%20Tooling-008B8B?style=for-the-badge&logo=wifi&logoColor=white" alt="WiFi Analyzer Pro"/>
+</a>
+
+</div>
+
+### 🧠 [AXIOM-AI](https://github.com/NetCore-Technologies/AXIOM-AI)
+
+An open-source AI engineering workspace focused on bringing model experimentation, dataset workflows, evaluation, and practical developer tools into one cohesive application.
+
+- **Focus:** AI workflows, dataset analysis, model experimentation, evaluation, diagnostics, and CLI tooling.
+- **Approach:** Make capabilities discoverable in the GUI while keeping the command line useful for automation and advanced workflows.
+- **Goal:** A maintainable, documented platform where features are testable and the roadmap reflects reality.
+
+[![Repository stars](https://img.shields.io/github/stars/NetCore-Technologies/AXIOM-AI?style=flat-square&label=stars)](https://github.com/NetCore-Technologies/AXIOM-AI/stargazers)
+[![Latest release](https://img.shields.io/github/v/release/NetCore-Technologies/AXIOM-AI?style=flat-square&label=release)](https://github.com/NetCore-Technologies/AXIOM-AI/releases)
+[![Open issues](https://img.shields.io/github/issues/NetCore-Technologies/AXIOM-AI?style=flat-square)](https://github.com/NetCore-Technologies/AXIOM-AI/issues)
+
+### 📡 [WiFi Analyzer Pro](https://github.com/manit6752025/wifi-analyzer-pro)
+
+A project focused on wireless-network visibility and analysis. Visit the repository for its current feature set, setup instructions, and implementation details.
+
+[![Repository stars](https://img.shields.io/github/stars/manit6752025/wifi-analyzer-pro?style=flat-square&label=stars)](https://github.com/manit6752025/wifi-analyzer-pro/stargazers)
+[![Open issues](https://img.shields.io/github/issues/manit6752025/wifi-analyzer-pro?style=flat-square)](https://github.com/manit6752025/wifi-analyzer-pro/issues)
+
+### 🧩 QuantumGrid OS
+
+An ongoing systems-focused project exploring operating-system concepts, Linux tooling, and network-aware infrastructure. Project details and current development status should be taken from its repository when publicly available.
+
+---
+
+## 🧰 Technologies & tools
+
+<div align="center">
+
+<img src="https://skillicons.dev/icons?i=python,ts,js,react,vite,html,css,bash,linux,git,github,docker,sqlite,fastapi,vscode&perline=8" alt="Technology icons"/>
+
+</div>
+
+| Area | Interests |
+|---|---|
+| **Languages** | Python, TypeScript, JavaScript, Bash |
+| **AI & data** | Model workflows, dataset tooling, evaluation, experimentation |
+| **Frontend** | React, Vite, HTML, CSS, accessible interfaces |
+| **Backend & tooling** | APIs, CLI design, diagnostics, automated testing |
+| **Systems** | Linux, networking, DNS, Wi-Fi, OpenWrt, self-hosting |
+| **Engineering habits** | Git, documentation, reproducible builds, tests, release workflows |
+
+*This is a snapshot of the tools and areas I work with and explore—not a claim of equal expertise in every item.*
+
+---
+
+## 📈 GitHub activity
+
+<div align="center">
+
+<a href="https://github.com/manit6752025?tab=repositories">
+  <img height="165" src="https://github-readme-stats.vercel.app/api?username=manit6752025&show_icons=true&hide_border=true&rank_icon=github&theme=transparent&include_all_commits=true" alt="GitHub profile statistics"/>
+</a>
+<a href="https://github.com/manit6752025?tab=repositories">
+  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=manit6752025&layout=compact&hide_border=true&theme=transparent" alt="Most-used language statistics"/>
+</a>
+
+</div>
+
+<div align="center">
+
+[![Contribution streak](https://streak-stats.demolab.com?user=manit6752025&hide_border=true&theme=transparent)](https://github.com/manit6752025)
+
+</div>
+
+### 📊 Repository activity
+
+These badges report activity for the named repositories; they are **not** a complete count of every contribution across GitHub.
+
+| Repository | Recent commit activity | Stars |
+|---|---|---|
+| **AXIOM-AI** | [![Commit activity](https://img.shields.io/github/commit-activity/m/NetCore-Technologies/AXIOM-AI?style=flat-square)](https://github.com/NetCore-Technologies/AXIOM-AI/commits) | [![Stars](https://img.shields.io/github/stars/NetCore-Technologies/AXIOM-AI?style=flat-square)](https://github.com/NetCore-Technologies/AXIOM-AI/stargazers) |
+| **WiFi Analyzer Pro** | [![Commit activity](https://img.shields.io/github/commit-activity/m/manit6752025/wifi-analyzer-pro?style=flat-square)](https://github.com/manit6752025/wifi-analyzer-pro/commits) | [![Stars](https://img.shields.io/github/stars/manit6752025/wifi-analyzer-pro?style=flat-square)](https://github.com/manit6752025/wifi-analyzer-pro/stargazers) |
+
+> GitHub stats cards and streak services are third-party endpoints. If one is temporarily unavailable, the rest of this README still works.
+
+---
+
+## 🏆 Achievements & open-source
+
+- 🥇 **GitHub achievements:** [View my profile achievements](https://github.com/manit6752025?tab=achievements)
+- 🧑‍💻 **Repositories:** [Explore my projects](https://github.com/manit6752025?tab=repositories)
+- 🐛 **Issues & collaboration:** Open an issue on a project if you have a useful idea, reproducible bug report, or improvement.
+- 🔐 **Security research profile:** [HackerOne — irule675](https://hackerone.com/irule675)
+
+I value useful contributions, clear bug reports, reproducible tests, readable code, and documentation that explains how to actually use the thing.
+
+---
+
+## 🌌 Beyond the terminal
+
+I enjoy exploring the intersection of technology and curiosity: how systems behave, how networks can be improved, how AI tools can become more practical, and how open-source projects can turn ambitious ideas into real software.
+
+The goal isn't to know everything. It's to keep asking better questions, build things that teach me something, and leave the codebase a little better than I found it.
 
 ```text
-USER                 A Random Person Exploring Technology and Peace
-PRIMARY OBJECTIVE    Build useful things and understand how they work
-FAVOURITE ACTIVITIES AI, Linux, networking, automation, and engineering
-POWER SOURCE         Coffee ☕
-BACKGROUND PROCESS   Thinking about one more improvement
-SLEEP SCHEDULE       Experimental; stability not guaranteed
-DEADLINE STRATEGY    Disappear before the deadline arrives
-DEBUGGING METHOD     Observe → Reproduce → Investigate → Fix → Test
-ERROR HANDLING       Coffee → Log files → More coffee
-CURRENT STATUS      Probably building something
-ULTIMATE GOAL        Technological advancement, open systems, and peace
+$ axiom status
+AI experiments       : ongoing
+Open-source projects : compiling
+Network curiosity    : 100%
+Coffee level         : critically important
+Sleep                : optional (not recommended)
+Deadline camouflage  : enabled
+Peace                 : still being explored
+```
+
+---
+
+## 🤝 Connect
+
+<div align="center">
+
+<a href="https://github.com/manit6752025">
+  <img src="https://img.shields.io/badge/GitHub-Follow%20my%20work-181717?style=for-the-badge&logo=github" alt="GitHub"/>
+</a>
+<a href="https://github.com/NetCore-Technologies/AXIOM-AI">
+  <img src="https://img.shields.io/badge/Explore-AXIOM--AI-6C3BFF?style=for-the-badge&logo=github" alt="Explore AXIOM-AI"/>
+</a>
+
+### *Build with curiosity. Debug with patience. Ship with purpose.*
+
+**Powered by coffee, late-night peace, and the occasional “why is this broken?”**
+
+</div>
+
+<div align="center">
+
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:00D4FF,35:6C3BFF,70:14213D,100:090A0F&height=120&section=footer" alt="Animated footer banner"/>
+
+</div>
