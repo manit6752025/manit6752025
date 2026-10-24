@@ -57,9 +57,9 @@ An open-source AI engineering workspace focused on bringing model experimentatio
 - **Approach:** Make capabilities discoverable in the GUI while keeping the command line useful for automation and advanced workflows.
 - **Goal:** A maintainable, documented platform where features are testable and the roadmap reflects reality.
 
-[![Repository stars](https://img.shields.io/github/stars/NetCore-Technologies/AXIOM-AI?style=flat-square&label=stars)](https://github.com/NetCore-Technologies/AXIOM-AI/stargazers)
-[![Latest release](https://img.shields.io/github/v/release/NetCore-Technologies/AXIOM-AI?style=flat-square&label=release)](https://github.com/NetCore-Technologies/AXIOM-AI/releases)
-[![Open issues](https://img.shields.io/github/issues/NetCore-Technologies/AXIOM-AI?style=flat-square)](https://github.com/NetCore-Technologies/AXIOM-AI/issues)
+[![Repository stars](https://img.shields.io/github/stars/manit6752025/AXIOM-AI?style=flat-square&label=stars)](https://github.com/manit6752025/AXIOM-AI/stargazers)
+[![Latest release](https://img.shields.io/github/v/release/manit6752025/AXIOM-AI?style=flat-square&label=release)](https://github.com/manit6752025/AXIOM-AI/releases)
+[![Open issues](https://img.shields.io/github/issues/manit6752025/AXIOM-AI?style=flat-square)](https://github.com/manit6752025/AXIOM-AI/issues)
 
 ### 📡 [WiFi Analyzer Pro](https://github.com/manit6752025/wifi-analyzer-pro)
 
