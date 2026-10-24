@@ -167,7 +167,7 @@ Peace                 : still being explored
 
 ### *Build with curiosity. Debug with patience. Ship with purpose.*
 
-**Powered by coffee, late-night peace, and the occasional “why is this broken?”**
+**Powered by coffee, late-night peace, and the occasional “crashouts”**
 
 </div>
 
