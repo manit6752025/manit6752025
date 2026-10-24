@@ -2,7 +2,7 @@ name: Refresh stats
 
 on:
   schedule:
-    - cron: "*/15 * * * *"
+    - cron: "*/0.01 * * * *"
   workflow_dispatch:
 
 permissions:
