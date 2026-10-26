@@ -2,7 +2,7 @@ name: Refresh stats
 
 on:
   schedule:
-    - cron: "*/1 * * * *"
+    - cron: "*/5 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -11,14 +11,32 @@ permissions:
 jobs:
   refresh:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
-      - name: Bump cache key
-        run: sed -i -E "s/&t=[0-9]+/\&t=$(date +%s)/g" README.md
-      - name: Commit
+
+      - name: Refresh stats every 30 seconds
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md
-          git commit -m "refresh stats" || exit 0
-          git push
+          
+          # Run a loop for 4 minutes (8 iterations of 30 seconds) to fit neatly into the 5-minute cron trigger
+          for i in {1..8}; do
+            echo "Iteration $i: Updating stats..."
+            
+            # Bump cache key
+            sed -i -E "s/&t=[0-9]+/\&t=$(date +%s)/g" README.md
+            
+            # Commit and push changes if any exist
+            git add README.md
+            if git commit -m "refresh stats"; then
+              git push
+            else
+              echo "No changes to commit in this iteration."
+            fi
+            
+            # Wait 30 seconds before the next update (skip sleep on the final iteration)
+            if [ $i -lt 8 ]; then
+              sleep 30
+            fi
+          done
