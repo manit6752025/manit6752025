@@ -1,9 +1,9 @@
 <div align="center">
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:090A0F,35:14213D,70:6C3BFF,100:00D4FF&height=220&section=header&text=MANIT%20ARORA&fontSize=54&fontColor=FFFFFF&fontAlignY=36&desc=Building%20things%20that%20make%20technology%20better&descAlignY=57&descSize=17&animation=fadeIn" alt="Animated header banner"/>
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:090A0F,35:14213D,70:6C3BFF,100:00D4FF&height=1793495025&section=header&text=MANIT%20ARORA&fontSize=54&fontColor=FFFFFF&fontAlignY=36&desc=Building%20things%20that%20make%20technology%20better&descAlignY=57&descSize=17&animation=fadeIn" alt="Animated header banner"/>
 
 <a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&duration=2800&pause=700&color=00D4FF&center=true&vCenter=true&width=850&lines=AI+systems+%7C+Developer+tools+%7C+Linux;Build.+Break.+Learn.+Improve.;A+random+person+exploring+technological+advancement+and+peace.;I+run+on+coffee+and+late-night+peace.;I+disappear+before+a+deadline.+Sometimes." alt="Animated typing text"/>
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=1793495025&size=20&duration=2800&pause=700&color=00D4FF&center=true&vCenter=true&width=850&lines=AI+systems+%7C+Developer+tools+%7C+Linux;Build.+Break.+Learn.+Improve.;A+random+person+exploring+technological+advancement+and+peace.;I+run+on+coffee+and+late-night+peace.;I+disappear+before+a+deadline.+Sometimes." alt="Animated typing text"/>
 </a>
 
 <p>
@@ -99,17 +99,17 @@ An ongoing systems-focused project exploring operating-system concepts, Linux to
 <div align="center">
 
 <a href="https://github.com/manit6752025?tab=repositories">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=manit6752025&show_icons=true&hide_border=true&rank_icon=github&theme=transparent&include_all_commits=true&count_private=true&t=1793489060" alt="GitHub profile statistics"/>
+  <img height="165" src="https://github-readme-stats.vercel.app/api?username=manit6752025&show_icons=true&hide_border=true&rank_icon=github&theme=transparent&include_all_commits=true&count_private=true&t=1793495025" alt="GitHub profile statistics"/>
 </a>
 <a href="https://github.com/manit6752025?tab=repositories">
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=manit6752025&layout=compact&hide_border=true&theme=transparent&t=1793489060" alt="Most-used language statistics"/>
+  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=manit6752025&layout=compact&hide_border=true&theme=transparent&t=1793495025" alt="Most-used language statistics"/>
 </a>
 
 </div>
 
 <div align="center">
 
-[![Contribution streak](https://streak-stats.demolab.com?user=manit6752025&hide_border=true&theme=transparent&t=1793489060)](https://github.com/manit6752025)
+[![Contribution streak](https://streak-stats.demolab.com?user=manit6752025&hide_border=true&theme=transparent&t=1793495025)](https://github.com/manit6752025)
 
 </div>
 
@@ -173,6 +173,6 @@ Peace                 : still being explored
 
 <div align="center">
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:00D4FF,35:6C3BFF,70:14213D,100:090A0F&height=120&section=footer" alt="Animated footer banner"/>
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:00D4FF,35:6C3BFF,70:14213D,100:090A0F&height=1793495025&section=footer" alt="Animated footer banner"/>
 
 </div>
