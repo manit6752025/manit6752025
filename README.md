@@ -125,7 +125,7 @@ An ongoing systems-focused project exploring operating-system concepts, Linux to
 - 🥇 **GitHub achievements:** [View my profile achievements](https://github.com/manit6752025?tab=achievements)
 - 🧑‍💻 **Repositories:** [Explore my projects](https://github.com/manit6752025?tab=repositories)
 - 🐛 **Issues & collaboration:** Open an issue on a project if you have a useful idea, reproducible bug report, or improvement.
-- 🔐 **Security research profile:** [HackerOne — irule675](https://hackerone.com/irule675)
+- 🔐 **Security research profile:** [HackerOne — Manit6752025](https://hackerone.com/manit6752025)
 
 I value useful contributions, clear bug reports, reproducible tests, readable code, and documentation that explains how to actually use the thing.
 
