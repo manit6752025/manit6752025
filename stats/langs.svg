@@ -13,20 +13,20 @@
 <text class="t" x="24" y="34">Most used languages</text>
 <text class="l" x="24" y="66">Python</text>
 <rect class="tr" x="140" y="56" width="180" height="10" rx="5"/>
-<rect x="140" y="56" width="118" height="10" rx="5" fill="#3572A5"/>
-<text class="v" x="396" y="66" text-anchor="end">65.7%</text>
+<rect x="140" y="56" width="127" height="10" rx="5" fill="#3572A5"/>
+<text class="v" x="396" y="66" text-anchor="end">70.6%</text>
 <text class="l" x="24" y="94">TypeScript</text>
 <rect class="tr" x="140" y="84" width="180" height="10" rx="5"/>
-<rect x="140" y="84" width="44" height="10" rx="5" fill="#3178c6"/>
-<text class="v" x="396" y="94" text-anchor="end">24.5%</text>
+<rect x="140" y="84" width="38" height="10" rx="5" fill="#3178c6"/>
+<text class="v" x="396" y="94" text-anchor="end">21.2%</text>
 <text class="l" x="24" y="122">CSS</text>
 <rect class="tr" x="140" y="112" width="180" height="10" rx="5"/>
-<rect x="140" y="112" width="15" height="10" rx="5" fill="#663399"/>
-<text class="v" x="396" y="122" text-anchor="end">8.5%</text>
+<rect x="140" y="112" width="13" height="10" rx="5" fill="#663399"/>
+<text class="v" x="396" y="122" text-anchor="end">7.1%</text>
 <text class="l" x="24" y="150">Shell</text>
 <rect class="tr" x="140" y="140" width="180" height="10" rx="5"/>
 <rect x="140" y="140" width="2" height="10" rx="5" fill="#89e051"/>
-<text class="v" x="396" y="150" text-anchor="end">0.6%</text>
+<text class="v" x="396" y="150" text-anchor="end">0.5%</text>
 <text class="l" x="24" y="178">JavaScript</text>
 <rect class="tr" x="140" y="168" width="180" height="10" rx="5"/>
 <rect x="140" y="168" width="2" height="10" rx="5" fill="#f1e05a"/>
