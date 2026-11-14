@@ -13,26 +13,26 @@
 <text class="t" x="24" y="34">Most used languages</text>
 <text class="l" x="24" y="66">Python</text>
 <rect class="tr" x="140" y="56" width="180" height="10" rx="5"/>
-<rect x="140" y="56" width="127" height="10" rx="5" fill="#3572A5"/>
-<text class="v" x="396" y="66" text-anchor="end">70.6%</text>
+<rect x="140" y="56" width="123" height="10" rx="5" fill="#3572A5"/>
+<text class="v" x="396" y="66" text-anchor="end">68.6%</text>
 <text class="l" x="24" y="94">TypeScript</text>
 <rect class="tr" x="140" y="84" width="180" height="10" rx="5"/>
-<rect x="140" y="84" width="38" height="10" rx="5" fill="#3178c6"/>
-<text class="v" x="396" y="94" text-anchor="end">21.2%</text>
+<rect x="140" y="84" width="37" height="10" rx="5" fill="#3178c6"/>
+<text class="v" x="396" y="94" text-anchor="end">20.6%</text>
 <text class="l" x="24" y="122">CSS</text>
 <rect class="tr" x="140" y="112" width="180" height="10" rx="5"/>
-<rect x="140" y="112" width="13" height="10" rx="5" fill="#663399"/>
-<text class="v" x="396" y="122" text-anchor="end">7.1%</text>
-<text class="l" x="24" y="150">Shell</text>
+<rect x="140" y="112" width="14" height="10" rx="5" fill="#663399"/>
+<text class="v" x="396" y="122" text-anchor="end">8.0%</text>
+<text class="l" x="24" y="150">HTML</text>
 <rect class="tr" x="140" y="140" width="180" height="10" rx="5"/>
-<rect x="140" y="140" width="2" height="10" rx="5" fill="#89e051"/>
-<text class="v" x="396" y="150" text-anchor="end">0.5%</text>
-<text class="l" x="24" y="178">JavaScript</text>
+<rect x="140" y="140" width="3" height="10" rx="5" fill="#e34c26"/>
+<text class="v" x="396" y="150" text-anchor="end">1.9%</text>
+<text class="l" x="24" y="178">Shell</text>
 <rect class="tr" x="140" y="168" width="180" height="10" rx="5"/>
-<rect x="140" y="168" width="2" height="10" rx="5" fill="#f1e05a"/>
-<text class="v" x="396" y="178" text-anchor="end">0.3%</text>
-<text class="l" x="24" y="206">HTML</text>
+<rect x="140" y="168" width="2" height="10" rx="5" fill="#89e051"/>
+<text class="v" x="396" y="178" text-anchor="end">0.5%</text>
+<text class="l" x="24" y="206">JavaScript</text>
 <rect class="tr" x="140" y="196" width="180" height="10" rx="5"/>
-<rect x="140" y="196" width="2" height="10" rx="5" fill="#e34c26"/>
-<text class="v" x="396" y="206" text-anchor="end">0.3%</text>
+<rect x="140" y="196" width="2" height="10" rx="5" fill="#f1e05a"/>
+<text class="v" x="396" y="206" text-anchor="end">0.4%</text>
 </svg>
