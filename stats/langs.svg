@@ -13,7 +13,7 @@
 <text class="t" x="24" y="34">Most used languages</text>
 <text class="l" x="24" y="66">Python</text>
 <rect class="tr" x="140" y="56" width="180" height="10" rx="5"/>
-<rect x="140" y="56" width="123" height="10" rx="5" fill="#3572A5"/>
+<rect x="140" y="56" width="124" height="10" rx="5" fill="#3572A5"/>
 <text class="v" x="396" y="66" text-anchor="end">68.6%</text>
 <text class="l" x="24" y="94">TypeScript</text>
 <rect class="tr" x="140" y="84" width="180" height="10" rx="5"/>
