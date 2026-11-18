@@ -9,9 +9,9 @@
 <p>
   <a href="https://github.com/manit6752025"><img src="https://img.shields.io/badge/GitHub-manit6752025-181717?style=for-the-badge&logo=github" alt="GitHub profile"/></a>
   <a href="https://github.com/manit6752025/AXIOM-AI"><img src="https://img.shields.io/badge/Flagship-AXIOM--AI-6C3BFF?style=for-the-badge&logo=github" alt="AXIOM-AI"/></a>
-  <a href="https://github.com/Netcore-Technologies/boxr"><img src="https://img.shields.io/badge/Project-boxr-FF7A18?style=for-the-badge&logo=github" alt="boxr"/></a>
+  <a href="https://github.com/netcoretechnologies/boxr"><img src="https://img.shields.io/badge/Project-boxr-FF7A18?style=for-the-badge&logo=github" alt="boxr"/></a>
   <a href="https://github.com/manit6752025/wifi-analyzer-pro"><img src="https://img.shields.io/badge/Project-WiFi%20Analyzer%20Pro-00A6A6?style=for-the-badge&logo=wifi" alt="WiFi Analyzer Pro"/></a>
-  <a href="https://github.com/NetCore-Technologies"><img src="https://img.shields.io/badge/Project-QuantumGrid%20OS-14213D?style=for-the-badge&logo=linux&logoColor=white" alt="QuantumGrid OS"/></a>
+  <a href="https://github.com/NetCore-Technologies/quantumgrid-os"><img src="https://img.shields.io/badge/Project-QuantumGrid%20OS-14213D?style=for-the-badge&logo=linux&logoColor=white" alt="QuantumGrid OS"/></a>
 </p>
 
 ### *“A Random Person Exploring The Whereabouts of Technological Advancement and Peace.”*
@@ -28,7 +28,8 @@ I spend my time exploring **AI engineering, developer tooling, Python, TypeScrip
 
 - 🧠 Building **AXIOM-AI**, an AI experimentation and workflow platform.
 - 📦 Building **boxr** under NetCore Technologies.
-- 🧰 Exploring **QuantumGrid OS** and practical systems/networking ideas.
+- 🏢 Running **NetCore Technologies**, the company behind boxr and QuantumGrid OS.
+- 🧰 Building **QuantumGrid OS** under NetCore Technologies, a systems and networking project.
 - 📡 Building **WiFi Analyzer Pro** for wireless-network visibility.
 - 🔧 Interested in Linux, Wi-Fi, DNS, routers, diagnostics, and self-hosted infrastructure.
 - 🛠️ Big on turning ambitious roadmaps into working features — not just checkboxes.
@@ -46,13 +47,13 @@ I spend my time exploring **AI engineering, developer tooling, Python, TypeScrip
 <a href="https://github.com/manit6752025/AXIOM-AI">
   <img src="https://img.shields.io/badge/AXIOM--AI-AI%20Engineering%20Platform-6C3BFF?style=for-the-badge&logo=github&logoColor=white" alt="AXIOM-AI"/>
 </a>
-<a href="https://github.com/Netcore-Technologies/boxr">
+<a href="https://github.com/netcoretechnologies/boxr">
   <img src="https://img.shields.io/badge/boxr-NetCore%20Technologies-FF7A18?style=for-the-badge&logo=github&logoColor=white" alt="boxr"/>
 </a>
 <a href="https://github.com/manit6752025/wifi-analyzer-pro">
   <img src="https://img.shields.io/badge/WiFi%20Analyzer%20Pro-Wireless%20Tooling-008B8B?style=for-the-badge&logo=wifi&logoColor=white" alt="WiFi Analyzer Pro"/>
 </a>
-<a href="https://github.com/NetCore-Technologies">
+<a href="https://github.com/NetCore-Technologies/quantumgrid-os">
   <img src="https://img.shields.io/badge/QuantumGrid%20OS-Systems%20%26%20Networking-14213D?style=for-the-badge&logo=linux&logoColor=white" alt="QuantumGrid OS"/>
 </a>
 
@@ -70,12 +71,12 @@ An open-source AI engineering workspace focused on bringing model experimentatio
 [![Latest release](https://img.shields.io/github/v/release/manit6752025/AXIOM-AI?include_prereleases&sort=semver&style=flat-square&label=release)](https://github.com/manit6752025/AXIOM-AI/releases)
 [![Open issues](https://img.shields.io/github/issues/manit6752025/AXIOM-AI?style=flat-square)](https://github.com/manit6752025/AXIOM-AI/issues)
 
-### 📦 [boxr](https://github.com/Netcore-Technologies/boxr)
+### 📦 [boxr](https://github.com/netcoretechnologies/boxr)
 
-A NetCore Technologies project. Visit the repository for its current feature set, setup instructions, and implementation details.
+A [NetCore Technologies](https://github.com/Netcore-Technologies) project. Visit the repository for its current feature set, setup instructions, and implementation details.
 
-[![Repository stars](https://img.shields.io/github/stars/Netcore-Technologies/boxr?style=flat-square&label=stars)](https://github.com/Netcore-Technologies/boxr/stargazers)
-[![Open issues](https://img.shields.io/github/issues/Netcore-Technologies/boxr?style=flat-square)](https://github.com/Netcore-Technologies/boxr/issues)
+[![Repository stars](https://img.shields.io/github/stars/netcoretechnologies/boxr?style=flat-square&label=stars)](https://github.com/netcoretechnologies/boxr/stargazers)
+[![Open issues](https://img.shields.io/github/issues/netcoretechnologies/boxr?style=flat-square)](https://github.com/netcoretechnologies/boxr/issues)
 
 ### 📡 [WiFi Analyzer Pro](https://github.com/manit6752025/wifi-analyzer-pro)
 
@@ -84,9 +85,18 @@ A project focused on wireless-network visibility and analysis. Visit the reposit
 [![Repository stars](https://img.shields.io/github/stars/manit6752025/wifi-analyzer-pro?style=flat-square&label=stars)](https://github.com/manit6752025/wifi-analyzer-pro/stargazers)
 [![Open issues](https://img.shields.io/github/issues/manit6752025/wifi-analyzer-pro?style=flat-square)](https://github.com/manit6752025/wifi-analyzer-pro/issues)
 
-### 🧩 [QuantumGrid OS](https://github.com/NetCore-Technologies)
+### 🧩 [QuantumGrid OS](https://github.com/NetCore-Technologies/quantumgrid-os)
 
-An ongoing systems-focused project exploring operating-system concepts, Linux tooling, and network-aware infrastructure. Project details and current development status should be taken from its repository when publicly available.
+A NetCore Technologies project exploring operating-system concepts, Linux tooling, and network-aware infrastructure. Visit the repository for its current feature set, setup instructions, and implementation details.
+
+[![Repository stars](https://img.shields.io/github/stars/NetCore-Technologies/quantumgrid-os?style=flat-square&label=stars)](https://github.com/NetCore-Technologies/quantumgrid-os/stargazers)
+[![Open issues](https://img.shields.io/github/issues/NetCore-Technologies/quantumgrid-os?style=flat-square)](https://github.com/NetCore-Technologies/quantumgrid-os/issues)
+
+### 🏢 [NetCore Technologies](https://github.com/Netcore-Technologies)
+
+My company, home to **boxr**, **QuantumGrid OS** and more. Everything under the organization lives at [github.com/Netcore-Technologies](https://github.com/Netcore-Technologies).
+
+[![Followers](https://img.shields.io/github/followers/Netcore-Technologies?style=flat-square&label=followers)](https://github.com/Netcore-Technologies)
 
 ---
 
@@ -131,8 +141,9 @@ An ongoing systems-focused project exploring operating-system concepts, Linux to
 | Repository | Recent commit activity | Stars |
 |---|---|---|
 | **AXIOM-AI** | [![Commit activity](https://img.shields.io/github/commit-activity/m/manit6752025/AXIOM-AI?style=flat-square)](https://github.com/manit6752025/AXIOM-AI/commits) | [![Stars](https://img.shields.io/github/stars/manit6752025/AXIOM-AI?style=flat-square)](https://github.com/manit6752025/AXIOM-AI/stargazers) |
-| **boxr** | [![Commit activity](https://img.shields.io/github/commit-activity/m/Netcore-Technologies/boxr?style=flat-square)](https://github.com/Netcore-Technologies/boxr/commits) | [![Stars](https://img.shields.io/github/stars/Netcore-Technologies/boxr?style=flat-square)](https://github.com/Netcore-Technologies/boxr/stargazers) |
+| **boxr** | [![Commit activity](https://img.shields.io/github/commit-activity/m/netcoretechnologies/boxr?style=flat-square)](https://github.com/netcoretechnologies/boxr/commits) | [![Stars](https://img.shields.io/github/stars/netcoretechnologies/boxr?style=flat-square)](https://github.com/netcoretechnologies/boxr/stargazers) |
 | **WiFi Analyzer Pro** | [![Commit activity](https://img.shields.io/github/commit-activity/m/manit6752025/wifi-analyzer-pro?style=flat-square)](https://github.com/manit6752025/wifi-analyzer-pro/commits) | [![Stars](https://img.shields.io/github/stars/manit6752025/wifi-analyzer-pro?style=flat-square)](https://github.com/manit6752025/wifi-analyzer-pro/stargazers) |
+| **QuantumGrid OS** | [![Commit activity](https://img.shields.io/github/commit-activity/m/NetCore-Technologies/quantumgrid-os?style=flat-square)](https://github.com/NetCore-Technologies/quantumgrid-os/commits) | [![Stars](https://img.shields.io/github/stars/NetCore-Technologies/quantumgrid-os?style=flat-square)](https://github.com/NetCore-Technologies/quantumgrid-os/stargazers) |
 
 > Stats cards are generated by a GitHub Action and refresh every 6 hours.
 
@@ -142,7 +153,7 @@ An ongoing systems-focused project exploring operating-system concepts, Linux to
 
 - 🥇 **GitHub achievements:** [View my profile achievements](https://github.com/manit6752025?tab=achievements)
 - 🧑‍💻 **Repositories:** [Explore my projects](https://github.com/manit6752025?tab=repositories)
-- 🏢 **NetCore Technologies:** [Explore the organization](https://github.com/NetCore-Technologies)
+- 🏢 **NetCore Technologies:** [Explore the organization](https://github.com/Netcore-Technologies)
 - 🐛 **Issues & collaboration:** Open an issue on a project if you have a useful idea, reproducible bug report, or improvement.
 - 🔐 **Security research profile:** [HackerOne — Manit6752025](https://hackerone.com/manit6752025)
 
@@ -162,7 +173,7 @@ AI experiments       : ongoing
 Open-source projects : compiling (AXIOM-AI, boxr, WiFi Analyzer Pro, QuantumGrid OS)
 Network curiosity    : 100%
 Coffee level         : critically important
-Sleep                : off (not recommended)
+Sleep                : optional (not recommended)
 Deadline camouflage  : enabled
 Peace                 : still being explored
 ```
@@ -179,7 +190,7 @@ Peace                 : still being explored
 <a href="https://github.com/manit6752025/AXIOM-AI">
   <img src="https://img.shields.io/badge/Explore-AXIOM--AI-6C3BFF?style=for-the-badge&logo=github" alt="Explore AXIOM-AI"/>
 </a>
-<a href="https://github.com/Netcore-Technologies/boxr">
+<a href="https://github.com/netcoretechnologies/boxr">
   <img src="https://img.shields.io/badge/Explore-boxr-FF7A18?style=for-the-badge&logo=github" alt="Explore boxr"/>
 </a>
 
