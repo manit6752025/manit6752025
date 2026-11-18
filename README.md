@@ -9,7 +9,7 @@
 <p>
   <a href="https://github.com/manit6752025"><img src="https://img.shields.io/badge/GitHub-manit6752025-181717?style=for-the-badge&logo=github" alt="GitHub profile"/></a>
   <a href="https://github.com/manit6752025/AXIOM-AI"><img src="https://img.shields.io/badge/Flagship-AXIOM--AI-6C3BFF?style=for-the-badge&logo=github" alt="AXIOM-AI"/></a>
-  <a href="https://github.com/netcoretechnologies/boxr"><img src="https://img.shields.io/badge/Project-boxr-FF7A18?style=for-the-badge&logo=github" alt="boxr"/></a>
+  <a href="https://github.com//boxr"><img src="https://img.shields.io/badge/Project-boxr-FF7A18?style=for-the-badge&logo=github" alt="boxr"/></a>
   <a href="https://github.com/manit6752025/wifi-analyzer-pro"><img src="https://img.shields.io/badge/Project-WiFi%20Analyzer%20Pro-00A6A6?style=for-the-badge&logo=wifi" alt="WiFi Analyzer Pro"/></a>
   <a href="https://github.com/NetCore-Technologies/quantumgrid-os"><img src="https://img.shields.io/badge/Project-QuantumGrid%20OS-14213D?style=for-the-badge&logo=linux&logoColor=white" alt="QuantumGrid OS"/></a>
 </p>
@@ -47,7 +47,7 @@ I spend my time exploring **AI engineering, developer tooling, Python, TypeScrip
 <a href="https://github.com/manit6752025/AXIOM-AI">
   <img src="https://img.shields.io/badge/AXIOM--AI-AI%20Engineering%20Platform-6C3BFF?style=for-the-badge&logo=github&logoColor=white" alt="AXIOM-AI"/>
 </a>
-<a href="https://github.com/netcoretechnologies/boxr">
+<a href="https://github.com/netcore-technologies/boxr">
   <img src="https://img.shields.io/badge/boxr-NetCore%20Technologies-FF7A18?style=for-the-badge&logo=github&logoColor=white" alt="boxr"/>
 </a>
 <a href="https://github.com/manit6752025/wifi-analyzer-pro">
@@ -71,12 +71,12 @@ An open-source AI engineering workspace focused on bringing model experimentatio
 [![Latest release](https://img.shields.io/github/v/release/manit6752025/AXIOM-AI?include_prereleases&sort=semver&style=flat-square&label=release)](https://github.com/manit6752025/AXIOM-AI/releases)
 [![Open issues](https://img.shields.io/github/issues/manit6752025/AXIOM-AI?style=flat-square)](https://github.com/manit6752025/AXIOM-AI/issues)
 
-### 📦 [boxr](https://github.com/netcoretechnologies/boxr)
+### 📦 [boxr](https://github.com/netcore-technologies/boxr)
 
 A [NetCore Technologies](https://github.com/Netcore-Technologies) project. Visit the repository for its current feature set, setup instructions, and implementation details.
 
-[![Repository stars](https://img.shields.io/github/stars/netcoretechnologies/boxr?style=flat-square&label=stars)](https://github.com/netcoretechnologies/boxr/stargazers)
-[![Open issues](https://img.shields.io/github/issues/netcoretechnologies/boxr?style=flat-square)](https://github.com/netcoretechnologies/boxr/issues)
+[![Repository stars](https://img.shields.io/github/stars/netcore-technologies/boxr?style=flat-square&label=stars)](https://github.com/netcore-technologies/boxr/stargazers)
+[![Open issues](https://img.shields.io/github/issues/netcore-technologies/boxr?style=flat-square)](https://github.com/netcore-technologies/boxr/issues)
 
 ### 📡 [WiFi Analyzer Pro](https://github.com/manit6752025/wifi-analyzer-pro)
 
@@ -141,7 +141,7 @@ My company, home to **boxr**, **QuantumGrid OS** and more. Everything under the 
 | Repository | Recent commit activity | Stars |
 |---|---|---|
 | **AXIOM-AI** | [![Commit activity](https://img.shields.io/github/commit-activity/m/manit6752025/AXIOM-AI?style=flat-square)](https://github.com/manit6752025/AXIOM-AI/commits) | [![Stars](https://img.shields.io/github/stars/manit6752025/AXIOM-AI?style=flat-square)](https://github.com/manit6752025/AXIOM-AI/stargazers) |
-| **boxr** | [![Commit activity](https://img.shields.io/github/commit-activity/m/netcoretechnologies/boxr?style=flat-square)](https://github.com/netcoretechnologies/boxr/commits) | [![Stars](https://img.shields.io/github/stars/netcoretechnologies/boxr?style=flat-square)](https://github.com/netcoretechnologies/boxr/stargazers) |
+| **boxr** | [![Commit activity](https://img.shields.io/github/commit-activity/m/netcore-technologies/boxr?style=flat-square)](https://github.com/netcore-technologies/boxr/commits) | [![Stars](https://img.shields.io/github/stars/netcore-technologies/boxr?style=flat-square)](https://github.com/netcore-technologies/boxr/stargazers) |
 | **WiFi Analyzer Pro** | [![Commit activity](https://img.shields.io/github/commit-activity/m/manit6752025/wifi-analyzer-pro?style=flat-square)](https://github.com/manit6752025/wifi-analyzer-pro/commits) | [![Stars](https://img.shields.io/github/stars/manit6752025/wifi-analyzer-pro?style=flat-square)](https://github.com/manit6752025/wifi-analyzer-pro/stargazers) |
 | **QuantumGrid OS** | [![Commit activity](https://img.shields.io/github/commit-activity/m/NetCore-Technologies/quantumgrid-os?style=flat-square)](https://github.com/NetCore-Technologies/quantumgrid-os/commits) | [![Stars](https://img.shields.io/github/stars/NetCore-Technologies/quantumgrid-os?style=flat-square)](https://github.com/NetCore-Technologies/quantumgrid-os/stargazers) |
 
@@ -190,7 +190,7 @@ Peace                 : still being explored
 <a href="https://github.com/manit6752025/AXIOM-AI">
   <img src="https://img.shields.io/badge/Explore-AXIOM--AI-6C3BFF?style=for-the-badge&logo=github" alt="Explore AXIOM-AI"/>
 </a>
-<a href="https://github.com/netcoretechnologies/boxr">
+<a href="https://github.com/netcore-technologies/boxr">
   <img src="https://img.shields.io/badge/Explore-boxr-FF7A18?style=for-the-badge&logo=github" alt="Explore boxr"/>
 </a>
 
