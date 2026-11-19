@@ -242,5 +242,5 @@ Peace                 : still being explored
 </div>
 
 <div align="center">
-<sub>Built by <a href="https://github.com/manit6752025">@manit6752025</a> and <a href="https://github.com/TaxCollector23">@TaxCollector23</a></sub>
+<sub>Built by <a href="https://github.com/manit6752025">@manit6752025</a> and <a 
 </div>
