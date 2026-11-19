@@ -10,7 +10,7 @@
   <a href="https://github.com/manit6752025"><img src="https://img.shields.io/badge/GitHub-manit6752025-181717?style=for-the-badge&logo=github" alt="GitHub profile"/></a>
   <a href="https://github.com/manit6752025/AXIOM-AI"><img src="https://img.shields.io/badge/Flagship-AXIOM--AI-6C3BFF?style=for-the-badge&logo=github" alt="AXIOM-AI"/></a>
   <a href="https://github.com/netcore-technologies/boxr"><img src="https://img.shields.io/badge/Project-boxr-FF7A18?style=for-the-badge&logo=github" alt="boxr"/></a>
-  <a href="https://github.com/manit6752025/wifi-analyzer-pro"><img src="https://img.shields.io/badge/Project-WiFi%20Analyzer%20Pro-00A6A6?style=for-the-badge&logo=wifi" alt="WiFi Analyzer Pro"/></a>
+  <a href="https://github.com/NetCore-Technologies/wifi-analyzer-pro"><img src="https://img.shields.io/badge/Project-WiFi%20Analyzer%20Pro-00A6A6?style=for-the-badge&logo=wifi" alt="WiFi Analyzer Pro"/></a>
   <a href="https://github.com/NetCore-Technologies/quantumgrid-os"><img src="https://img.shields.io/badge/Project-QuantumGrid%20OS-14213D?style=for-the-badge&logo=linux&logoColor=white" alt="QuantumGrid OS"/></a>
 </p>
 
@@ -50,7 +50,7 @@ I spend my time exploring **AI engineering, developer tooling, Python, TypeScrip
 <a href="https://github.com/netcore-technologies/boxr">
   <img src="https://img.shields.io/badge/boxr-NetCore%20Technologies-FF7A18?style=for-the-badge&logo=github&logoColor=white" alt="boxr"/>
 </a>
-<a href="https://github.com/manit6752025/wifi-analyzer-pro">
+<a href="https://github.com/NetCore-Technologies/wifi-analyzer-pro">
   <img src="https://img.shields.io/badge/WiFi%20Analyzer%20Pro-Wireless%20Tooling-008B8B?style=for-the-badge&logo=wifi&logoColor=white" alt="WiFi Analyzer Pro"/>
 </a>
 <a href="https://github.com/NetCore-Technologies/quantumgrid-os">
@@ -78,12 +78,12 @@ A [NetCore Technologies](https://github.com/Netcore-Technologies) project. Visit
 [![Repository stars](https://img.shields.io/github/stars/netcore-technologies/boxr?style=flat-square&label=stars)](https://github.com/netcore-technologies/boxr/stargazers)
 [![Open issues](https://img.shields.io/github/issues/netcore-technologies/boxr?style=flat-square)](https://github.com/netcore-technologies/boxr/issues)
 
-### 📡 [WiFi Analyzer Pro](https://github.com/manit6752025/wifi-analyzer-pro)
+### 📡 [WiFi Analyzer Pro](https://github.com/NetCore-Technologies/wifi-analyzer-pro)
 
-A project focused on wireless-network visibility and analysis. Visit the repository for its current feature set, setup instructions, and implementation details.
+A real-time WiFi diagnostic dashboard with a Python backend and React frontend. See the [roadmap](https://github.com/NetCore-Technologies/wifi-analyzer-pro/blob/main/ROADMAP.md) for what's coming next.
 
-[![Repository stars](https://img.shields.io/github/stars/manit6752025/wifi-analyzer-pro?style=flat-square&label=stars)](https://github.com/manit6752025/wifi-analyzer-pro/stargazers)
-[![Open issues](https://img.shields.io/github/issues/manit6752025/wifi-analyzer-pro?style=flat-square)](https://github.com/manit6752025/wifi-analyzer-pro/issues)
+[![Repository stars](https://img.shields.io/github/stars/NetCore-Technologies/wifi-analyzer-pro?style=flat-square&label=stars)](https://github.com/NetCore-Technologies/wifi-analyzer-pro/stargazers)
+[![Open issues](https://img.shields.io/github/issues/NetCore-Technologies/wifi-analyzer-pro?style=flat-square)](https://github.com/NetCore-Technologies/wifi-analyzer-pro/issues)
 
 ### 🧩 [QuantumGrid OS](https://github.com/NetCore-Technologies/quantumgrid-os)
 
@@ -125,7 +125,7 @@ My company, home to **boxr**, **QuantumGrid OS** and more. Everything under the 
 
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=16&duration=2500&pause=600&color=00D4FF&center=true&vCenter=true&width=700&lines=Loading+stats...;Commits+compiled.;Streak+status%3A+dangerously+alive.;Coffee+level%3A+critical." alt="Stats typing text"/>
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=16&duration=2500&pause=600&color=00D4FF&center=true&vCenter=true&width=700&lines=Loading+stats...;Commits+compiled.;Pull+requests+merged.;Streak+status%3A+dangerously+alive.;Coffee+level%3A+critical." alt="Stats typing text"/>
 
 <br/>
 
@@ -150,7 +150,7 @@ My company, home to **boxr**, **QuantumGrid OS** and more. Everything under the 
 |---|---|---|---|---|
 | **AXIOM-AI** | ![c](https://img.shields.io/github/commit-activity/m/manit6752025/AXIOM-AI?style=for-the-badge&color=6C3BFF&labelColor=090A0F) | ![s](https://img.shields.io/github/stars/manit6752025/AXIOM-AI?style=for-the-badge&color=00D4FF&labelColor=090A0F) | ![r](https://img.shields.io/github/v/release/manit6752025/AXIOM-AI?include_prereleases&style=for-the-badge&color=14213D&labelColor=090A0F) | ![i](https://img.shields.io/github/issues/manit6752025/AXIOM-AI?style=for-the-badge&color=6C3BFF&labelColor=090A0F) |
 | **boxr** | ![c](https://img.shields.io/github/commit-activity/m/netcore-technologies/boxr?style=for-the-badge&color=6C3BFF&labelColor=090A0F) | ![s](https://img.shields.io/github/stars/netcore-technologies/boxr?style=for-the-badge&color=00D4FF&labelColor=090A0F) | ![r](https://img.shields.io/github/v/release/netcore-technologies/boxr?include_prereleases&style=for-the-badge&color=14213D&labelColor=090A0F) | ![i](https://img.shields.io/github/issues/netcore-technologies/boxr?style=for-the-badge&color=6C3BFF&labelColor=090A0F) |
-| **WiFi Analyzer Pro** | ![c](https://img.shields.io/github/commit-activity/m/manit6752025/wifi-analyzer-pro?style=for-the-badge&color=6C3BFF&labelColor=090A0F) | ![s](https://img.shields.io/github/stars/manit6752025/wifi-analyzer-pro?style=for-the-badge&color=00D4FF&labelColor=090A0F) | ![r](https://img.shields.io/github/v/release/manit6752025/wifi-analyzer-pro?include_prereleases&style=for-the-badge&color=14213D&labelColor=090A0F) | ![i](https://img.shields.io/github/issues/manit6752025/wifi-analyzer-pro?style=for-the-badge&color=6C3BFF&labelColor=090A0F) |
+| **WiFi Analyzer Pro** | ![c](https://img.shields.io/github/commit-activity/m/NetCore-Technologies/wifi-analyzer-pro?style=for-the-badge&color=6C3BFF&labelColor=090A0F) | ![s](https://img.shields.io/github/stars/NetCore-Technologies/wifi-analyzer-pro?style=for-the-badge&color=00D4FF&labelColor=090A0F) | ![r](https://img.shields.io/github/v/release/NetCore-Technologies/wifi-analyzer-pro?include_prereleases&style=for-the-badge&color=14213D&labelColor=090A0F) | ![i](https://img.shields.io/github/issues/NetCore-Technologies/wifi-analyzer-pro?style=for-the-badge&color=6C3BFF&labelColor=090A0F) |
 | **QuantumGrid OS** | ![c](https://img.shields.io/github/commit-activity/m/NetCore-Technologies/quantumgrid-os?style=for-the-badge&color=6C3BFF&labelColor=090A0F) | ![s](https://img.shields.io/github/stars/NetCore-Technologies/quantumgrid-os?style=for-the-badge&color=00D4FF&labelColor=090A0F) | ![r](https://img.shields.io/github/v/release/NetCore-Technologies/quantumgrid-os?include_prereleases&style=for-the-badge&color=14213D&labelColor=090A0F) | ![i](https://img.shields.io/github/issues/NetCore-Technologies/quantumgrid-os?style=for-the-badge&color=6C3BFF&labelColor=090A0F) |
 
 <div align="center">
@@ -161,7 +161,7 @@ My company, home to **boxr**, **QuantumGrid OS** and more. Everything under the 
 
 </div>
 
-> Stats cards are generated by a GitHub Action and refresh every 6 hours.
+> Stats cards are generated by a GitHub Action and refresh every 6 hours. Merged PRs are public pull requests I authored that were merged.
 
 ---
 
@@ -174,7 +174,7 @@ My company, home to **boxr**, **QuantumGrid OS** and more. Everything under the 
 <br/>
 
 <a href="https://github.com/manit6752025?tab=achievements"><img src="https://img.shields.io/badge/🥇_GitHub-Achievements-6C3BFF?style=for-the-badge&labelColor=090A0F" alt="Achievements"/></a>
-<a href="https://hackerone.com/manit6752025"><img src="https://img.shields.io/badge/🔐_HackerOne-Security_Research-00D4FF?style=for-the-badge&labelColor=090A0F" alt="HackerOne"/></a>
+<a href="https://hackerone.com/irule675"><img src="https://img.shields.io/badge/🔐_HackerOne-Security_Research-00D4FF?style=for-the-badge&labelColor=090A0F" alt="HackerOne"/></a>
 <a href="https://github.com/Netcore-Technologies"><img src="https://img.shields.io/badge/🏢_NetCore-Technologies-14213D?style=for-the-badge&labelColor=090A0F" alt="NetCore"/></a>
 
 </div>
@@ -183,9 +183,9 @@ My company, home to **boxr**, **QuantumGrid OS** and more. Everything under the 
 |---|---|---|
 | 🧠 | Building **AXIOM-AI**, an AI engineering platform | [Repo](https://github.com/manit6752025/AXIOM-AI) |
 | 📦 | Shipping **boxr** under NetCore Technologies | [Repo](https://github.com/netcore-technologies/boxr) |
-| 📡 | Created **WiFi Analyzer Pro** for wireless visibility | [Repo](https://github.com/manit6752025/wifi-analyzer-pro) |
+| 📡 | Created **WiFi Analyzer Pro** for wireless visibility | [Repo](https://github.com/NetCore-Technologies/wifi-analyzer-pro) |
 | 🧩 | Developing **QuantumGrid OS** | [Repo](https://github.com/NetCore-Technologies/quantumgrid-os) |
-| 🔐 | Security research and responsible disclosure | [HackerOne](https://hackerone.com/manit6752025) |
+| 🔐 | Security research and responsible disclosure | [HackerOne](https://hackerone.com/irule675) |
 | 🏢 | Founded and run **NetCore Technologies** | [Org](https://github.com/Netcore-Technologies) |
 
 > 🐛 Open an issue on any project for a useful idea, reproducible bug report, or improvement.
@@ -242,4 +242,5 @@ Peace                 : still being explored
 </div>
 
 <div align="center">
-<sub>Built by <a href="https://github.com/manit6752025">@manit6752025</a>
+<sub>Built by <a href="https://github.com/manit6752025">@manit6752025</a> and <a href="https://github.com/TaxCollector23">@TaxCollector23</a></sub>
+</div>
