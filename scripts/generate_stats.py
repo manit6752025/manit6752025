@@ -10,15 +10,28 @@ OWNER = os.environ.get("STATS_OWNER", "manit6752025")
 KIND = os.environ.get("STATS_KIND", "user")
 TOKEN = os.environ.get("GITHUB_TOKEN", "")
 OUT = os.environ.get("STATS_OUT", "stats")
-TITLE = os.environ.get("STATS_TITLE", "Manit's GitHub Stats" if KIND == "user" else OWNER + " Stats")
+TITLE = os.environ.get(
+    "STATS_TITLE", "Manit's GitHub Stats" if KIND == "user" else OWNER + " Stats"
+)
 CACHE = os.path.join(OUT, "cache.json")
 API = "https://api.github.com"
 PALETTE = ["#00D4FF", "#6C3BFF", "#3FA9FF", "#9B6BFF", "#00A6A6", "#B38CFF"]
 
 DEFAULT = {
-    "commits": 0, "stars": 0, "repos": 0, "followers": 0, "prs": 0,
-    "issues": 0, "forks": 0, "issues_open": 0, "total": 0,
-    "current": 0, "longest": 0, "days": [0] * 30, "langs": [["Python", 100]],
+    "commits": 0,
+    "stars": 0,
+    "repos": 0,
+    "followers": 0,
+    "prs": 0,
+    "merged": 0,
+    "issues": 0,
+    "forks": 0,
+    "issues_open": 0,
+    "total": 0,
+    "current": 0,
+    "longest": 0,
+    "days": [0] * 30,
+    "langs": [["Python", 100]],
 }
 
 CSS = """
@@ -121,11 +134,14 @@ def refresh(d):
         d["followers"] = info.get("followers", d["followers"])
     except Exception as e:
         log(e)
+
     repos = []
     try:
         kind_q = "owner" if KIND == "user" else "public"
         for page in range(1, 6):
-            batch = call(f"{API}/{path}/{OWNER}/repos?per_page=100&page={page}&type={kind_q}")
+            batch = call(
+                f"{API}/{path}/{OWNER}/repos?per_page=100&page={page}&type={kind_q}"
+            )
             repos += batch
             if len(batch) < 100:
                 break
@@ -134,6 +150,7 @@ def refresh(d):
         d["issues_open"] = sum(r.get("open_issues_count", 0) for r in repos)
     except Exception as e:
         log(e)
+
     counts = {}
     for r in [x for x in repos if not x.get("fork")][:30]:
         try:
@@ -145,19 +162,32 @@ def refresh(d):
         total = sum(counts.values())
         top = sorted(counts.items(), key=lambda kv: -kv[1])[:6]
         d["langs"] = [[k, round(v * 100 / total, 1)] for k, v in top]
+
     if KIND != "user":
         return
+
     try:
         res = call(f"{API}/search/commits?q=author:{OWNER}&per_page=1")
         d["commits"] = max(d["commits"], res.get("total_count", 0))
     except Exception as e:
         log(e)
+
+    try:
+        res = call(f"{API}/search/issues?q=author:{OWNER}+type:pr+is:merged&per_page=1")
+        d["merged"] = max(d["merged"], res.get("total_count", 0))
+    except Exception as e:
+        log(e)
+
     try:
         q = "query($l:String!){user(login:$l){contributionsCollection{totalIssueContributions totalPullRequestContributions contributionCalendar{totalContributions weeks{contributionDays{contributionCount}}}}}}"
         res = call(API + "/graphql", {"query": q, "variables": {"l": OWNER}})
         c = res["data"]["user"]["contributionsCollection"]
         cal = c["contributionCalendar"]
-        days = [x["contributionCount"] for w in cal["weeks"] for x in w["contributionDays"]]
+        days = [
+            x["contributionCount"]
+            for w in cal["weeks"]
+            for x in w["contributionDays"]
+        ]
         d["total"] = cal["totalContributions"]
         d["prs"] = c["totalPullRequestContributions"]
         d["issues"] = c["totalIssueContributions"]
@@ -183,40 +213,68 @@ def grade(sc):
 
 def score(d):
     if KIND == "org":
-        return d["stars"] * 8 + d["forks"] * 4 + d["followers"] * 4 + d["repos"] * 10
-    return d["commits"] + d["stars"] * 8 + d["followers"] * 4 + d["prs"] * 3 + d["repos"] * 2
+        return (
+            d["stars"] * 8
+            + d["forks"] * 4
+            + d["followers"] * 4
+            + d["repos"] * 10
+        )
+    return (
+        d["commits"]
+        + d["stars"] * 8
+        + d["followers"] * 4
+        + d["prs"] * 3
+        + d["repos"] * 2
+    )
 
 
 def stat_rows(d):
     if KIND == "org":
-        return [("Public repos", d["repos"]), ("Stars earned", d["stars"]), ("Forks", d["forks"]),
-                ("Followers", d["followers"]), ("Open issues", d["issues_open"]), ("Languages", len(d["langs"]))]
-    return [("Total commits", d["commits"]), ("Stars earned", d["stars"]), ("Public repos", d["repos"]),
-            ("Followers", d["followers"]), ("PRs (12 mo)", d["prs"]), ("Issues (12 mo)", d["issues"])]
+        return [
+            ("Public repos", d["repos"]),
+            ("Stars earned", d["stars"]),
+            ("Forks", d["forks"]),
+            ("Followers", d["followers"]),
+            ("Open issues", d["issues_open"]),
+            ("Languages", len(d["langs"])),
+        ]
+    return [
+        ("Total commits", d["commits"]),
+        ("Stars earned", d["stars"]),
+        ("Public repos", d["repos"]),
+        ("Followers", d["followers"]),
+        ("Merged PRs", d["merged"]),
+        ("Issues (12 mo)", d["issues"]),
+    ]
 
 
 def head(text):
     x = 24 + len(text) * 9.2 + 4
-    return f'<text x="24" y="34" class="t">{escape(text)}</text><rect class="cur" x="{x:.0f}" y="21" width="8" height="15" fill="#00D4FF"/>'
+    return (
+        f'<text x="24" y="34" class="t">{escape(text)}</text>'
+        f'<rect class="cur" x="{x:.0f}" y="21" width="8" height="15" fill="#00D4FF"/>'
+    )
 
 
 def frame(w, h, body):
     dots = "".join(
-        f'<circle cx="{(i * 53 + 17) % w}" cy="{h - 4}" r="{1.2 + i % 3 * .6:.1f}" fill="{PALETTE[i % 2]}" style="animation:float {3 + i % 4}s linear {i * .45:.2f}s infinite"/>'
+        f'<circle cx="{(i * 53 + 17) % w}" cy="{h - 4}" r="{1.2 + i % 3 * .6:.1f}" '
+        f'fill="{PALETTE[i % 2]}" '
+        f'style="animation:float {3 + i % 4}s linear {i * .45:.2f}s infinite"/>'
         for i in range(14)
     )
     return (
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}">'
-        f'<style>{CSS}</style>{DEFS}'
+        f"<style>{CSS}</style>{DEFS}"
         f'<clipPath id="c"><rect width="{w}" height="{h}" rx="14"/></clipPath>'
         f'<rect x=".5" y=".5" width="{w - 1}" height="{h - 1}" rx="14" fill="url(#bg)"/>'
         f'<g clip-path="url(#c)">{dots}'
         f'<rect class="scan" x="0" y="0" width="{w}" height="2" fill="#00D4FF" opacity=".18"/>'
         f'<rect class="sw" x="0" y="0" width="140" height="{h}" fill="url(#sw)"/>'
-        f'{body}</g>'
+        f"{body}</g>"
         f'<rect x=".5" y=".5" width="{w - 1}" height="{h - 1}" rx="14" fill="none" stroke="#6C3BFF" stroke-opacity=".4"/>'
         f'<rect class="lap" pathLength="100" x=".5" y=".5" width="{w - 1}" height="{h - 1}" rx="14" fill="none" stroke="url(#ac)" stroke-width="2" filter="url(#gl)"/>'
-        f'</svg>'
+        f"</svg>"
     )
 
 
@@ -227,24 +285,27 @@ def stats_svg(d):
     for i, (k, v) in enumerate(rows):
         y = 64 + i * 24
         wb = max(4, 176 * math.log10(v + 1) / math.log10(top + 1))
-        dl = i * .12
+        dl = i * 0.12
         out += (
             f'<g class="row" style="animation-delay:{dl:.2f}s">'
             f'<text x="24" y="{y}" class="l">{escape(k)}</text>'
-            f'<text x="200" y="{y}" class="v" text-anchor="end">{fmt(v)}</text>'
-            f'<rect x="24" y="{y + 5}" width="176" height="3" rx="1.5" fill="#14213D"/>'
-            f'<rect class="bar" x="24" y="{y + 5}" width="{wb:.0f}" height="3" rx="1.5" fill="url(#ac)" style="animation-delay:{dl + .3:.2f}s"/>'
-            f'</g>'
+            f'<text x="220" y="{y}" class="v" text-anchor="end">{fmt(v)}</text>'
+            f'<rect x="232" y="{y - 9}" width="176" height="8" rx="4" fill="#FFFFFF" fill-opacity=".06"/>'
+            f'<rect class="bar" x="232" y="{y - 9}" width="{wb:.1f}" height="8" rx="4" fill="url(#ac)" style="animation-delay:{dl + 0.2:.2f}s"/>'
+            f"</g>"
         )
     sc = score(d)
-    frac = max(min(sc / 8000, 1), .05)
+    frac = max(min(sc / 8000, 1), 0.05)
     c = 2 * math.pi * 50
     o = c * (1 - frac)
     out += (
-        '<circle cx="385" cy="118" r="50" fill="none" stroke="#14213D" stroke-width="9"/>'
-        f'<circle class="ring" cx="385" cy="118" r="50" fill="none" stroke="url(#ac)" stroke-width="9" stroke-linecap="round" transform="rotate(-90 385 118)" filter="url(#gl)" style="--c:{c:.1f};--o:{o:.1f};stroke-dasharray:{c:.1f}"/>'
-        '<text x="385" y="104" class="l" text-anchor="middle">RANK</text>'
-        f'<text x="385" y="134" class="big pulse" text-anchor="middle">{grade(sc)}</text>'
+        f'<g transform="translate(430,105)">'
+        f'<circle r="50" fill="none" stroke="#FFFFFF" stroke-opacity=".06" stroke-width="8"/>'
+        f'<circle class="ring" r="50" fill="none" stroke="url(#ac)" stroke-width="8" stroke-linecap="round" '
+        f'stroke-dasharray="{c:.1f}" style="--c:{c:.1f};--o:{o:.1f};transform:rotate(-90deg);transform-box:fill-box;transform-origin:center"/>'
+        f'<text y="-6" text-anchor="middle" class="l">RANK</text>'
+        f'<text y="22" text-anchor="middle" class="big">{grade(sc)}</text>'
+        f"</g>"
     )
     return frame(495, 210, out)
 
@@ -252,50 +313,60 @@ def stats_svg(d):
 def langs_svg(d):
     langs = d["langs"]
     out = head("Most Used Languages")
-    out += '<clipPath id="lb"><rect x="24" y="52" width="447" height="10" rx="5"/></clipPath>'
-    out += '<rect x="24" y="52" width="447" height="10" rx="5" fill="#14213D"/><g clip-path="url(#lb)">'
+    out += '<rect x="24" y="52" width="447" height="10" rx="5" fill="#FFFFFF" fill-opacity=".06"/>'
+    out += '<g clip-path="url(#c)">'
     cum = 0.0
     for i, (name, pct) in enumerate(langs):
         wd = pct * 4.47
-        out += f'<rect class="bar" x="{24 + cum * 4.47:.1f}" y="52" width="{wd:.1f}" height="10" fill="{PALETTE[i % 6]}" style="animation-delay:{i * .15:.2f}s"/>'
+        out += (
+            f'<rect x="{24 + cum * 4.47:.1f}" y="52" width="{wd:.1f}" height="10" '
+            f'fill="{PALETTE[i % len(PALETTE)]}"/>'
+        )
         cum += pct
-    out += '</g>'
+    out += "</g>"
     for i, (name, pct) in enumerate(langs):
         x = 24 + (i % 2) * 225
         y = 100 + (i // 2) * 34
         out += (
-            f'<g class="row" style="animation-delay:{.4 + i * .12:.2f}s">'
-            f'<circle class="pulse" cx="{x + 5}" cy="{y - 4}" r="5" fill="{PALETTE[i % 6]}" style="animation-delay:{i * .3:.1f}s"/>'
-            f'<text x="{x + 18}" y="{y}" class="v">{escape(str(name))}</text>'
-            f'<text x="{x + 18}" y="{y + 15}" class="l">{pct}%</text></g>'
+            f'<g class="row" style="animation-delay:{i * 0.1:.2f}s">'
+            f'<circle cx="{x + 6}" cy="{y - 4}" r="5" fill="{PALETTE[i % len(PALETTE)]}"/>'
+            f'<text x="{x + 18}" y="{y}" class="l">{escape(str(name))}</text>'
+            f'<text x="{x + 200}" y="{y}" class="v" text-anchor="end">{pct}%</text>'
+            f"</g>"
         )
     return frame(495, 210, out)
 
 
 def streak_svg(d):
     out = head("Contribution Streak")
-    out += '<line x1="165" y1="52" x2="165" y2="150" stroke="#6C3BFF" stroke-opacity=".3"/><line x1="330" y1="52" x2="330" y2="150" stroke="#6C3BFF" stroke-opacity=".3"/>'
+    out += '<rect x="24" y="52" width="447" height="1" fill="#FFFFFF" fill-opacity=".06"/>'
     out += (
-        f'<g class="row"><text x="82" y="104" class="big" text-anchor="middle">{fmt(d["total"])}</text>'
-        '<text x="82" y="146" class="l" text-anchor="middle">CONTRIBUTIONS</text></g>'
-        f'<g class="row" style="animation-delay:.3s"><text x="412" y="104" class="big" text-anchor="middle">{fmt(d["longest"])}</text>'
-        '<text x="412" y="146" class="l" text-anchor="middle">LONGEST STREAK</text></g>'
+        f'<text x="24" y="88" class="big">{fmt(d["total"])}</text>'
+        f'<text x="24" y="104" class="l">CONTRIBUTIONS</text>'
+        f'<text x="200" y="88" class="big">{fmt(d["longest"])}</text>'
+        f'<text x="200" y="104" class="l">LONGEST STREAK</text>'
     )
-    frac = max(min(d["current"] / max(d["longest"], 1), 1), .06)
+    frac = max(min(d["current"] / max(d["longest"], 1), 1), 0.06)
     c = 2 * math.pi * 36
     o = c * (1 - frac)
     out += (
-        '<circle cx="247" cy="94" r="36" fill="none" stroke="#14213D" stroke-width="7"/>'
-        f'<circle class="ring" cx="247" cy="94" r="36" fill="none" stroke="url(#ac)" stroke-width="7" stroke-linecap="round" transform="rotate(-90 247 94)" filter="url(#gl)" style="--c:{c:.1f};--o:{o:.1f};stroke-dasharray:{c:.1f}"/>'
-        '<g transform="translate(247,72) scale(.6)"><path class="flame" d="M0 -12 C6 -4 8 0 4 8 C2 12 -2 12 -4 8 C-7 3 -2 -2 0 -12Z" fill="#00D4FF" filter="url(#gl)"/></g>'
-        f'<text x="247" y="108" class="big" text-anchor="middle" style="font-size:24px">{fmt(d["current"])}</text>'
-        '<text x="247" y="146" class="l" text-anchor="middle">CURRENT STREAK</text>'
+        f'<g transform="translate(400,80)">'
+        f'<circle r="36" fill="none" stroke="#FFFFFF" stroke-opacity=".06" stroke-width="6"/>'
+        f'<circle class="ring" r="36" fill="none" stroke="url(#ac)" stroke-width="6" stroke-linecap="round" '
+        f'stroke-dasharray="{c:.1f}" style="--c:{c:.1f};--o:{o:.1f};transform:rotate(-90deg);transform-box:fill-box;transform-origin:center"/>'
+        f'<text y="0" text-anchor="middle" class="v">{fmt(d["current"])}</text>'
+        f'<text y="14" text-anchor="middle" class="l" style="font-size:7px">CURRENT STREAK</text>'
+        f"</g>"
     )
     days = d["days"] if len(d["days"]) > 1 else [0, 0]
     m = max(days + [1])
     step = 447 / (len(days) - 1)
-    pts = " ".join(f"{24 + i * step:.1f},{184 - n / m * 26:.1f}" for i, n in enumerate(days))
-    out += f'<polyline class="draw" pathLength="1" points="{pts}" fill="none" stroke="url(#ac)" stroke-width="2" stroke-linejoin="round" filter="url(#gl)"/>'
+    pts = " ".join(
+        f"{24 + i * step:.1f},{184 - n / m * 26:.1f}" for i, n in enumerate(days)
+    )
+    out += (
+        f'<polyline class="draw" points="{pts}" fill="none" stroke="url(#ac)" stroke-width="2" stroke-linejoin="round"/>'
+    )
     return frame(495, 196, out)
 
 
@@ -308,21 +379,35 @@ def hexpts(cx, cy, r):
 
 def ach_svg(d):
     if KIND == "org":
-        items = [("REPOS", d["repos"]), ("STARS", d["stars"]), ("FORKS", d["forks"]),
-                 ("FOLLOWERS", d["followers"]), ("ISSUES", d["issues_open"]), ("LANGS", len(d["langs"]))]
+        items = [
+            ("REPOS", d["repos"]),
+            ("STARS", d["stars"]),
+            ("FORKS", d["forks"]),
+            ("FOLLOWERS", d["followers"]),
+            ("ISSUES", d["issues_open"]),
+            ("LANGS", len(d["langs"])),
+        ]
     else:
-        items = [("COMMITS", d["commits"]), ("STARS", d["stars"]), ("REPOS", d["repos"]),
-                 ("FOLLOWERS", d["followers"]), ("STREAK", d["longest"]), ("PRS", d["prs"])]
+        items = [
+            ("COMMITS", d["commits"]),
+            ("STARS", d["stars"]),
+            ("REPOS", d["repos"]),
+            ("FOLLOWERS", d["followers"]),
+            ("STREAK", d["longest"]),
+            ("MERGED", d["merged"]),
+        ]
     out = head("Achievements")
     for i, (label, val) in enumerate(items):
         cx = 52 + i * 78
         cy = 84
+        color = PALETTE[i % len(PALETTE)]
         out += (
-            f'<g class="pop" style="animation-delay:{i * .15:.2f}s">'
-            f'<polygon class="spin" points="{hexpts(cx, cy, 33)}" fill="none" stroke="#6C3BFF" stroke-width="1.5" stroke-dasharray="4 4"/>'
-            f'<polygon points="{hexpts(cx, cy, 26)}" fill="#14213D" stroke="url(#ac)" stroke-width="2" filter="url(#gl)"/>'
-            f'<text x="{cx}" y="{cy + 5}" class="v" text-anchor="middle" style="font-size:12px">{fmt(val)}</text>'
-            f'<text x="{cx}" y="{cy + 54}" class="l" text-anchor="middle" style="font-size:10px">{label}</text></g>'
+            f'<g class="pop" style="animation-delay:{i * 0.1:.2f}s">'
+            f'<polygon points="{hexpts(cx, cy, 26)}" fill="{color}" fill-opacity=".12" '
+            f'stroke="{color}" stroke-opacity=".5" stroke-width="1.5"/>'
+            f'<text x="{cx}" y="{cy + 2}" text-anchor="middle" class="v">{fmt(val)}</text>'
+            f'<text x="{cx}" y="{cy + 42}" text-anchor="middle" class="l" style="font-size:8px">{label}</text>'
+            f"</g>"
         )
     return frame(495, 160, out)
 
@@ -347,9 +432,15 @@ def main():
             json.dump(d, f)
     except Exception as e:
         log(e)
-    cards = {"stats.svg": stats_svg, "langs.svg": langs_svg, "achievements.svg": ach_svg}
+
+    cards = {
+        "stats.svg": stats_svg,
+        "langs.svg": langs_svg,
+        "achievements.svg": ach_svg,
+    }
     if KIND == "user":
         cards["streak.svg"] = streak_svg
+
     for name, fn in cards.items():
         try:
             write(name, fn(d))
@@ -361,4 +452,4 @@ try:
     main()
 except Exception as e:
     log(e)
-sys.exit(0)
+    sys.exit(0)
