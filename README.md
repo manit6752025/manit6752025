@@ -174,7 +174,7 @@ My company, home to **boxr**, **QuantumGrid OS** and more. Everything under the 
 <br/>
 
 <a href="https://github.com/manit6752025?tab=achievements"><img src="https://img.shields.io/badge/🥇_GitHub-Achievements-6C3BFF?style=for-the-badge&labelColor=090A0F" alt="Achievements"/></a>
-<a href="https://hackerone.com/irule675"><img src="https://img.shields.io/badge/🔐_HackerOne-Security_Research-00D4FF?style=for-the-badge&labelColor=090A0F" alt="HackerOne"/></a>
+<a href="https://hackerone.com/manit6752025"><img src="https://img.shields.io/badge/🔐_HackerOne-Security_Research-00D4FF?style=for-the-badge&labelColor=090A0F" alt="HackerOne"/></a>
 <a href="https://github.com/Netcore-Technologies"><img src="https://img.shields.io/badge/🏢_NetCore-Technologies-14213D?style=for-the-badge&labelColor=090A0F" alt="NetCore"/></a>
 
 </div>
@@ -185,7 +185,7 @@ My company, home to **boxr**, **QuantumGrid OS** and more. Everything under the 
 | 📦 | Shipping **boxr** under NetCore Technologies | [Repo](https://github.com/netcore-technologies/boxr) |
 | 📡 | Created **WiFi Analyzer Pro** for wireless visibility | [Repo](https://github.com/NetCore-Technologies/wifi-analyzer-pro) |
 | 🧩 | Developing **QuantumGrid OS** | [Repo](https://github.com/NetCore-Technologies/quantumgrid-os) |
-| 🔐 | Security research and responsible disclosure | [HackerOne](https://hackerone.com/irule675) |
+| 🔐 | Security research and responsible disclosure | [HackerOne](https://hackerone.com/manit6752025) |
 | 🏢 | Founded and run **NetCore Technologies** | [Org](https://github.com/Netcore-Technologies) |
 
 > 🐛 Open an issue on any project for a useful idea, reproducible bug report, or improvement.
