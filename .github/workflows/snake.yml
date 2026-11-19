@@ -1,23 +1,30 @@
 name: Generate Snake
+
 on:
   schedule:
-    - cron: "0 */6 * * *"
+    - cron: "0 */12 * * *"
   workflow_dispatch:
   push:
     branches: [main]
+    paths:
+      - .github/workflows/snake.yml
+
 permissions:
   contents: write
+
 jobs:
   snake:
     runs-on: ubuntu-latest
     steps:
       - uses: Platane/snk/svg-only@v3
+        continue-on-error: true
         with:
           github_user_name: manit6752025
           outputs: |
-            dist/snake.svg?color_snake=00D4FF&color_dots=14213D,2a1f6b,4a2fb8,6C3BFF,00D4FF
-            dist/snake-dark.svg?palette=github-dark&color_snake=00D4FF&color_dots=14213D,2a1f6b,4a2fb8,6C3BFF,00D4FF
+            dist/snake.svg?color_snake=%2300D4FF&color_dots=%23161b22,%232a1f6b,%234a2fb8,%236C3BFF,%2300D4FF
+            dist/snake-dark.svg?palette=github-dark&color_snake=%2300D4FF&color_dots=%23161b22,%232a1f6b,%234a2fb8,%236C3BFF,%2300D4FF
       - uses: crazy-max/ghaction-github-pages@v4
+        continue-on-error: true
         with:
           target_branch: output
           build_dir: dist

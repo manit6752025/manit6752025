@@ -129,14 +129,16 @@ My company, home to **boxr**, **QuantumGrid OS** and more. Everything under the 
 
 <br/>
 
-<img height="200" src="https://github-readme-stats.vercel.app/api?username=manit6752025&show_icons=true&include_all_commits=true&count_private=true&rank_icon=github&bg_color=090A0F&title_color=00D4FF&text_color=FFFFFF&icon_color=6C3BFF&border_color=6C3BFF&ring_color=00D4FF&hide_border=false&custom_title=Manit%27s%20GitHub%20Stats" alt="GitHub stats"/>
-<img height="200" src="https://github-readme-stats.vercel.app/api/top-langs/?username=manit6752025&layout=compact&langs_count=8&bg_color=090A0F&title_color=00D4FF&text_color=FFFFFF&border_color=6C3BFF&hide_border=false&custom_title=Most%20Used%20Languages" alt="Top languages"/>
-
-<img src="https://streak-stats.demolab.com?user=manit6752025&background=090A0F&ring=6C3BFF&fire=00D4FF&currStreakLabel=00D4FF&currStreakNum=FFFFFF&sideLabels=FFFFFF&sideNums=FFFFFF&dates=9AA0B4&border=6C3BFF&stroke=14213D" alt="Contribution streak"/>
+<img src="stats/stats.svg" alt="GitHub stats"/>
+<img src="stats/langs.svg" alt="Top languages"/>
 
 <br/>
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=manit6752025&bg_color=090A0F&color=00D4FF&line=6C3BFF&point=FFFFFF&area=true&area_color=6C3BFF&hide_border=true&custom_title=Contribution%20Graph" alt="Activity graph"/>
+<img src="stats/streak.svg" alt="Contribution streak"/>
+
+<br/>
+
+<img src="stats/achievements.svg" alt="Achievements"/>
 
 <br/>
 
@@ -154,94 +156,4 @@ My company, home to **boxr**, **QuantumGrid OS** and more. Everything under the 
 | **AXIOM-AI** | ![c](https://img.shields.io/github/commit-activity/m/manit6752025/AXIOM-AI?style=for-the-badge&color=6C3BFF&labelColor=090A0F) | ![s](https://img.shields.io/github/stars/manit6752025/AXIOM-AI?style=for-the-badge&color=00D4FF&labelColor=090A0F) | ![r](https://img.shields.io/github/v/release/manit6752025/AXIOM-AI?include_prereleases&style=for-the-badge&color=14213D&labelColor=090A0F) | ![i](https://img.shields.io/github/issues/manit6752025/AXIOM-AI?style=for-the-badge&color=6C3BFF&labelColor=090A0F) |
 | **boxr** | ![c](https://img.shields.io/github/commit-activity/m/netcore-technologies/boxr?style=for-the-badge&color=6C3BFF&labelColor=090A0F) | ![s](https://img.shields.io/github/stars/netcore-technologies/boxr?style=for-the-badge&color=00D4FF&labelColor=090A0F) | ![r](https://img.shields.io/github/v/release/netcore-technologies/boxr?include_prereleases&style=for-the-badge&color=14213D&labelColor=090A0F) | ![i](https://img.shields.io/github/issues/netcore-technologies/boxr?style=for-the-badge&color=6C3BFF&labelColor=090A0F) |
 | **WiFi Analyzer Pro** | ![c](https://img.shields.io/github/commit-activity/m/manit6752025/wifi-analyzer-pro?style=for-the-badge&color=6C3BFF&labelColor=090A0F) | ![s](https://img.shields.io/github/stars/manit6752025/wifi-analyzer-pro?style=for-the-badge&color=00D4FF&labelColor=090A0F) | ![r](https://img.shields.io/github/v/release/manit6752025/wifi-analyzer-pro?include_prereleases&style=for-the-badge&color=14213D&labelColor=090A0F) | ![i](https://img.shields.io/github/issues/manit6752025/wifi-analyzer-pro?style=for-the-badge&color=6C3BFF&labelColor=090A0F) |
-| **QuantumGrid OS** | ![c](https://img.shields.io/github/commit-activity/m/NetCore-Technologies/quantumgrid-os?style=for-the-badge&color=6C3BFF&labelColor=090A0F) | ![s](https://img.shields.io/github/stars/NetCore-Technologies/quantumgrid-os?style=for-the-badge&color=00D4FF&labelColor=090A0F) | ![r](https://img.shields.io/github/v/release/NetCore-Technologies/quantumgrid-os?include_prereleases&style=for-the-badge&color=14213D&labelColor=090A0F) | ![i](https://img.shields.io/github/issues/NetCore-Technologies/quantumgrid-os?style=for-the-badge&color=6C3BFF&labelColor=090A0F) |
-
-<div align="center">
-
-![Profile views](https://komarev.com/ghpvc/?username=manit6752025&label=PROFILE+VIEWS&color=6C3BFF&style=for-the-badge)
-![Followers](https://img.shields.io/github/followers/manit6752025?style=for-the-badge&color=00D4FF&labelColor=090A0F)
-![Repos](https://img.shields.io/badge/dynamic/json?url=https://api.github.com/users/manit6752025&query=$.public_repos&label=REPOS&style=for-the-badge&color=14213D&labelColor=090A0F)
-
-</div>
-
----
-
-## 🏆 Achievements & open-source
-
-<div align="center">
-
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=18&duration=2200&pause=900&color=6C3BFF&center=true&vCenter=true&width=700&lines=%F0%9F%8F%86+ACHIEVEMENT+UNLOCKED;%F0%9F%90%9B+Bug+hunter+on+HackerOne;%F0%9F%9A%80+4+projects+shipped;%E2%98%95+Survived+another+deadline" alt="Achievement unlocked"/>
-
-<br/>
-
-<img src="https://github-profile-trophy.vercel.app/?username=manit6752025&theme=onedark&no-bg=true&no-frame=true&row=1&column=7&margin-w=12&margin-h=12" alt="GitHub trophies"/>
-
-<br/>
-
-<a href="https://github.com/manit6752025?tab=achievements"><img src="https://img.shields.io/badge/🥇_GitHub-Achievements-6C3BFF?style=for-the-badge&labelColor=090A0F" alt="Achievements"/></a>
-<a href="https://hackerone.com/manit6752025"><img src="https://img.shields.io/badge/🔐_HackerOne-Security_Research-00D4FF?style=for-the-badge&labelColor=090A0F" alt="HackerOne"/></a>
-<a href="https://github.com/Netcore-Technologies"><img src="https://img.shields.io/badge/🏢_NetCore-Technologies-14213D?style=for-the-badge&labelColor=090A0F" alt="NetCore"/></a>
-
-</div>
-
-| | Highlight | Where |
-|---|---|---|
-| 🧠 | Building **AXIOM-AI**, an AI engineering platform | [Repo](https://github.com/manit6752025/AXIOM-AI) |
-| 📦 | Shipping **boxr** under NetCore Technologies | [Repo](https://github.com/netcore-technologies/boxr) |
-| 📡 | Created **WiFi Analyzer Pro** for wireless visibility | [Repo](https://github.com/manit6752025/wifi-analyzer-pro) |
-| 🧩 | Developing **QuantumGrid OS** | [Repo](https://github.com/NetCore-Technologies/quantumgrid-os) |
-| 🔐 | Security research and responsible disclosure | [HackerOne](https://hackerone.com/manit6752025) |
-| 🏢 | Founded and run **NetCore Technologies** | [Org](https://github.com/Netcore-Technologies) |
-
-> 🐛 Open an issue on any project for a useful idea, reproducible bug report, or improvement.
-
-<div align="center">
-<img width="100%" src="https://capsule-render.vercel.app/api?type=rect&color=0:00D4FF,50:6C3BFF,100:14213D&height=4" alt="divider"/>
-</div>
-
----
-
-## 🌌 Beyond the terminal
-
-I enjoy exploring the intersection of technology and curiosity: how systems behave, how networks can be improved, how AI tools can become more practical, and how open-source projects can turn ambitious ideas into real software.
-
-The goal isn't to know everything. It's to keep asking better questions, build things that teach me something, and leave the codebase a little better than I found it.
-
-```text
-$ axiom status
-AI experiments       : ongoing
-Open-source projects : compiling (AXIOM-AI, boxr, WiFi Analyzer Pro, QuantumGrid OS)
-Network curiosity    : 100%
-Coffee level         : critically important
-Sleep                : optional (not recommended)
-Deadline camouflage  : enabled
-Peace                 : still being explored
-```
-
----
-
-## 🤝 Connect
-
-<div align="center">
-
-<a href="https://github.com/manit6752025">
-  <img src="https://img.shields.io/badge/GitHub-Follow%20my%20work-181717?style=for-the-badge&logo=github" alt="GitHub"/>
-</a>
-<a href="https://github.com/manit6752025/AXIOM-AI">
-  <img src="https://img.shields.io/badge/Explore-AXIOM--AI-6C3BFF?style=for-the-badge&logo=github" alt="Explore AXIOM-AI"/>
-</a>
-<a href="https://github.com/netcore-technologies/boxr">
-  <img src="https://img.shields.io/badge/Explore-boxr-FF7A18?style=for-the-badge&logo=github" alt="Explore boxr"/>
-</a>
-
-### *Build with curiosity. Debug with patience. Ship with purpose.*
-
-**Powered by coffee, late-night peace, and the occasional “crashouts”**
-
-</div>
-
-<div align="center">
-
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:00D4FF,35:6C3BFF,70:14213D,100:090A0F&height=120&section=footer" alt="Animated footer banner"/>
-
-</div>
+| **QuantumGrid OS** | ![c](https://img.shields.io/github/commit-activity/m/NetCore-Technologies/quantumgrid-os?style=for-the-badge&color=6C3BFF&labelColor=090A0F) | ![s](https://img.shields.io/github/stars/NetCore-Technologies/quantumgrid-os?style=for-the-badge&color=00D4FF&labelColor
