@@ -242,5 +242,5 @@ Peace                 : still being explored
 </div>
 
 <div align="center">
-<sub>Built by <a href="https://github.com/manit6752025">@manit6752025</a> and <a 
+<sub>Built by <a href="https://github.com/manit6752025">@manit6752025</a>
 </div>
