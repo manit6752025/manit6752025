@@ -9,7 +9,7 @@
 <p>
   <a href="https://github.com/manit6752025"><img src="https://img.shields.io/badge/GitHub-manit6752025-181717?style=for-the-badge&logo=github" alt="GitHub profile"/></a>
   <a href="https://github.com/manit6752025/AXIOM-AI"><img src="https://img.shields.io/badge/Flagship-AXIOM--AI-6C3BFF?style=for-the-badge&logo=github" alt="AXIOM-AI"/></a>
-  <a href="https://github.com//boxr"><img src="https://img.shields.io/badge/Project-boxr-FF7A18?style=for-the-badge&logo=github" alt="boxr"/></a>
+  <a href="https://github.com/netcore-technologies/boxr"><img src="https://img.shields.io/badge/Project-boxr-FF7A18?style=for-the-badge&logo=github" alt="boxr"/></a>
   <a href="https://github.com/manit6752025/wifi-analyzer-pro"><img src="https://img.shields.io/badge/Project-WiFi%20Analyzer%20Pro-00A6A6?style=for-the-badge&logo=wifi" alt="WiFi Analyzer Pro"/></a>
   <a href="https://github.com/NetCore-Technologies/quantumgrid-os"><img src="https://img.shields.io/badge/Project-QuantumGrid%20OS-14213D?style=for-the-badge&logo=linux&logoColor=white" alt="QuantumGrid OS"/></a>
 </p>
@@ -125,39 +125,79 @@ My company, home to **boxr**, **QuantumGrid OS** and more. Everything under the 
 
 <div align="center">
 
-<img height="190" src="stats/stats.svg" alt="GitHub profile statistics"/>
-<img height="190" src="stats/langs.svg" alt="Most-used language statistics"/>
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=16&duration=2500&pause=600&color=00D4FF&center=true&vCenter=true&width=700&lines=Loading+stats...;Commits+compiled.;Streak+status%3A+dangerously+alive.;Coffee+level%3A+critical." alt="Stats typing text"/>
 
-</div>
+<br/>
 
-<div align="center">
+<img height="200" src="https://github-readme-stats.vercel.app/api?username=manit6752025&show_icons=true&include_all_commits=true&count_private=true&rank_icon=github&bg_color=090A0F&title_color=00D4FF&text_color=FFFFFF&icon_color=6C3BFF&border_color=6C3BFF&ring_color=00D4FF&hide_border=false&custom_title=Manit%27s%20GitHub%20Stats" alt="GitHub stats"/>
+<img height="200" src="https://github-readme-stats.vercel.app/api/top-langs/?username=manit6752025&layout=compact&langs_count=8&bg_color=090A0F&title_color=00D4FF&text_color=FFFFFF&border_color=6C3BFF&hide_border=false&custom_title=Most%20Used%20Languages" alt="Top languages"/>
 
-[![Contribution streak](https://streak-stats.demolab.com?user=manit6752025&hide_border=true&theme=transparent)](https://github.com/manit6752025)
+<img src="https://streak-stats.demolab.com?user=manit6752025&background=090A0F&ring=6C3BFF&fire=00D4FF&currStreakLabel=00D4FF&currStreakNum=FFFFFF&sideLabels=FFFFFF&sideNums=FFFFFF&dates=9AA0B4&border=6C3BFF&stroke=14213D" alt="Contribution streak"/>
+
+<br/>
+
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=manit6752025&bg_color=090A0F&color=00D4FF&line=6C3BFF&point=FFFFFF&area=true&area_color=6C3BFF&hide_border=true&custom_title=Contribution%20Graph" alt="Activity graph"/>
+
+<br/>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/manit6752025/manit6752025/output/snake-dark.svg"/>
+  <img src="https://raw.githubusercontent.com/manit6752025/manit6752025/output/snake.svg" alt="Contribution snake"/>
+</picture>
 
 </div>
 
 ### 📊 Repository activity
 
-| Repository | Recent commit activity | Stars |
-|---|---|---|
-| **AXIOM-AI** | [![Commit activity](https://img.shields.io/github/commit-activity/m/manit6752025/AXIOM-AI?style=flat-square)](https://github.com/manit6752025/AXIOM-AI/commits) | [![Stars](https://img.shields.io/github/stars/manit6752025/AXIOM-AI?style=flat-square)](https://github.com/manit6752025/AXIOM-AI/stargazers) |
-| **boxr** | [![Commit activity](https://img.shields.io/github/commit-activity/m/netcore-technologies/boxr?style=flat-square)](https://github.com/netcore-technologies/boxr/commits) | [![Stars](https://img.shields.io/github/stars/netcore-technologies/boxr?style=flat-square)](https://github.com/netcore-technologies/boxr/stargazers) |
-| **WiFi Analyzer Pro** | [![Commit activity](https://img.shields.io/github/commit-activity/m/manit6752025/wifi-analyzer-pro?style=flat-square)](https://github.com/manit6752025/wifi-analyzer-pro/commits) | [![Stars](https://img.shields.io/github/stars/manit6752025/wifi-analyzer-pro?style=flat-square)](https://github.com/manit6752025/wifi-analyzer-pro/stargazers) |
-| **QuantumGrid OS** | [![Commit activity](https://img.shields.io/github/commit-activity/m/NetCore-Technologies/quantumgrid-os?style=flat-square)](https://github.com/NetCore-Technologies/quantumgrid-os/commits) | [![Stars](https://img.shields.io/github/stars/NetCore-Technologies/quantumgrid-os?style=flat-square)](https://github.com/NetCore-Technologies/quantumgrid-os/stargazers) |
+| Repository | Commits / month | Stars | Latest release | Issues |
+|---|---|---|---|---|
+| **AXIOM-AI** | ![c](https://img.shields.io/github/commit-activity/m/manit6752025/AXIOM-AI?style=for-the-badge&color=6C3BFF&labelColor=090A0F) | ![s](https://img.shields.io/github/stars/manit6752025/AXIOM-AI?style=for-the-badge&color=00D4FF&labelColor=090A0F) | ![r](https://img.shields.io/github/v/release/manit6752025/AXIOM-AI?include_prereleases&style=for-the-badge&color=14213D&labelColor=090A0F) | ![i](https://img.shields.io/github/issues/manit6752025/AXIOM-AI?style=for-the-badge&color=6C3BFF&labelColor=090A0F) |
+| **boxr** | ![c](https://img.shields.io/github/commit-activity/m/netcore-technologies/boxr?style=for-the-badge&color=6C3BFF&labelColor=090A0F) | ![s](https://img.shields.io/github/stars/netcore-technologies/boxr?style=for-the-badge&color=00D4FF&labelColor=090A0F) | ![r](https://img.shields.io/github/v/release/netcore-technologies/boxr?include_prereleases&style=for-the-badge&color=14213D&labelColor=090A0F) | ![i](https://img.shields.io/github/issues/netcore-technologies/boxr?style=for-the-badge&color=6C3BFF&labelColor=090A0F) |
+| **WiFi Analyzer Pro** | ![c](https://img.shields.io/github/commit-activity/m/manit6752025/wifi-analyzer-pro?style=for-the-badge&color=6C3BFF&labelColor=090A0F) | ![s](https://img.shields.io/github/stars/manit6752025/wifi-analyzer-pro?style=for-the-badge&color=00D4FF&labelColor=090A0F) | ![r](https://img.shields.io/github/v/release/manit6752025/wifi-analyzer-pro?include_prereleases&style=for-the-badge&color=14213D&labelColor=090A0F) | ![i](https://img.shields.io/github/issues/manit6752025/wifi-analyzer-pro?style=for-the-badge&color=6C3BFF&labelColor=090A0F) |
+| **QuantumGrid OS** | ![c](https://img.shields.io/github/commit-activity/m/NetCore-Technologies/quantumgrid-os?style=for-the-badge&color=6C3BFF&labelColor=090A0F) | ![s](https://img.shields.io/github/stars/NetCore-Technologies/quantumgrid-os?style=for-the-badge&color=00D4FF&labelColor=090A0F) | ![r](https://img.shields.io/github/v/release/NetCore-Technologies/quantumgrid-os?include_prereleases&style=for-the-badge&color=14213D&labelColor=090A0F) | ![i](https://img.shields.io/github/issues/NetCore-Technologies/quantumgrid-os?style=for-the-badge&color=6C3BFF&labelColor=090A0F) |
 
-> Stats cards are generated by a GitHub Action and refresh every 6 hours.
+<div align="center">
+
+![Profile views](https://komarev.com/ghpvc/?username=manit6752025&label=PROFILE+VIEWS&color=6C3BFF&style=for-the-badge)
+![Followers](https://img.shields.io/github/followers/manit6752025?style=for-the-badge&color=00D4FF&labelColor=090A0F)
+![Repos](https://img.shields.io/badge/dynamic/json?url=https://api.github.com/users/manit6752025&query=$.public_repos&label=REPOS&style=for-the-badge&color=14213D&labelColor=090A0F)
+
+</div>
 
 ---
 
 ## 🏆 Achievements & open-source
 
-- 🥇 **GitHub achievements:** [View my profile achievements](https://github.com/manit6752025?tab=achievements)
-- 🧑‍💻 **Repositories:** [Explore my projects](https://github.com/manit6752025?tab=repositories)
-- 🏢 **NetCore Technologies:** [Explore the organization](https://github.com/Netcore-Technologies)
-- 🐛 **Issues & collaboration:** Open an issue on a project if you have a useful idea, reproducible bug report, or improvement.
-- 🔐 **Security research profile:** [HackerOne — Manit6752025](https://hackerone.com/manit6752025)
+<div align="center">
 
-I value useful contributions, clear bug reports, reproducible tests, readable code, and documentation that explains how to actually use the thing.
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=18&duration=2200&pause=900&color=6C3BFF&center=true&vCenter=true&width=700&lines=%F0%9F%8F%86+ACHIEVEMENT+UNLOCKED;%F0%9F%90%9B+Bug+hunter+on+HackerOne;%F0%9F%9A%80+4+projects+shipped;%E2%98%95+Survived+another+deadline" alt="Achievement unlocked"/>
+
+<br/>
+
+<img src="https://github-profile-trophy.vercel.app/?username=manit6752025&theme=onedark&no-bg=true&no-frame=true&row=1&column=7&margin-w=12&margin-h=12" alt="GitHub trophies"/>
+
+<br/>
+
+<a href="https://github.com/manit6752025?tab=achievements"><img src="https://img.shields.io/badge/🥇_GitHub-Achievements-6C3BFF?style=for-the-badge&labelColor=090A0F" alt="Achievements"/></a>
+<a href="https://hackerone.com/manit6752025"><img src="https://img.shields.io/badge/🔐_HackerOne-Security_Research-00D4FF?style=for-the-badge&labelColor=090A0F" alt="HackerOne"/></a>
+<a href="https://github.com/Netcore-Technologies"><img src="https://img.shields.io/badge/🏢_NetCore-Technologies-14213D?style=for-the-badge&labelColor=090A0F" alt="NetCore"/></a>
+
+</div>
+
+| | Highlight | Where |
+|---|---|---|
+| 🧠 | Building **AXIOM-AI**, an AI engineering platform | [Repo](https://github.com/manit6752025/AXIOM-AI) |
+| 📦 | Shipping **boxr** under NetCore Technologies | [Repo](https://github.com/netcore-technologies/boxr) |
+| 📡 | Created **WiFi Analyzer Pro** for wireless visibility | [Repo](https://github.com/manit6752025/wifi-analyzer-pro) |
+| 🧩 | Developing **QuantumGrid OS** | [Repo](https://github.com/NetCore-Technologies/quantumgrid-os) |
+| 🔐 | Security research and responsible disclosure | [HackerOne](https://hackerone.com/manit6752025) |
+| 🏢 | Founded and run **NetCore Technologies** | [Org](https://github.com/Netcore-Technologies) |
+
+> 🐛 Open an issue on any project for a useful idea, reproducible bug report, or improvement.
+
+<div align="center">
+<img width="100%" src="https://capsule-render.vercel.app/api?type=rect&color=0:00D4FF,50:6C3BFF,100:14213D&height=4" alt="divider"/>
+</div>
 
 ---
 
