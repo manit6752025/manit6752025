@@ -169,7 +169,7 @@ My company, home to **boxr**, **QuantumGrid OS** and more. Everything under the 
 
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=18&duration=2200&pause=900&color=6C3BFF&center=true&vCenter=true&width=700&lines=%F0%9F%8F%86+ACHIEVEMENT+UNLOCKED;%F0%9F%90%9B+Bug+hunter+on+HackerOne;%F0%9F%9A%80+4+projects+shipped;%E2%98%95+Survived+another+deadline" alt="Achievement unlocked"/>
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=18&duration=2200&pause=900&color=6C3BFF&center=true&vCenter=true&width=700&lines=%F0%9F%8F%86+ACHIEVEMENT+UNLOCKED;%F0%9F%90%9B+Bug+hunter+on+HackerOne;%F0%9F%9A%80+5+projects+shipped;%E2%98%95+Survived+another+deadline" alt="Achievement unlocked"/>
 
 <br/>
 
