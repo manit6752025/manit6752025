@@ -2,7 +2,7 @@ name: Refresh stats
 
 on:
   schedule:
-    - cron: "0 */6 * * *"
+    - cron: "30 */1 * * *"
   workflow_dispatch:
   push:
     paths:
@@ -29,8 +29,8 @@ jobs:
       - name: Commit and push
         continue-on-error: true
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "Manit Arora"
+          git config user.email "manit6752025@gmail.com"
           git add stats
           git diff --cached --quiet && exit 0
           git commit -m "refresh stats"
