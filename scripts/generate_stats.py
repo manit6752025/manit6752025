@@ -9,6 +9,11 @@ from html import escape
 OWNER = os.environ.get("STATS_OWNER", "manit6752025")
 KIND = os.environ.get("STATS_KIND", "user")
 TOKEN = os.environ.get("GITHUB_TOKEN", "")
+EXTRA_ORGS = [
+    o.strip()
+    for o in os.environ.get("STATS_EXTRA_ORGS", "NetCore-Technologies").split(",")
+    if o.strip()
+]
 OUT = os.environ.get("STATS_OUT", "stats")
 TITLE = os.environ.get(
     "STATS_TITLE", "Manit's GitHub Stats" if KIND == "user" else OWNER + " Stats"
@@ -126,33 +131,68 @@ def streaks(counts):
     return cur, longest
 
 
+def paged(url):
+    items = []
+    sep = "&" if "?" in url else "?"
+    for page in range(1, 11):
+        batch = call(f"{url}{sep}per_page=100&page={page}")
+        items += batch
+        if len(batch) < 100:
+            break
+    return items
+
+
+def collect_repos():
+    if KIND == "user":
+        sources = [f"{API}/users/{OWNER}/repos?type=owner"]
+        sources += [f"{API}/orgs/{o}/repos?type=all" for o in EXTRA_ORGS]
+    else:
+        sources = [f"{API}/orgs/{OWNER}/repos?type=all"]
+    found = {}
+    for url in sources:
+        try:
+            for r in paged(url):
+                found.setdefault(r["full_name"], r)
+        except Exception as e:
+            log(e)
+    if KIND == "user" and TOKEN:
+        mine = {OWNER.lower()} | {o.lower() for o in EXTRA_ORGS}
+        try:
+            for r in paged(
+                f"{API}/user/repos?affiliation=owner,organization_member&visibility=all"
+            ):
+                if r["owner"]["login"].lower() in mine:
+                    found.setdefault(r["full_name"], r)
+        except Exception as e:
+            log(e)
+    return list(found.values())
+
+
 def refresh(d):
     path = "users" if KIND == "user" else "orgs"
     try:
         info = call(f"{API}/{path}/{OWNER}")
-        d["repos"] = info.get("public_repos", d["repos"])
         d["followers"] = info.get("followers", d["followers"])
     except Exception as e:
         log(e)
 
     repos = []
     try:
-        kind_q = "owner" if KIND == "user" else "public"
-        for page in range(1, 6):
-            batch = call(
-                f"{API}/{path}/{OWNER}/repos?per_page=100&page={page}&type={kind_q}"
-            )
-            repos += batch
-            if len(batch) < 100:
-                break
-        d["stars"] = sum(r.get("stargazers_count", 0) for r in repos)
-        d["forks"] = sum(r.get("forks_count", 0) for r in repos)
-        d["issues_open"] = sum(r.get("open_issues_count", 0) for r in repos)
+        repos = collect_repos()
+        if repos:
+            d["repos"] = sum(1 for r in repos if not r.get("private"))
+            d["stars"] = sum(r.get("stargazers_count", 0) for r in repos)
+            d["forks"] = sum(r.get("forks_count", 0) for r in repos)
+            d["issues_open"] = sum(r.get("open_issues_count", 0) for r in repos)
     except Exception as e:
         log(e)
 
     counts = {}
-    for r in [x for x in repos if not x.get("fork")][:30]:
+    own = sorted(
+        (x for x in repos if not x.get("fork")),
+        key=lambda x: -x.get("stargazers_count", 0),
+    )
+    for r in own[:40]:
         try:
             for k, v in call(r["languages_url"]).items():
                 counts[k] = counts.get(k, 0) + v

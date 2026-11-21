@@ -19,12 +19,20 @@ concurrency:
 jobs:
   refresh:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.STATS_TOKEN || secrets.GITHUB_TOKEN }}
+      STATS_EXTRA_ORGS: NetCore-Technologies
     steps:
       - uses: actions/checkout@v4
-      - name: Generate stats cards
+      - name: Generate user cards
+        continue-on-error: true
+        run: python3 scripts/generate_stats.py
+      - name: Generate NetCore org cards
         continue-on-error: true
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          STATS_OWNER: NetCore-Technologies
+          STATS_KIND: org
+          STATS_OUT: stats/org
         run: python3 scripts/generate_stats.py
       - name: Commit and push
         continue-on-error: true
