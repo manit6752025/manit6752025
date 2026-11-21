@@ -173,6 +173,12 @@ def refresh(d):
     try:
         info = call(f"{API}/{path}/{OWNER}")
         d["followers"] = info.get("followers", d["followers"])
+        if KIND == "user":
+            for org in EXTRA_ORGS:
+                try:
+                    d["followers"] += call(f"{API}/orgs/{org}").get("followers", 0)
+                except Exception as e:
+                    log(e)
     except Exception as e:
         log(e)
 
@@ -204,6 +210,16 @@ def refresh(d):
         d["langs"] = [[k, round(v * 100 / total, 1)] for k, v in top]
 
     if KIND != "user":
+        try:
+            res = call(f"{API}/search/commits?q=org:{OWNER}&per_page=1")
+            d["commits"] = max(d["commits"], res.get("total_count", 0))
+        except Exception as e:
+            log(e)
+        try:
+            res = call(f"{API}/search/issues?q=org:{OWNER}+type:pr+is:merged&per_page=1")
+            d["merged"] = max(d["merged"], res.get("total_count", 0))
+        except Exception as e:
+            log(e)
         return
 
     try:
@@ -273,10 +289,10 @@ def stat_rows(d):
         return [
             ("Public repos", d["repos"]),
             ("Stars earned", d["stars"]),
-            ("Forks", d["forks"]),
+            ("Total commits", d["commits"]),
             ("Followers", d["followers"]),
+            ("Merged PRs", d["merged"]),
             ("Open issues", d["issues_open"]),
-            ("Languages", len(d["langs"])),
         ]
     return [
         ("Total commits", d["commits"]),
@@ -422,10 +438,10 @@ def ach_svg(d):
         items = [
             ("REPOS", d["repos"]),
             ("STARS", d["stars"]),
-            ("FORKS", d["forks"]),
+            ("COMMITS", d["commits"]),
             ("FOLLOWERS", d["followers"]),
+            ("MERGED", d["merged"]),
             ("ISSUES", d["issues_open"]),
-            ("LANGS", len(d["langs"])),
         ]
     else:
         items = [
