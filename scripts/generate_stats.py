@@ -210,11 +210,14 @@ def refresh(d):
         d["langs"] = [[k, round(v * 100 / total, 1)] for k, v in top]
 
     if KIND != "user":
-        try:
-            res = call(f"{API}/search/commits?q=org:{OWNER}&per_page=1")
-            d["commits"] = max(d["commits"], res.get("total_count", 0))
-        except Exception as e:
-            log(e)
+        total_commits = 0
+        for r in repos:
+            try:
+                people = paged(f"{API}/repos/{r['full_name']}/contributors?anon=1")
+                total_commits += sum(p.get("contributions", 0) for p in people)
+            except Exception as e:
+                log(e)
+        d["commits"] = max(d["commits"], total_commits)
         try:
             res = call(f"{API}/search/issues?q=org:{OWNER}+type:pr+is:merged&per_page=1")
             d["merged"] = max(d["merged"], res.get("total_count", 0))
