@@ -24,13 +24,14 @@
 
 I'm **Manit Arora** — a developer, experimenter, and technology enthusiast who likes figuring out how things work, making them better, and occasionally discovering that the bug was one missing character all along.
 
-I spend my time exploring **AI engineering, developer tooling, Python, TypeScript, Linux, networking, and open-source software**. I like projects that do more than look impressive in a screenshot: they should be useful, testable, documented, and connected into a coherent experience.
+I spend my time exploring **AI engineering, developer tooling, Python, TypeScript, Go, Linux, networking, and open-source software**. I like projects that do more than look impressive in a screenshot: they should be useful, testable, documented, and connected into a coherent experience.
 
 - 🧠 Building **AXIOM-AI**, an AI experimentation and workflow platform.
 - 📦 Building **boxr** under NetCore Technologies.
 - 🏢 Running **NetCore Technologies**, the company behind boxr and QuantumGrid OS.
 - 🧰 Building **QuantumGrid OS** under NetCore Technologies, a systems and networking project.
 - 📡 Building **WiFi Analyzer Pro** for wireless-network visibility.
+- 🐹 Currently learning **Go**.
 - 🔧 Interested in Linux, Wi-Fi, DNS, routers, diagnostics, and self-hosted infrastructure.
 - 🛠️ Big on turning ambitious roadmaps into working features — not just checkboxes.
 - 🌙 Most productive when the world gets quiet and the coffee gets suspiciously cold.
@@ -42,41 +43,28 @@ I spend my time exploring **AI engineering, developer tooling, Python, TypeScrip
 
 ## 🚀 Featured projects
 
-<div align="center">
-
-<a href="https://github.com/manit6752025/AXIOM-AI">
-  <img src="https://img.shields.io/badge/AXIOM--AI-AI%20Engineering%20Platform-6C3BFF?style=for-the-badge&logo=github&logoColor=white" alt="AXIOM-AI"/>
-</a>
-<a href="https://github.com/netcore-technologies/boxr">
-  <img src="https://img.shields.io/badge/boxr-NetCore%20Technologies-FF7A18?style=for-the-badge&logo=github&logoColor=white" alt="boxr"/>
-</a>
-<a href="https://github.com/NetCore-Technologies/wifi-analyzer-pro">
-  <img src="https://img.shields.io/badge/WiFi%20Analyzer%20Pro-Wireless%20Tooling-008B8B?style=for-the-badge&logo=wifi&logoColor=white" alt="WiFi Analyzer Pro"/>
-</a>
-<a href="https://github.com/NetCore-Technologies/quantumgrid-os">
-  <img src="https://img.shields.io/badge/QuantumGrid%20OS-Systems%20%26%20Networking-14213D?style=for-the-badge&logo=linux&logoColor=white" alt="QuantumGrid OS"/>
-</a>
-
-</div>
-
 ### 🧠 [AXIOM-AI](https://github.com/manit6752025/AXIOM-AI)
 
-An open-source AI engineering workspace focused on bringing model experimentation, dataset workflows, evaluation, and practical developer tools into one cohesive application.
+**Know what fits before you train.** Inspect models, clean JSONL datasets, check VRAM/RAM fit, and run local LoRA fine-tuning or MCP servers.
 
-- **Focus:** AI workflows, dataset analysis, model experimentation, evaluation, diagnostics, and CLI tooling.
-- **Approach:** Make capabilities discoverable in the GUI while keeping the command line useful for automation and advanced workflows.
+- **Focus:** Local-first AI workflows, dataset analysis, model experimentation, evaluation, and diagnostics.
+- **Approach:** Everything is discoverable in the GUI (`axiom gui`), while the CLI stays useful for automation and advanced workflows.
 - **Goal:** A maintainable, documented platform where features are testable and the roadmap reflects reality.
 
 [![Repository stars](https://img.shields.io/github/stars/manit6752025/AXIOM-AI?style=flat-square&label=stars)](https://github.com/manit6752025/AXIOM-AI/stargazers)
 [![Latest release](https://img.shields.io/github/v/release/manit6752025/AXIOM-AI?include_prereleases&sort=semver&style=flat-square&label=release)](https://github.com/manit6752025/AXIOM-AI/releases)
 [![Open issues](https://img.shields.io/github/issues/manit6752025/AXIOM-AI?style=flat-square)](https://github.com/manit6752025/AXIOM-AI/issues)
 
+⭐ **Like it? [Star AXIOM-AI](https://github.com/manit6752025/AXIOM-AI) to follow along.**
+
 ### 📦 [boxr](https://github.com/netcore-technologies/boxr)
 
-A [NetCore Technologies](https://github.com/Netcore-Technologies) project. Visit the repository for its current feature set, setup instructions, and implementation details.
+**A daemonless mini Docker engine built from scratch in Go** using Linux namespaces, cgroups v2, and OverlayFS.
 
 [![Repository stars](https://img.shields.io/github/stars/netcore-technologies/boxr?style=flat-square&label=stars)](https://github.com/netcore-technologies/boxr/stargazers)
 [![Open issues](https://img.shields.io/github/issues/netcore-technologies/boxr?style=flat-square)](https://github.com/netcore-technologies/boxr/issues)
+
+⭐ **Into containers and Linux internals? [Star boxr](https://github.com/netcore-technologies/boxr).**
 
 ### 📡 [WiFi Analyzer Pro](https://github.com/NetCore-Technologies/wifi-analyzer-pro)
 
@@ -85,12 +73,16 @@ A real-time WiFi diagnostic dashboard with a Python backend and React frontend. 
 [![Repository stars](https://img.shields.io/github/stars/NetCore-Technologies/wifi-analyzer-pro?style=flat-square&label=stars)](https://github.com/NetCore-Technologies/wifi-analyzer-pro/stargazers)
 [![Open issues](https://img.shields.io/github/issues/NetCore-Technologies/wifi-analyzer-pro?style=flat-square)](https://github.com/NetCore-Technologies/wifi-analyzer-pro/issues)
 
+⭐ **Want to see it live? [Star WiFi Analyzer Pro](https://github.com/NetCore-Technologies/wifi-analyzer-pro).**
+
 ### 🧩 [QuantumGrid OS](https://github.com/NetCore-Technologies/quantumgrid-os)
 
-A NetCore Technologies project exploring operating-system concepts, Linux tooling, and network-aware infrastructure. Visit the repository for its current feature set, setup instructions, and implementation details.
+**An intelligent, high-performance network OS for Qualcomm routers** built around gaming, Wi-Fi, 5G, and hardware acceleration.
 
 [![Repository stars](https://img.shields.io/github/stars/NetCore-Technologies/quantumgrid-os?style=flat-square&label=stars)](https://github.com/NetCore-Technologies/quantumgrid-os/stargazers)
 [![Open issues](https://img.shields.io/github/issues/NetCore-Technologies/quantumgrid-os?style=flat-square)](https://github.com/NetCore-Technologies/quantumgrid-os/issues)
+
+⭐ **Star [QuantumGrid OS](https://github.com/NetCore-Technologies/quantumgrid-os) if router firmware is your thing.**
 
 ### 🏢 [NetCore Technologies](https://github.com/Netcore-Technologies)
 
@@ -104,17 +96,17 @@ My company, home to **boxr**, **QuantumGrid OS** and more. Everything under the 
 
 <div align="center">
 
-<img src="https://skillicons.dev/icons?i=python,ts,js,react,vite,html,css,bash,linux,git,github,docker,sqlite,fastapi,vscode&perline=8" alt="Technology icons"/>
+<img src="https://skillicons.dev/icons?i=python,go,ts,js,react,vite,html,css,bash,linux,git,github,docker,sqlite,fastapi,vscode&perline=8" alt="Technology icons"/>
 
 </div>
 
 | Area | Interests |
 |---|---|
-| **Languages** | Python, TypeScript, JavaScript, Bash |
+| **Languages** | Python, TypeScript, JavaScript, Bash, Go (learning) |
 | **AI & data** | Model workflows, dataset tooling, evaluation, experimentation |
 | **Frontend** | React, Vite, HTML, CSS, accessible interfaces |
 | **Backend & tooling** | APIs, CLI design, diagnostics, automated testing |
-| **Systems** | Linux, networking, DNS, Wi-Fi, OpenWrt, self-hosting |
+| **Systems** | Linux, containers (namespaces, cgroups v2, OverlayFS), networking, DNS, Wi-Fi, OpenWrt, self-hosting |
 | **Engineering habits** | Git, documentation, reproducible builds, tests, release workflows |
 
 *This is a snapshot of the tools and areas I work with and explore—not a claim of equal expertise in every item.*
@@ -207,10 +199,11 @@ $ axiom status
 AI experiments       : ongoing
 Open-source projects : compiling (AXIOM-AI, boxr, WiFi Analyzer Pro, QuantumGrid OS)
 Network curiosity    : 100%
+Learning             : Go
 Coffee level         : critically important
 Sleep                : optional (not recommended)
 Deadline camouflage  : enabled
-Peace                 : still being explored
+Peace                : still being explored
 ```
 
 ---
@@ -237,10 +230,10 @@ Peace                 : still being explored
 
 <div align="center">
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:00D4FF,35:6C3BFF,70:14213D,100:090A0F&height=120&section=footer" alt="Animated footer banner"/>
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:00D4FF,35:6C3BFF,70:14213D,100:090A0F&height=120&section=footer" alt="Footer banner"/>
 
 </div>
 
 <div align="center">
-<sub>Built by <a href="https://github.com/manit6752025">@manit6752025</a>
+<sub>Built by <a href="https://github.com/manit6752025">@manit6752025</a></sub>
 </div>
