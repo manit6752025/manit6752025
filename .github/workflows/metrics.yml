@@ -2,7 +2,7 @@ name: Refresh stats
 
 on:
   schedule:
-    - cron: "30 */1 * * *"
+    - cron: "0 */1 * * *"
   workflow_dispatch:
   push:
     paths:
