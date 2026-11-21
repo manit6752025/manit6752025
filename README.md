@@ -214,6 +214,12 @@ Peace                : still being explored
 <a href="https://github.com/manit6752025">
   <img src="https://img.shields.io/badge/GitHub-Follow%20my%20work-181717?style=for-the-badge&logo=github" alt="GitHub"/>
 </a>
+<a href="https://www.linkedin.com/in/manit-arora-a4756141b/">
+  <img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
+</a>
+<a href="mailto:manit672025@gmail.com">
+  <img src="https://img.shields.io/badge/Gmail-Email%20me-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/>
+</a>
 <a href="https://github.com/manit6752025/AXIOM-AI">
   <img src="https://img.shields.io/badge/Explore-AXIOM--AI-6C3BFF?style=for-the-badge&logo=github" alt="Explore AXIOM-AI"/>
 </a>
