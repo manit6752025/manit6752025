@@ -22,18 +22,17 @@
 
 ## `whoami` — Hello, world 👋
 
-I'm **Manit Arora** — a developer, experimenter, and technology enthusiast who likes figuring out how things work, making them better, and occasionally discovering that the bug was one missing character all along.
+I'm **Manit Arora**, a developer and tech enthusiast who likes figuring out how things work, making them better, and occasionally finding out the bug was one missing character all along.
 
-I spend my time exploring **AI engineering, developer tooling, Python, TypeScript, Go, Linux, networking, and open-source software**. I like projects that do more than look impressive in a screenshot: they should be useful, testable, documented, and connected into a coherent experience.
+I mostly work with **Python, TypeScript, Linux, and networking**, and I'm currently learning **Go** and **Rust**. I like projects that are useful, testable, and documented, not just good-looking in a screenshot.
 
-- 🧠 Building **AXIOM-AI**, an AI experimentation and workflow platform.
-- 📦 Building **boxr** under NetCore Technologies.
-- 🏢 Running **NetCore Technologies**, the company behind boxr and QuantumGrid OS.
-- 🧰 Building **QuantumGrid OS** under NetCore Technologies, a systems and networking project.
-- 📡 Building **WiFi Analyzer Pro** for wireless-network visibility.
-- 🐹 Currently learning **Go**.
-- 🔧 Interested in Linux, Wi-Fi, DNS, routers, diagnostics, and self-hosted infrastructure.
-- 🛠️ Big on turning ambitious roadmaps into working features — not just checkboxes.
+- 🧠 **AXIOM-AI**: an AI experimentation and workflow platform.
+- 📦 **boxr** and 🧩 **QuantumGrid OS**: systems and networking projects under NetCore Technologies.
+- 📡 **WiFi Analyzer Pro**: wireless-network visibility.
+- 🏢 Running **NetCore Technologies**, the company behind it all.
+- 🔧 Into Linux, Wi-Fi, DNS, routers, diagnostics, and self-hosting.
+- 🐹🦀 Learning **Go** and **Rust**.
+- 🛠️ Big on turning ambitious roadmaps into working features, not just checkboxes.
 - 🌙 Most productive when the world gets quiet and the coffee gets suspiciously cold.
 - 🏃 Known to disappear before a deadline. This is either time management or a very advanced stealth feature.
 
@@ -96,13 +95,13 @@ My company, home to **boxr**, **QuantumGrid OS** and more. Everything under the 
 
 <div align="center">
 
-<img src="https://skillicons.dev/icons?i=python,go,ts,js,react,vite,html,css,bash,linux,git,github,docker,sqlite,fastapi,vscode&perline=8" alt="Technology icons"/>
+<img src="https://skillicons.dev/icons?i=python,go,rust,ts,js,react,vite,html,css,bash,linux,git,github,docker,sqlite,fastapi,vscode&perline=8" alt="Technology icons"/>
 
 </div>
 
 | Area | Interests |
 |---|---|
-| **Languages** | Python, TypeScript, JavaScript, Bash, Go (learning) |
+| **Languages** | Python, TypeScript, JavaScript, Bash, Go (learning), Rust (learning) |
 | **AI & data** | Model workflows, dataset tooling, evaluation, experimentation |
 | **Frontend** | React, Vite, HTML, CSS, accessible interfaces |
 | **Backend & tooling** | APIs, CLI design, diagnostics, automated testing |
@@ -199,7 +198,7 @@ $ axiom status
 AI experiments       : ongoing
 Open-source projects : compiling (AXIOM-AI, boxr, WiFi Analyzer Pro, QuantumGrid OS)
 Network curiosity    : 100%
-Learning             : Go
+Learning             : Go, Rust
 Coffee level         : critically important
 Sleep                : optional (not recommended)
 Deadline camouflage  : enabled
