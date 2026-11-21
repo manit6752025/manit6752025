@@ -81,7 +81,7 @@ DEFS = """<defs>
 
 
 def log(e):
-    print("stats warning:", e, file=sys.stderr)
+    print("stats warning:", e, getattr(e, "url", ""), file=sys.stderr)
 
 
 def call(url, body=None):
