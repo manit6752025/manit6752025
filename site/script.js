@@ -39,3 +39,27 @@ if($("[data-live]").length){var K="ma-live",c0=null;try{c0=JSON.parse(sessionSto
 function show(v){put("repos",v.n);put("stars",v.s);put("followers",v.f)}
 if(c0)show(c0);else Promise.all([load("manit6752025"),load("NetCore-Technologies")]).then(function(r){var v={f:r[0].f+r[1].f,n:r[0].n+r[1].n,s:r[0].s+r[1].s};show(v);try{sessionStorage.setItem(K,JSON.stringify(v))}catch(e){}}).catch(function(){})}
 })();
+(function(){
+document.querySelectorAll("[data-copy]").forEach(function(b){
+var s=b.querySelector("small"),o=s.textContent;
+b.addEventListener("click",function(){
+var v=b.dataset.copy;
+function ok(){s.textContent="copied";setTimeout(function(){s.textContent=o},1600)}
+if(navigator.clipboard)navigator.clipboard.writeText(v).then(ok,function(){s.textContent=v});else s.textContent=v})})})();
+(function(){
+var rm=matchMedia("(prefers-reduced-motion: reduce)").matches;
+if(!("IntersectionObserver" in window))document.querySelectorAll(".rv").forEach(function(e){e.classList.add("in")});
+var J=[["Why did the router go to therapy?","Too many unresolved connections."],["Why do programmers prefer dark mode?","Because light attracts bugs."],["I’d tell you a UDP joke…","but you might not get it."],["I’d tell you a TCP joke…","but I’d keep repeating it until you got it."],["Why did the creeper cross the road?","To get to the other ssssside."],["Why does my Bedwars bed never sleep well?","It’s always feeling a bit exposed."],["How do you comfort a JavaScript bug?","You console it."],["It’s not DNS.","There’s no way it’s DNS. It was DNS."],["What do you call a fake noodle?","An impasta."],["Why was the container so calm?","It knew how to isolate its feelings."],["Why did the 5G tower get promoted?","Great reception."],["I’m reading a book about anti-gravity.","It’s impossible to put down."],["Why did the developer go broke?","He used up all his cache."],["Why did the Wi-Fi signal break up with the laptop?","It felt like they had no connection."],["What’s a Rust developer’s favourite game?","Borrow and Seek. Everything must be returned."]];
+function spark(x,y){if(rm)return;var c=["#6C3BFF","#00D4FF","#ffffff"];for(var i=0;i<12;i++){var s=document.createElement("i");s.className="spark";var a=Math.random()*6.28,d=40+Math.random()*60;s.style.left=x+"px";s.style.top=y+"px";s.style.background=c[i%3];s.style.setProperty("--dx",Math.cos(a)*d+"px");s.style.setProperty("--dy",Math.sin(a)*d+"px");document.body.appendChild(s);setTimeout(function(el){el.remove()},900,s)}}
+addEventListener("click",function(e){spark(e.clientX,e.clientY)});
+document.querySelectorAll("[data-joke]").forEach(function(b){
+var s=b.querySelector(".js"),p=b.querySelector(".jp"),btn=b.querySelector("button"),i=Math.floor(Math.random()*J.length),open=false;
+function show(){s.textContent=J[i][0];p.textContent=J[i][1];p.classList.remove("show");btn.textContent="Punchline!";open=false}
+show();
+btn.addEventListener("click",function(e){
+if(!open){p.classList.add("show");btn.textContent="Another one";open=true;var r=p.getBoundingClientRect();spark(r.left+r.width/2,r.top)}
+else{i=(i+1+Math.floor(Math.random()*(J.length-1)))%J.length;show()}})});
+if(!rm)document.querySelectorAll(".btn,.copy").forEach(function(b){
+b.addEventListener("mousemove",function(e){var r=b.getBoundingClientRect();b.style.transform="translate("+((e.clientX-r.left-r.width/2)*.18)+"px,"+((e.clientY-r.top-r.height/2)*.3)+"px)"});
+b.addEventListener("mouseleave",function(){b.style.transform=""})});
+})();

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">Signal Pulse</title>
+  <defs>
+    <linearGradient id="shell" x1="8" y1="5" x2="56" y2="60" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0d2939"/>
+      <stop offset="1" stop-color="#10172c"/>
+    </linearGradient>
+    <linearGradient id="signal" x1="8" y1="17" x2="55" y2="48" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#50e3d2"/>
+      <stop offset=".55" stop-color="#36b9ef"/>
+      <stop offset="1" stop-color="#8c8aff"/>
+    </linearGradient>
+    <filter id="soft-glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="2.1" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="18" fill="url(#shell)" stroke="#50e3d2" stroke-opacity=".35" stroke-width="1.5"/>
+  <g fill="none" stroke="url(#signal)" stroke-linecap="round" stroke-width="3.2">
+    <path d="M14 20c10-9 26-9 36 0" opacity=".72"/>
+    <path d="M20 26c7-6 17-6 24 0" opacity=".9"/>
+  </g>
+  <path d="M8 39h11l5-9 8 18 7-14 4 5h13" fill="none" stroke="url(#signal)" stroke-width="3.7" stroke-linecap="round" stroke-linejoin="round" filter="url(#soft-glow)"/>
+  <circle cx="32" cy="49" r="2.1" fill="#50e3d2"/>
+</svg>
