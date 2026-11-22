@@ -232,7 +232,10 @@ Peace                : still being explored
 <a href="https://github.com/netcore-technologies/boxr">
   <img src="https://img.shields.io/badge/Explore-boxr-FF7A18?style=for-the-badge&logo=github" alt="Explore boxr"/>
 </a>
+<<<<<<< HEAD
 <a href="https://manit6752025.github.io/manit6752025"> <img src="https://img.shields.io/badge/Website-Visit%20my%20site-0A66C2?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Website"/>
+=======
+>>>>>>> a60bb4c (Consolidate Personal Website)
 
 ### *Build with curiosity. Debug with patience. Ship with purpose.*
 
