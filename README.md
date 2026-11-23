@@ -129,8 +129,18 @@ My company, home to **boxr**, **QuantumGrid OS** and more. Everything under the 
 <br/>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/manit6752025/manit6752025/output/snake-dark.svg"/>
-  <img src="https://raw.githubusercontent.com/manit6752025/manit6752025/output/snake.svg" width="98%" alt="Contribution snake"/>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/manit6752025/manit6752025/output/pacman-contribution-graph-dark.svg"/>
+  <img src="https://raw.githubusercontent.com/manit6752025/manit6752025/output/pacman-contribution-graph.svg" width="98%" alt="Pac-Man contribution graph"/>
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/manit6752025/manit6752025/output/breakout-contribution-graph-dark.svg"/>
+  <img src="https://raw.githubusercontent.com/manit6752025/manit6752025/output/breakout-contribution-graph.svg" width="98%" alt="Breakout contribution graph"/>
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/manit6752025/manit6752025/output/galaga-contribution-graph-dark.svg"/>
+  <img src="https://raw.githubusercontent.com/manit6752025/manit6752025/output/galaga-contribution-graph.svg" width="98%" alt="Galaga contribution graph"/>
 </picture>
 
 <br/>
@@ -232,9 +242,6 @@ Peace                : still being explored
 <a href="https://github.com/netcore-technologies/boxr">
   <img src="https://img.shields.io/badge/Explore-boxr-FF7A18?style=for-the-badge&logo=github" alt="Explore boxr"/>
 </a>
-<a href="https://manit-arora.me"> <img src="https://img.shields.io/badge/Website-Visit%20my%20site-0A66C2?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Website"/>
-
-
 
 ### *Build with curiosity. Debug with patience. Ship with purpose.*
 
