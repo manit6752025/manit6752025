@@ -458,7 +458,7 @@ def ach_svg(d):
     out = head("Achievements")
     for i, (label, val) in enumerate(items):
         cx = 52 + i * 78
-        cy = 84
+        cy = 110
         color = PALETTE[i % len(PALETTE)]
         out += (
             f'<g class="pop" style="animation-delay:{i * 0.1:.2f}s">'
@@ -468,7 +468,7 @@ def ach_svg(d):
             f'<text x="{cx}" y="{cy + 42}" text-anchor="middle" class="l" style="font-size:8px">{label}</text>'
             f"</g>"
         )
-    return frame(495, 160, out)
+    return frame(495, 210, out)
 
 
 def write(name, svg):
