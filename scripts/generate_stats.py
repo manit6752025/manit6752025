@@ -421,12 +421,12 @@ def streak_svg(d):
     m = max(days + [1])
     step = 447 / (len(days) - 1)
     pts = " ".join(
-        f"{24 + i * step:.1f},{184 - n / m * 26:.1f}" for i, n in enumerate(days)
+        f"{24 + i * step:.1f},{192 - n / m * 34:.1f}" for i, n in enumerate(days)
     )
     out += (
         f'<polyline class="draw" points="{pts}" fill="none" stroke="url(#ac)" stroke-width="2" stroke-linejoin="round"/>'
     )
-    return frame(495, 196, out)
+    return frame(495, 210, out)
 
 
 def hexpts(cx, cy, r):
