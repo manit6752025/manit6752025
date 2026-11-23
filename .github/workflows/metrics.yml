@@ -24,9 +24,14 @@ jobs:
       STATS_EXTRA_ORGS: NetCore-Technologies
     steps:
       - uses: actions/checkout@v4
+
+      - name: Clean stats directory contents
+        run: rm -rf stats/*
+
       - name: Generate user cards
         continue-on-error: true
         run: python3 scripts/generate_stats.py
+
       - name: Generate NetCore org cards
         continue-on-error: true
         env:
@@ -34,6 +39,7 @@ jobs:
           STATS_KIND: org
           STATS_OUT: stats/org
         run: python3 scripts/generate_stats.py
+
       - name: Commit and push
         continue-on-error: true
         run: |
