@@ -1,6 +1,7 @@
 import os
 import json
 import requests
+import traceback
 from datetime import datetime
 
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
@@ -17,18 +18,25 @@ HEADERS = {
 os.makedirs(OUT_DIR, exist_ok=True)
 
 def api_get(url):
-    res = requests.get(url, headers=HEADERS)
-    if res.status_code == 200:
-        return res.json()
-    return {}
+    try:
+        res = requests.get(url, headers=HEADERS, timeout=10)
+        if res.status_code == 200:
+            return res.json()
+        print(f"API Error {res.status_code} for {url}: {res.text}")
+        return {}
+    except Exception as e:
+        print(f"Request failed for {url}: {e}")
+        return {}
 
 def api_graphql(query, variables):
-    res = requests.post("https://api.github.com/graphql", headers=HEADERS, json={"query": query, "variables": variables})
-    if res.status_code == 200:
-        return res.json().get("data", {})
-    return {}
+    try:
+        res = requests.post("https://api.github.com/graphql", headers=HEADERS, json={"query": query, "variables": variables}, timeout=10)
+        if res.status_code == 200:
+            return res.json().get("data", {})
+        return {}
+    except Exception:
+        return {}
 
-# --- Data Fetching ---
 def get_user_stats(username):
     user = api_get(f"https://api.github.com/users/{username}")
     repos = api_get(f"https://api.github.com/users/{username}/repos?per_page=100")
@@ -37,21 +45,16 @@ def get_user_stats(username):
     followers = user.get("followers", 0)
     public_repos = user.get("public_repos", 0)
     
-    # PRs & Issues (Search API)
     prs = api_get(f"https://api.github.com/search/issues?q=author:{username}+type:pr+is:merged&per_page=1").get("total_count", 0)
     issues = api_get(f"https://api.github.com/search/issues?q=author:{username}+type:issue+is:closed&per_page=1").get("total_count", 0)
     
-    # Commits
     personal_commits = api_get(f"https://api.github.com/search/commits?q=author:{username}&per_page=1").get("total_count", 0)
     org_commits = api_get(f"https://api.github.com/search/commits?q=author:{username}+org:{ORG_NAME}&per_page=1").get("total_count", 0)
     
     return {
         "commits": personal_commits + org_commits if KIND == "user" else personal_commits,
-        "stars": stars,
-        "repos": public_repos,
-        "followers": followers,
-        "prs": prs,
-        "issues": issues
+        "stars": stars, "repos": public_repos, "followers": followers,
+        "prs": prs, "issues": issues
     }
 
 def get_org_stats(org):
@@ -74,10 +77,11 @@ def get_org_stats(org):
 def get_languages(username, is_org=False):
     repos = api_get(f"https://api.github.com/{'orgs' if is_org else 'users'}/{username}/repos?per_page=100")
     langs = {}
-    for repo in repos if isinstance(repos, list) else []:
-        l_data = api_get(repo["languages_url"])
-        for lang, bytes_count in l_data.items():
-            langs[lang] = langs.get(lang, 0) + bytes_count
+    if isinstance(repos, list):
+        for repo in repos:
+            l_data = api_get(repo["languages_url"])
+            for lang, bytes_count in l_data.items():
+                langs[lang] = langs.get(lang, 0) + bytes_count
     
     total = sum(langs.values()) or 1
     sorted_langs = sorted(langs.items(), key=lambda x: x[1], reverse=True)[:6]
@@ -88,7 +92,6 @@ def get_streak(username):
     query($login: String!) {
       user(login: $login) {
         contributionsCollection {
-          totalCommitContributions
           contributionCalendar {
             totalContributions
             weeks { contributionDays { contributionCount } }
@@ -193,29 +196,35 @@ def make_achievements_svg(stats, streak, title, filename):
 
 # --- Main ---
 if __name__ == "__main__":
-    print(f"Generating stats for: {OWNER} (Kind: {KIND})")
-    
-    if KIND == "user":
-        stats = get_user_stats(OWNER)
-        langs = get_languages(OWNER, is_org=False)
-        total, longest, current = get_streak(OWNER)
-        make_stats_svg(stats, "Manit's GitHub Stats", "stats.svg")
-        make_langs_svg(langs, "Most Used Languages", "langs.svg")
-        make_streak_svg(total, longest, current, "Contribution Streak", "streak.svg")
-        make_achievements_svg(stats, current, "Achievements", "achievements.svg")
+    try:
+        print(f"Generating stats for: {OWNER} (Kind: {KIND})")
         
-        # Save cache for badges
-        with open(f"{OUT_DIR}/cache.json", "w") as f:
-            json.dump({"followers": stats['followers'], "repos": stats['repos'], "stars": stats['stars']}, f)
+        if KIND == "user":
+            stats = get_user_stats(OWNER)
+            langs = get_languages(OWNER, is_org=False)
+            total, longest, current = get_streak(OWNER)
             
-    else:
-        stats = get_org_stats(OWNER)
-        langs = get_languages(OWNER, is_org=True)
-        # Org streak uses the owner's contributions within the org (as requested)
-        total, longest, current = get_streak("manit6752025") 
-        make_stats_svg(stats, f"{OWNER.split('-')[0]} Stats", f"{OUT_DIR}/stats.svg")
-        make_langs_svg(langs, f"{OWNER.split('-')[0]} Languages", f"{OUT_DIR}/langs.svg")
-        make_streak_svg(total, longest, current, f"{OWNER.split('-')[0]} Streak", f"{OUT_DIR}/streak.svg")
-        make_achievements_svg(stats, current, f"{OWNER.split('-')[0]} Achievements", f"{OUT_DIR}/achievements.svg")
-    
-    print("SVGs generated successfully.")
+            make_stats_svg(stats, "Manit's GitHub Stats", "stats.svg")
+            make_langs_svg(langs, "Most Used Languages", "langs.svg")
+            make_streak_svg(total, longest, current, "Contribution Streak", "streak.svg")
+            make_achievements_svg(stats, current, "Achievements", "achievements.svg")
+            
+            with open(f"{OUT_DIR}/cache.json", "w") as f:
+                json.dump({"followers": stats['followers'], "repos": stats['repos'], "stars": stats['stars']}, f)
+                
+        else:
+            stats = get_org_stats(OWNER)
+            langs = get_languages(OWNER, is_org=True)
+            total, longest, current = get_streak("manit6752025") 
+            
+            # BUG FIXED: Removed OUT_DIR from the filename argument
+            make_stats_svg(stats, f"{OWNER.split('-')[0]} Stats", "stats.svg")
+            make_langs_svg(langs, f"{OWNER.split('-')[0]} Languages", "langs.svg")
+            make_streak_svg(total, longest, current, f"{OWNER.split('-')[0]} Streak", "streak.svg")
+            make_achievements_svg(stats, current, f"{OWNER.split('-')[0]} Achievements", "achievements.svg")
+        
+        print("SVGs generated successfully.")
+    except Exception as e:
+        print(f"CRITICAL ERROR: {e}")
+        traceback.print_exc()
+        exit(1)
