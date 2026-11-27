@@ -120,11 +120,11 @@ My company, home to **boxr**, **QuantumGrid OS** and more. Everything under the 
 
 <br/>
 
-<img src="stats/stats.svg" width="49%" alt="GitHub stats"/>
-<img src="stats/langs.svg" width="49%" alt="Top languages"/>
+<img src="stats/stats.svg?v=1795815196" width="49%" alt="GitHub stats"/>
+<img src="stats/langs.svg?v=1795815196" width="49%" alt="Top languages"/>
 
-<img src="stats/streak.svg" width="49%" alt="Contribution streak"/>
-<img src="stats/achievements.svg" width="49%" alt="Achievements"/>
+<img src="stats/streak.svg?v=1795815196" width="49%" alt="Contribution streak"/>
+<img src="stats/achievements.svg?v=1795815196" width="49%" alt="Achievements"/>
 
 <br/>
 
@@ -145,8 +145,8 @@ My company, home to **boxr**, **QuantumGrid OS** and more. Everything under the 
 
 <br/>
 
-<img src="stats/org/stats.svg" width="49%" alt="NetCore Technologies stats"/>
-<img src="stats/org/achievements.svg" width="49%" alt="NetCore Technologies achievements"/>
+<img src="stats/org/stats.svg?v=1795815196" width="49%" alt="NetCore Technologies stats"/>
+<img src="stats/org/achievements.svg?v=1795815196" width="49%" alt="NetCore Technologies achievements"/>
 
 </div>
 
