@@ -44,7 +44,7 @@ jobs:
 
       - name: Check every card was rebuilt
         run: |
-          for f in stats/stats.svg stats/langs.svg stats/streak.svg stats/achievements.svg stats/org/stats.svg stats/org/langs.svg stats/org/achievements.svg; do
+          for f in stats/stats.svg stats/langs.svg stats/streak.svg stats/achievements.svg stats/org/stats.svg stats/org/langs.svg stats/org/streak.svg stats/org/achievements.svg; do
             test -s "$f" || { echo "Missing $f"; exit 1; }
           done
 
