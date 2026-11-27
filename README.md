@@ -125,7 +125,7 @@ My company, home to **boxr**, **QuantumGrid OS** and more. Everything under the 
 
 <img src="stats/streak.svg?v=1" width="49%" alt="Contribution streak"/>
 <img src="stats/achievements.svg?v=1" width="49%" alt="Achievements"/>
-
+<a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=manit6752025&theme=tokyonight&column=-1&margin-w=8" width="98%" alt="GitHub trophies"/></a>
 <br/>
 
 <picture>
