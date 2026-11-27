@@ -2,7 +2,7 @@ name: Refresh stats
 
 on:
   schedule:
-    - cron: "0 */1 * * *"
+    - cron: "0 */3 * * *" # Runs every 3 hours
   workflow_dispatch:
   push:
     paths:
@@ -42,9 +42,18 @@ jobs:
           STATS_OUT: stats/org
         run: python3 scripts/generate_stats.py
 
+      - name: Generate Trophies Locally
+        uses: Erik-Donath/github-profile-trophy@feature/generate-svg
+        with:
+          username: manit6752025
+          output_path: stats/trophy.svg
+          token: ${{ secrets.STATS_TOKEN || secrets.GITHUB_TOKEN }}
+
       - name: Check every card was rebuilt
         run: |
-          for f in stats/stats.svg stats/langs.svg stats/streak.svg stats/achievements.svg stats/org/stats.svg stats/org/langs.svg stats/org/streak.svg stats/org/achievements.svg; do
+          for f in stats/stats.svg stats/langs.svg stats/streak.svg stats/achievements.svg \
+                   stats/org/stats.svg stats/org/langs.svg stats/org/streak.svg stats/org/achievements.svg \
+                   stats/trophy.svg; do
             test -s "$f" || { echo "Missing $f"; exit 1; }
           done
 
@@ -60,6 +69,6 @@ jobs:
           version=$(date +%s)
           sed -E -i "s#(stats/[A-Za-z/]+\.svg)(\?v=[0-9]+)?#\1?v=${version}#g" README.md
           git add README.md
-          git commit -m "refresh stats"
+          git commit -m "chore: refresh stats and trophies"
           git pull --rebase origin main
           git push
