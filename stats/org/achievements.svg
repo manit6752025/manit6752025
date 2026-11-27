@@ -1,26 +1,37 @@
-<svg width="450" height="200" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-    <linearGradient id="neon" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%" stop-color="#00D4FF"/>
-        <stop offset="100%" stop-color="#6C3BFF"/>
-    </linearGradient>
-    <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-        <circle cx="2" cy="2" r="1" fill="#ffffff" opacity="0.05"/>
-    </pattern>
-</defs>
-    <rect width="100%" height="100%" fill="#090A0F" rx="10" stroke="url(#neon)" stroke-width="2"/>
-    <rect width="100%" height="100%" fill="url(#dots)" rx="10"/>
-    <text x="20" y="30" fill="#00D4FF" font-family="sans-serif" font-size="18" font-weight="bold">Achievements</text><polygon points="55,80 80,65 105,80 105,110 80,125 55,110" fill="#0d1117" stroke="url(#neon)" stroke-width="2"/>
-        <text x="80" y="95" fill="#c9d1d9" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle">0</text>
-        <text x="80" y="140" fill="#8b949e" font-family="sans-serif" font-size="10" text-anchor="middle">COMMITS</text><polygon points="120,80 145,65 170,80 170,110 145,125 120,110" fill="#0d1117" stroke="url(#neon)" stroke-width="2"/>
-        <text x="145" y="95" fill="#c9d1d9" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle">28</text>
-        <text x="145" y="140" fill="#8b949e" font-family="sans-serif" font-size="10" text-anchor="middle">STARS</text><polygon points="185,80 210,65 235,80 235,110 210,125 185,110" fill="#0d1117" stroke="url(#neon)" stroke-width="2"/>
-        <text x="210" y="95" fill="#c9d1d9" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle">4</text>
-        <text x="210" y="140" fill="#8b949e" font-family="sans-serif" font-size="10" text-anchor="middle">REPOS</text><polygon points="250,80 275,65 300,80 300,110 275,125 250,110" fill="#0d1117" stroke="url(#neon)" stroke-width="2"/>
-        <text x="275" y="95" fill="#c9d1d9" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle">3</text>
-        <text x="275" y="140" fill="#8b949e" font-family="sans-serif" font-size="10" text-anchor="middle">FOLLOWERS</text><polygon points="315,80 340,65 365,80 365,110 340,125 315,110" fill="#0d1117" stroke="url(#neon)" stroke-width="2"/>
-        <text x="340" y="95" fill="#c9d1d9" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle">11</text>
-        <text x="340" y="140" fill="#8b949e" font-family="sans-serif" font-size="10" text-anchor="middle">STREAK</text><polygon points="380,80 405,65 430,80 430,110 405,125 380,110" fill="#0d1117" stroke="url(#neon)" stroke-width="2"/>
-        <text x="405" y="95" fill="#c9d1d9" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle">26</text>
-        <text x="405" y="140" fill="#8b949e" font-family="sans-serif" font-size="10" text-anchor="middle">MERGED</text>
-    </svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="495" height="210" viewBox="0 0 495 210"><style>
+text{font-family:'JetBrains Mono','Fira Code','Segoe UI',monospace}
+.t{fill:#00D4FF;font-size:15px;font-weight:700}
+.l{fill:#9AA0B4;font-size:11.5px}
+.v{fill:#FFFFFF;font-size:14px;font-weight:700}
+.big{fill:#FFFFFF;font-size:30px;font-weight:800}
+.row{opacity:0;animation:in .7s ease-out forwards}
+.pulse{animation:pulse 2.2s ease-in-out infinite}
+.bar{transform-box:fill-box;transform-origin:left center;transform:scaleX(0);animation:grow 1.3s cubic-bezier(.2,.8,.2,1) forwards}
+.spin{transform-box:fill-box;transform-origin:center;animation:spin 14s linear infinite}
+.cur{animation:blink 1s steps(1) infinite}
+.ring{stroke-dashoffset:var(--c);animation:ring 1.8s ease-out .4s forwards}
+.lap{stroke-dasharray:30 70;animation:lap 5s linear infinite}
+.scan{animation:scan 4s linear infinite}
+.sw{animation:sweep 5s linear infinite}
+.flame{transform-box:fill-box;transform-origin:center bottom;animation:flame 1.2s ease-in-out infinite}
+.pop{opacity:0;transform-box:fill-box;transform-origin:center;animation:pop .6s cubic-bezier(.2,1.4,.4,1) forwards}
+.draw{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 2.5s ease-out .5s forwards}
+@keyframes in{from{opacity:0;transform:translateX(-16px)}to{opacity:1;transform:translateX(0)}}
+@keyframes pulse{0%,100%{opacity:.45}50%{opacity:1}}
+@keyframes grow{to{transform:scaleX(1)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+@keyframes ring{to{stroke-dashoffset:var(--o)}}
+@keyframes lap{to{stroke-dashoffset:-100}}
+@keyframes scan{from{transform:translateY(-4px)}to{transform:translateY(320px)}}
+@keyframes sweep{from{transform:translateX(-140px)}to{transform:translateX(900px)}}
+@keyframes float{0%{transform:translateY(0);opacity:0}15%{opacity:.9}100%{transform:translateY(-260px);opacity:0}}
+@keyframes flame{0%,100%{transform:scale(1,1)}50%{transform:scale(1.12,.92)}}
+@keyframes pop{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:scale(1)}}
+@keyframes draw{to{stroke-dashoffset:0}}
+</style><defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#090A0F"/><stop offset=".6" stop-color="#14213D"/><stop offset="1" stop-color="#241466"/></linearGradient>
+<linearGradient id="ac" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#00D4FF"/><stop offset="1" stop-color="#6C3BFF"/></linearGradient>
+<linearGradient id="sw" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".08"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<filter id="gl" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs><clipPath id="c"><rect width="495" height="210" rx="14"/></clipPath><rect x=".5" y=".5" width="494" height="209" rx="14" fill="url(#bg)"/><g clip-path="url(#c)"><circle cx="17" cy="206" r="1.2" fill="#00D4FF" style="animation:float 3s linear 0.00s infinite"/><circle cx="70" cy="206" r="1.8" fill="#6C3BFF" style="animation:float 4s linear 0.45s infinite"/><circle cx="123" cy="206" r="2.4" fill="#00D4FF" style="animation:float 5s linear 0.90s infinite"/><circle cx="176" cy="206" r="1.2" fill="#6C3BFF" style="animation:float 6s linear 1.35s infinite"/><circle cx="229" cy="206" r="1.8" fill="#00D4FF" style="animation:float 3s linear 1.80s infinite"/><circle cx="282" cy="206" r="2.4" fill="#6C3BFF" style="animation:float 4s linear 2.25s infinite"/><circle cx="335" cy="206" r="1.2" fill="#00D4FF" style="animation:float 5s linear 2.70s infinite"/><circle cx="388" cy="206" r="1.8" fill="#6C3BFF" style="animation:float 6s linear 3.15s infinite"/><circle cx="441" cy="206" r="2.4" fill="#00D4FF" style="animation:float 3s linear 3.60s infinite"/><circle cx="494" cy="206" r="1.2" fill="#6C3BFF" style="animation:float 4s linear 4.05s infinite"/><circle cx="52" cy="206" r="1.8" fill="#00D4FF" style="animation:float 5s linear 4.50s infinite"/><circle cx="105" cy="206" r="2.4" fill="#6C3BFF" style="animation:float 6s linear 4.95s infinite"/><circle cx="158" cy="206" r="1.2" fill="#00D4FF" style="animation:float 3s linear 5.40s infinite"/><circle cx="211" cy="206" r="1.8" fill="#6C3BFF" style="animation:float 4s linear 5.85s infinite"/><rect class="scan" x="0" y="0" width="495" height="2" fill="#00D4FF" opacity=".18"/><rect class="sw" x="0" y="0" width="140" height="210" fill="url(#sw)"/><text x="24" y="34" class="t">Achievements</text><rect class="cur" x="138" y="21" width="8" height="15" fill="#00D4FF"/><g class="pop" style="animation-delay:0.00s"><polygon points="74.5,97.0 74.5,123.0 52.0,136.0 29.5,123.0 29.5,97.0 52.0,84.0" fill="#00D4FF" fill-opacity=".12" stroke="#00D4FF" stroke-opacity=".5" stroke-width="1.5"/><text x="52" y="112" text-anchor="middle" class="v">4</text><text x="52" y="152" text-anchor="middle" class="l" style="font-size:8px">REPOS</text></g><g class="pop" style="animation-delay:0.10s"><polygon points="152.5,97.0 152.5,123.0 130.0,136.0 107.5,123.0 107.5,97.0 130.0,84.0" fill="#6C3BFF" fill-opacity=".12" stroke="#6C3BFF" stroke-opacity=".5" stroke-width="1.5"/><text x="130" y="112" text-anchor="middle" class="v">28</text><text x="130" y="152" text-anchor="middle" class="l" style="font-size:8px">STARS</text></g><g class="pop" style="animation-delay:0.20s"><polygon points="230.5,97.0 230.5,123.0 208.0,136.0 185.5,123.0 185.5,97.0 208.0,84.0" fill="#3FA9FF" fill-opacity=".12" stroke="#3FA9FF" stroke-opacity=".5" stroke-width="1.5"/><text x="208" y="112" text-anchor="middle" class="v">4,608</text><text x="208" y="152" text-anchor="middle" class="l" style="font-size:8px">COMMITS</text></g><g class="pop" style="animation-delay:0.30s"><polygon points="308.5,97.0 308.5,123.0 286.0,136.0 263.5,123.0 263.5,97.0 286.0,84.0" fill="#9B6BFF" fill-opacity=".12" stroke="#9B6BFF" stroke-opacity=".5" stroke-width="1.5"/><text x="286" y="112" text-anchor="middle" class="v">3</text><text x="286" y="152" text-anchor="middle" class="l" style="font-size:8px">FOLLOWERS</text></g><g class="pop" style="animation-delay:0.40s"><polygon points="386.5,97.0 386.5,123.0 364.0,136.0 341.5,123.0 341.5,97.0 364.0,84.0" fill="#00A6A6" fill-opacity=".12" stroke="#00A6A6" stroke-opacity=".5" stroke-width="1.5"/><text x="364" y="112" text-anchor="middle" class="v">26</text><text x="364" y="152" text-anchor="middle" class="l" style="font-size:8px">MERGED</text></g><g class="pop" style="animation-delay:0.50s"><polygon points="464.5,97.0 464.5,123.0 442.0,136.0 419.5,123.0 419.5,97.0 442.0,84.0" fill="#B38CFF" fill-opacity=".12" stroke="#B38CFF" stroke-opacity=".5" stroke-width="1.5"/><text x="442" y="112" text-anchor="middle" class="v">18</text><text x="442" y="152" text-anchor="middle" class="l" style="font-size:8px">ISSUES</text></g></g><rect x=".5" y=".5" width="494" height="209" rx="14" fill="none" stroke="#6C3BFF" stroke-opacity=".4"/><rect class="lap" pathLength="100" x=".5" y=".5" width="494" height="209" rx="14" fill="none" stroke="url(#ac)" stroke-width="2" filter="url(#gl)"/></svg>

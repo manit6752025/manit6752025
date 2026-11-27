@@ -1,22 +1,37 @@
-<svg width="450" height="200" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-    <linearGradient id="neon" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%" stop-color="#00D4FF"/>
-        <stop offset="100%" stop-color="#6C3BFF"/>
-    </linearGradient>
-    <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-        <circle cx="2" cy="2" r="1" fill="#ffffff" opacity="0.05"/>
-    </pattern>
-</defs>
-    <rect width="100%" height="100%" fill="#090A0F" rx="10" stroke="url(#neon)" stroke-width="2"/>
-    <rect width="100%" height="100%" fill="url(#dots)" rx="10"/>
-    <text x="20" y="30" fill="#00D4FF" font-family="sans-serif" font-size="18" font-weight="bold">Contribution Streak</text>
-    <text x="30" y="80" fill="#c9d1d9" font-family="sans-serif" font-size="32" font-weight="bold">8,120</text>
-    <text x="30" y="100" fill="#8b949e" font-family="sans-serif" font-size="11">CONTRIBUTIONS</text>
-    <text x="180" y="80" fill="#c9d1d9" font-family="sans-serif" font-size="32" font-weight="bold">11</text>
-    <text x="180" y="100" fill="#8b949e" font-family="sans-serif" font-size="11">LONGEST STREAK</text>
-    <circle cx="370" cy="80" r="45" fill="none" stroke="url(#neon)" stroke-width="4"/>
-    <text x="370" y="82" fill="#c9d1d9" font-family="sans-serif" font-size="22" font-weight="bold" text-anchor="middle">11</text>
-    <text x="370" y="100" fill="#8b949e" font-family="sans-serif" font-size="9" text-anchor="middle">CURRENT STREAK</text>
-    <polyline points="20.0,150.0 33.666666666666664,150.0 47.33333333333333,149.92537313432837 61.0,150.0 74.66666666666666,150.0 88.33333333333333,150.0 102.0,150.0 115.66666666666666,150.0 129.33333333333331,149.8507462686567 143.0,150.0 156.66666666666666,150.0 170.33333333333331,150.0 184.0,150.0 197.66666666666666,150.0 211.33333333333331,148.33955223880596 225.0,147.57462686567163 238.66666666666666,147.3134328358209 252.33333333333331,149.92537313432837 266.0,150.0 279.66666666666663,147.46268656716418 293.3333333333333,148.8992537313433 307.0,110.0 320.66666666666663,112.92910447761193 334.3333333333333,135.41044776119404 348.0,134.77611940298507 361.66666666666663,147.03358208955223 375.3333333333333,149.88805970149255 389.0,149.88805970149255 402.66666666666663,148.2089552238806 416.3333333333333,148.52611940298507" fill="none" stroke="url(#neon)" stroke-width="2" stroke-dasharray="2,2"/>
-    </svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="495" height="210" viewBox="0 0 495 210"><style>
+text{font-family:'JetBrains Mono','Fira Code','Segoe UI',monospace}
+.t{fill:#00D4FF;font-size:15px;font-weight:700}
+.l{fill:#9AA0B4;font-size:11.5px}
+.v{fill:#FFFFFF;font-size:14px;font-weight:700}
+.big{fill:#FFFFFF;font-size:30px;font-weight:800}
+.row{opacity:0;animation:in .7s ease-out forwards}
+.pulse{animation:pulse 2.2s ease-in-out infinite}
+.bar{transform-box:fill-box;transform-origin:left center;transform:scaleX(0);animation:grow 1.3s cubic-bezier(.2,.8,.2,1) forwards}
+.spin{transform-box:fill-box;transform-origin:center;animation:spin 14s linear infinite}
+.cur{animation:blink 1s steps(1) infinite}
+.ring{stroke-dashoffset:var(--c);animation:ring 1.8s ease-out .4s forwards}
+.lap{stroke-dasharray:30 70;animation:lap 5s linear infinite}
+.scan{animation:scan 4s linear infinite}
+.sw{animation:sweep 5s linear infinite}
+.flame{transform-box:fill-box;transform-origin:center bottom;animation:flame 1.2s ease-in-out infinite}
+.pop{opacity:0;transform-box:fill-box;transform-origin:center;animation:pop .6s cubic-bezier(.2,1.4,.4,1) forwards}
+.draw{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 2.5s ease-out .5s forwards}
+@keyframes in{from{opacity:0;transform:translateX(-16px)}to{opacity:1;transform:translateX(0)}}
+@keyframes pulse{0%,100%{opacity:.45}50%{opacity:1}}
+@keyframes grow{to{transform:scaleX(1)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+@keyframes ring{to{stroke-dashoffset:var(--o)}}
+@keyframes lap{to{stroke-dashoffset:-100}}
+@keyframes scan{from{transform:translateY(-4px)}to{transform:translateY(320px)}}
+@keyframes sweep{from{transform:translateX(-140px)}to{transform:translateX(900px)}}
+@keyframes float{0%{transform:translateY(0);opacity:0}15%{opacity:.9}100%{transform:translateY(-260px);opacity:0}}
+@keyframes flame{0%,100%{transform:scale(1,1)}50%{transform:scale(1.12,.92)}}
+@keyframes pop{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:scale(1)}}
+@keyframes draw{to{stroke-dashoffset:0}}
+</style><defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#090A0F"/><stop offset=".6" stop-color="#14213D"/><stop offset="1" stop-color="#241466"/></linearGradient>
+<linearGradient id="ac" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#00D4FF"/><stop offset="1" stop-color="#6C3BFF"/></linearGradient>
+<linearGradient id="sw" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".08"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<filter id="gl" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs><clipPath id="c"><rect width="495" height="210" rx="14"/></clipPath><rect x=".5" y=".5" width="494" height="209" rx="14" fill="url(#bg)"/><g clip-path="url(#c)"><circle cx="17" cy="206" r="1.2" fill="#00D4FF" style="animation:float 3s linear 0.00s infinite"/><circle cx="70" cy="206" r="1.8" fill="#6C3BFF" style="animation:float 4s linear 0.45s infinite"/><circle cx="123" cy="206" r="2.4" fill="#00D4FF" style="animation:float 5s linear 0.90s infinite"/><circle cx="176" cy="206" r="1.2" fill="#6C3BFF" style="animation:float 6s linear 1.35s infinite"/><circle cx="229" cy="206" r="1.8" fill="#00D4FF" style="animation:float 3s linear 1.80s infinite"/><circle cx="282" cy="206" r="2.4" fill="#6C3BFF" style="animation:float 4s linear 2.25s infinite"/><circle cx="335" cy="206" r="1.2" fill="#00D4FF" style="animation:float 5s linear 2.70s infinite"/><circle cx="388" cy="206" r="1.8" fill="#6C3BFF" style="animation:float 6s linear 3.15s infinite"/><circle cx="441" cy="206" r="2.4" fill="#00D4FF" style="animation:float 3s linear 3.60s infinite"/><circle cx="494" cy="206" r="1.2" fill="#6C3BFF" style="animation:float 4s linear 4.05s infinite"/><circle cx="52" cy="206" r="1.8" fill="#00D4FF" style="animation:float 5s linear 4.50s infinite"/><circle cx="105" cy="206" r="2.4" fill="#6C3BFF" style="animation:float 6s linear 4.95s infinite"/><circle cx="158" cy="206" r="1.2" fill="#00D4FF" style="animation:float 3s linear 5.40s infinite"/><circle cx="211" cy="206" r="1.8" fill="#6C3BFF" style="animation:float 4s linear 5.85s infinite"/><rect class="scan" x="0" y="0" width="495" height="2" fill="#00D4FF" opacity=".18"/><rect class="sw" x="0" y="0" width="140" height="210" fill="url(#sw)"/><text x="24" y="34" class="t">Commit Streak</text><rect class="cur" x="148" y="21" width="8" height="15" fill="#00D4FF"/><rect x="24" y="52" width="447" height="1" fill="#FFFFFF" fill-opacity=".06"/><text x="24" y="88" class="big">4,428</text><text x="24" y="104" class="l">COMMITS (1 YR)</text><text x="200" y="88" class="big">10</text><text x="200" y="104" class="l">LONGEST STREAK</text><g transform="translate(400,80)"><circle r="36" fill="none" stroke="#FFFFFF" stroke-opacity=".06" stroke-width="6"/><circle class="ring" r="36" fill="none" stroke="url(#ac)" stroke-width="6" stroke-linecap="round" stroke-dasharray="226.2" style="--c:226.2;--o:0.0;transform:rotate(-90deg);transform-box:fill-box;transform-origin:center"/><text y="0" text-anchor="middle" class="v">10</text><text y="14" text-anchor="middle" class="l" style="font-size:7px">CURRENT STREAK</text></g><polyline class="draw" points="24.0,192.0 39.4,192.0 54.8,192.0 70.2,192.0 85.7,192.0 101.1,192.0 116.5,192.0 131.9,192.0 147.3,192.0 162.7,191.9 178.1,192.0 193.6,192.0 209.0,192.0 224.4,192.0 239.8,192.0 255.2,192.0 270.6,192.0 286.0,192.0 301.4,192.0 316.9,192.0 332.3,191.3 347.7,191.6 363.1,158.0 378.5,164.4 393.9,182.4 409.3,186.8 424.8,190.1 440.2,191.9 455.6,191.9 471.0,192.0" fill="none" stroke="url(#ac)" stroke-width="2" stroke-linejoin="round"/></g><rect x=".5" y=".5" width="494" height="209" rx="14" fill="none" stroke="#6C3BFF" stroke-opacity=".4"/><rect class="lap" pathLength="100" x=".5" y=".5" width="494" height="209" rx="14" fill="none" stroke="url(#ac)" stroke-width="2" filter="url(#gl)"/></svg>
