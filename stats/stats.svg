@@ -1,37 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="495" height="210" viewBox="0 0 495 210"><style>
-text{font-family:'JetBrains Mono','Fira Code','Segoe UI',monospace}
-.t{fill:#00D4FF;font-size:15px;font-weight:700}
-.l{fill:#9AA0B4;font-size:11.5px}
-.v{fill:#FFFFFF;font-size:14px;font-weight:700}
-.big{fill:#FFFFFF;font-size:30px;font-weight:800}
-.row{opacity:0;animation:in .7s ease-out forwards}
-.pulse{animation:pulse 2.2s ease-in-out infinite}
-.bar{transform-box:fill-box;transform-origin:left center;transform:scaleX(0);animation:grow 1.3s cubic-bezier(.2,.8,.2,1) forwards}
-.spin{transform-box:fill-box;transform-origin:center;animation:spin 14s linear infinite}
-.cur{animation:blink 1s steps(1) infinite}
-.ring{stroke-dashoffset:var(--c);animation:ring 1.8s ease-out .4s forwards}
-.lap{stroke-dasharray:30 70;animation:lap 5s linear infinite}
-.scan{animation:scan 4s linear infinite}
-.sw{animation:sweep 5s linear infinite}
-.flame{transform-box:fill-box;transform-origin:center bottom;animation:flame 1.2s ease-in-out infinite}
-.pop{opacity:0;transform-box:fill-box;transform-origin:center;animation:pop .6s cubic-bezier(.2,1.4,.4,1) forwards}
-.draw{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 2.5s ease-out .5s forwards}
-@keyframes in{from{opacity:0;transform:translateX(-16px)}to{opacity:1;transform:translateX(0)}}
-@keyframes pulse{0%,100%{opacity:.45}50%{opacity:1}}
-@keyframes grow{to{transform:scaleX(1)}}
-@keyframes spin{to{transform:rotate(360deg)}}
-@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
-@keyframes ring{to{stroke-dashoffset:var(--o)}}
-@keyframes lap{to{stroke-dashoffset:-100}}
-@keyframes scan{from{transform:translateY(-4px)}to{transform:translateY(320px)}}
-@keyframes sweep{from{transform:translateX(-140px)}to{transform:translateX(900px)}}
-@keyframes float{0%{transform:translateY(0);opacity:0}15%{opacity:.9}100%{transform:translateY(-260px);opacity:0}}
-@keyframes flame{0%,100%{transform:scale(1,1)}50%{transform:scale(1.12,.92)}}
-@keyframes pop{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:scale(1)}}
-@keyframes draw{to{stroke-dashoffset:0}}
-</style><defs>
-<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#090A0F"/><stop offset=".6" stop-color="#14213D"/><stop offset="1" stop-color="#241466"/></linearGradient>
-<linearGradient id="ac" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#00D4FF"/><stop offset="1" stop-color="#6C3BFF"/></linearGradient>
-<linearGradient id="sw" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".08"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
-<filter id="gl" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-</defs><clipPath id="c"><rect width="495" height="210" rx="14"/></clipPath><rect x=".5" y=".5" width="494" height="209" rx="14" fill="url(#bg)"/><g clip-path="url(#c)"><circle cx="17" cy="206" r="1.2" fill="#00D4FF" style="animation:float 3s linear 0.00s infinite"/><circle cx="70" cy="206" r="1.8" fill="#6C3BFF" style="animation:float 4s linear 0.45s infinite"/><circle cx="123" cy="206" r="2.4" fill="#00D4FF" style="animation:float 5s linear 0.90s infinite"/><circle cx="176" cy="206" r="1.2" fill="#6C3BFF" style="animation:float 6s linear 1.35s infinite"/><circle cx="229" cy="206" r="1.8" fill="#00D4FF" style="animation:float 3s linear 1.80s infinite"/><circle cx="282" cy="206" r="2.4" fill="#6C3BFF" style="animation:float 4s linear 2.25s infinite"/><circle cx="335" cy="206" r="1.2" fill="#00D4FF" style="animation:float 5s linear 2.70s infinite"/><circle cx="388" cy="206" r="1.8" fill="#6C3BFF" style="animation:float 6s linear 3.15s infinite"/><circle cx="441" cy="206" r="2.4" fill="#00D4FF" style="animation:float 3s linear 3.60s infinite"/><circle cx="494" cy="206" r="1.2" fill="#6C3BFF" style="animation:float 4s linear 4.05s infinite"/><circle cx="52" cy="206" r="1.8" fill="#00D4FF" style="animation:float 5s linear 4.50s infinite"/><circle cx="105" cy="206" r="2.4" fill="#6C3BFF" style="animation:float 6s linear 4.95s infinite"/><circle cx="158" cy="206" r="1.2" fill="#00D4FF" style="animation:float 3s linear 5.40s infinite"/><circle cx="211" cy="206" r="1.8" fill="#6C3BFF" style="animation:float 4s linear 5.85s infinite"/><rect class="scan" x="0" y="0" width="495" height="2" fill="#00D4FF" opacity=".18"/><rect class="sw" x="0" y="0" width="140" height="210" fill="url(#sw)"/><text x="24" y="34" class="t">Manit&#x27;s GitHub Stats</text><rect class="cur" x="212" y="21" width="8" height="15" fill="#00D4FF"/><g class="row" style="animation-delay:0.00s"><text x="24" y="64" class="l">Total commits</text><text x="220" y="64" class="v" text-anchor="end">7,998</text><rect x="232" y="55" width="176" height="8" rx="4" fill="#FFFFFF" fill-opacity=".06"/><rect class="bar" x="232" y="55" width="176.0" height="8" rx="4" fill="url(#ac)" style="animation-delay:0.20s"/></g><g class="row" style="animation-delay:0.12s"><text x="24" y="88" class="l">Stars earned</text><text x="220" y="88" class="v" text-anchor="end">62</text><rect x="232" y="79" width="176" height="8" rx="4" fill="#FFFFFF" fill-opacity=".06"/><rect class="bar" x="232" y="79" width="81.1" height="8" rx="4" fill="url(#ac)" style="animation-delay:0.32s"/></g><g class="row" style="animation-delay:0.24s"><text x="24" y="112" class="l">Public repos</text><text x="220" y="112" class="v" text-anchor="end">9</text><rect x="232" y="103" width="176" height="8" rx="4" fill="#FFFFFF" fill-opacity=".06"/><rect class="bar" x="232" y="103" width="45.1" height="8" rx="4" fill="url(#ac)" style="animation-delay:0.44s"/></g><g class="row" style="animation-delay:0.36s"><text x="24" y="136" class="l">Followers</text><text x="220" y="136" class="v" text-anchor="end">7</text><rect x="232" y="127" width="176" height="8" rx="4" fill="#FFFFFF" fill-opacity=".06"/><rect class="bar" x="232" y="127" width="40.7" height="8" rx="4" fill="url(#ac)" style="animation-delay:0.56s"/></g><g class="row" style="animation-delay:0.48s"><text x="24" y="160" class="l">Merged PRs</text><text x="220" y="160" class="v" text-anchor="end">251</text><rect x="232" y="151" width="176" height="8" rx="4" fill="#FFFFFF" fill-opacity=".06"/><rect class="bar" x="232" y="151" width="108.3" height="8" rx="4" fill="url(#ac)" style="animation-delay:0.68s"/></g><g class="row" style="animation-delay:0.60s"><text x="24" y="184" class="l">Issues (12 mo)</text><text x="220" y="184" class="v" text-anchor="end">146</text><rect x="232" y="175" width="176" height="8" rx="4" fill="#FFFFFF" fill-opacity=".06"/><rect class="bar" x="232" y="175" width="97.7" height="8" rx="4" fill="url(#ac)" style="animation-delay:0.80s"/></g><g transform="translate(430,105)"><circle r="50" fill="none" stroke="#FFFFFF" stroke-opacity=".06" stroke-width="8"/><circle class="ring" r="50" fill="none" stroke="url(#ac)" stroke-width="8" stroke-linecap="round" stroke-dasharray="314.2" style="--c:314.2;--o:0.0;transform:rotate(-90deg);transform-box:fill-box;transform-origin:center"/><text y="-6" text-anchor="middle" class="l">RANK</text><text y="22" text-anchor="middle" class="big">S</text></g></g><rect x=".5" y=".5" width="494" height="209" rx="14" fill="none" stroke="#6C3BFF" stroke-opacity=".4"/><rect class="lap" pathLength="100" x=".5" y=".5" width="494" height="209" rx="14" fill="none" stroke="url(#ac)" stroke-width="2" filter="url(#gl)"/></svg>
+<svg width="450" height="200" xmlns="http://www.w3.org/2000/svg">
+    <rect width="100%" height="100%" fill="#090A0F" rx="10" stroke="#00D4FF" stroke-width="2"/>
+    <text x="20" y="30" fill="#00D4FF" font-family="sans-serif" font-size="18" font-weight="bold">Manit's GitHub Stats</text>
+    <g transform="translate(20, 60)" font-family="sans-serif" font-size="14" fill="#c9d1d9">
+        <text y="0">Total commits</text><text x="150" y="0" font-weight="bold">12,326</text>
+        <text y="25">Stars earned</text><text x="150" y="25" font-weight="bold">34</text>
+        <text y="50">Public repos</text><text x="150" y="50" font-weight="bold">5</text>
+        <text y="75">Followers</text><text x="150" y="75" font-weight="bold">4</text>
+        <text y="100">Merged PRs</text><text x="150" y="100" font-weight="bold">251</text>
+        <text y="125">Issues (closed)</text><text x="150" y="125" font-weight="bold">146</text>
+    </g>
+    <circle cx="370" cy="80" r="45" fill="none" stroke="#6C3BFF" stroke-width="4"/>
+    <text x="370" y="75" fill="#c9d1d9" font-family="sans-serif" font-size="12" text-anchor="middle">RANK</text>
+    <text x="370" y="95" fill="#c9d1d9" font-family="sans-serif" font-size="24" font-weight="bold" text-anchor="middle">S</text>
+    </svg>
