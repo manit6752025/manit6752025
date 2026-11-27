@@ -25,8 +25,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Clean stats directory contents
-        run: rm -rf stats/*
+      - name: Delete old stat cards
+        run: |
+          mkdir -p stats/org
+          find stats -type f -name '*.svg' -delete
 
       - name: Generate user cards
         continue-on-error: true
@@ -40,13 +42,24 @@ jobs:
           STATS_OUT: stats/org
         run: python3 scripts/generate_stats.py
 
-      - name: Commit and push
-        continue-on-error: true
+      - name: Check every card was rebuilt
+        run: |
+          for f in stats/stats.svg stats/langs.svg stats/streak.svg stats/achievements.svg stats/org/stats.svg stats/org/langs.svg stats/org/achievements.svg; do
+            test -s "$f" || { echo "Missing $f"; exit 1; }
+          done
+
+      - name: Stamp README and publish
         run: |
           git config user.name "Manit Arora"
           git config user.email "manit6752025@gmail.com"
-          git add stats
-          git diff --cached --quiet && exit 0
+          git add -A stats
+          if git diff --cached --quiet -- stats; then
+            echo "Cards unchanged, nothing to publish"
+            exit 0
+          fi
+          version=$(date +%s)
+          sed -E -i "s#(stats/[A-Za-z/]+\.svg)(\?v=[0-9]+)?#\1?v=${version}#g" README.md
+          git add README.md
           git commit -m "refresh stats"
-          git pull origin main
+          git pull --rebase origin main
           git push
