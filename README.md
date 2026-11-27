@@ -120,11 +120,11 @@ My company, home to **boxr**, **QuantumGrid OS** and more. Everything under the 
 
 <br/>
 
-<img src="stats/stats.svg?v=1" width="49%" alt="GitHub stats"/>
-<img src="stats/langs.svg?v=1" width="49%" alt="Top languages"/>
+<img src="stats/stats.svg?v=1795816686" width="49%" alt="GitHub stats"/>
+<img src="stats/langs.svg?v=1795816686" width="49%" alt="Top languages"/>
 
-<img src="stats/streak.svg?v=1" width="49%" alt="Contribution streak"/>
-<img src="stats/achievements.svg?v=1" width="49%" alt="Achievements"/>
+<img src="stats/streak.svg?v=1795816686" width="49%" alt="Contribution streak"/>
+<img src="stats/achievements.svg?v=1795816686" width="49%" alt="Achievements"/>
 
 <br/>
 
@@ -153,11 +153,11 @@ My company, home to **boxr**, **QuantumGrid OS** and more. Everything under the 
 
 <h3>🏢 NetCore Technologies</h3>
 
-<img src="stats/org/stats.svg?v=1" width="49%" alt="NetCore Technologies stats"/>
-<img src="stats/org/langs.svg?v=1" width="49%" alt="NetCore Technologies languages"/>
+<img src="stats/org/stats.svg?v=1795816686" width="49%" alt="NetCore Technologies stats"/>
+<img src="stats/org/langs.svg?v=1795816686" width="49%" alt="NetCore Technologies languages"/>
 
-<img src="stats/org/streak.svg?v=1" width="49%" alt="NetCore Technologies contribution streak"/>
-<img src="stats/org/achievements.svg?v=1" width="49%" alt="NetCore Technologies achievements"/>
+<img src="stats/org/streak.svg?v=1795816686" width="49%" alt="NetCore Technologies contribution streak"/>
+<img src="stats/org/achievements.svg?v=1795816686" width="49%" alt="NetCore Technologies achievements"/>
 
 </div>
 
