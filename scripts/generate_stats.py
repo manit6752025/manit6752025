@@ -142,6 +142,76 @@ def paged(url):
     return items
 
 
+def day_key(ts):
+    return time.strftime("%Y-%m-%d", time.gmtime(ts))
+
+
+def commit_activity(full_name):
+    url = f"{API}/repos/{full_name}/stats/commit_activity"
+    headers = {"User-Agent": "stats-bot", "Accept": "application/vnd.github+json"}
+    if TOKEN:
+        headers["Authorization"] = "Bearer " + TOKEN
+    for attempt in range(4):
+        try:
+            req = urllib.request.Request(url, headers=headers)
+            with urllib.request.urlopen(req, timeout=25) as r:
+                body = r.read().decode()
+                if r.status == 204:
+                    return []
+                if r.status == 200 and body.strip():
+                    return json.loads(body)
+        except Exception as e:
+            log(e)
+            return None
+        time.sleep(3 * (attempt + 1))
+    return None
+
+
+def activity_by_day(repos):
+    cutoff = day_key(time.time() - 370 * 86400)
+    series = {}
+    done = 0
+    for r in repos:
+        if r.get("fork"):
+            continue
+        if (r.get("pushed_at") or "")[:10] < cutoff:
+            continue
+        weeks = commit_activity(r["full_name"])
+        if weeks is None:
+            continue
+        done += 1
+        for w in weeks:
+            for i, n in enumerate(w.get("days", [])):
+                if n:
+                    k = day_key(w["week"] + i * 86400)
+                    series[k] = series.get(k, 0) + n
+    return series, done
+
+
+def last_days(series, n=365):
+    now = time.time()
+    keys = [day_key(now - i * 86400) for i in range(n - 1, -1, -1)]
+    return keys, [series.get(k, 0) for k in keys]
+
+
+def my_commits(repos):
+    total = 0
+    mine = OWNER.lower()
+    for r in repos:
+        if r.get("fork"):
+            continue
+        try:
+            people = paged(f"{API}/repos/{r['full_name']}/contributors?anon=1")
+        except Exception as e:
+            log(e)
+            continue
+        for p in people:
+            who = (p.get("login") or "").lower()
+            if who == mine or p.get("type") == "Anonymous":
+                total += p.get("contributions", 0)
+    return total
+
+
 def collect_repos():
     if KIND == "user":
         sources = [f"{API}/users/{OWNER}/repos?type=owner"]
@@ -212,6 +282,8 @@ def refresh(d):
     if KIND != "user":
         total_commits = 0
         for r in repos:
+            if r.get("fork"):
+                continue
             try:
                 people = paged(f"{API}/repos/{r['full_name']}/contributors?anon=1")
                 total_commits += sum(p.get("contributions", 0) for p in people)
@@ -223,11 +295,25 @@ def refresh(d):
             d["merged"] = max(d["merged"], res.get("total_count", 0))
         except Exception as e:
             log(e)
+        try:
+            series, done = activity_by_day(repos)
+            if done:
+                _, counts = last_days(series)
+                d["total"] = sum(counts)
+                d["current"], d["longest"] = streaks(counts)
+                d["days"] = counts[-30:]
+        except Exception as e:
+            log(e)
         return
 
     try:
         res = call(f"{API}/search/commits?q=author:{OWNER}&per_page=1")
         d["commits"] = max(d["commits"], res.get("total_count", 0))
+    except Exception as e:
+        log(e)
+
+    try:
+        d["commits"] = max(d["commits"], my_commits(repos))
     except Exception as e:
         log(e)
 
@@ -238,20 +324,34 @@ def refresh(d):
         log(e)
 
     try:
-        q = "query($l:String!){user(login:$l){contributionsCollection{totalIssueContributions totalPullRequestContributions contributionCalendar{totalContributions weeks{contributionDays{contributionCount}}}}}}"
+        q = "query($l:String!){user(login:$l){contributionsCollection{totalIssueContributions totalPullRequestContributions contributionCalendar{totalContributions weeks{contributionDays{contributionCount date}}}}}}"
         res = call(API + "/graphql", {"query": q, "variables": {"l": OWNER}})
         c = res["data"]["user"]["contributionsCollection"]
         cal = c["contributionCalendar"]
-        days = [
-            x["contributionCount"]
+        cal_days = [
+            (x["date"], x["contributionCount"])
             for w in cal["weeks"]
             for x in w["contributionDays"]
         ]
-        d["total"] = cal["totalContributions"]
         d["prs"] = c["totalPullRequestContributions"]
         d["issues"] = c["totalIssueContributions"]
-        d["current"], d["longest"] = streaks(days)
-        d["days"] = days[-30:]
+        extra = {}
+        try:
+            org_repos = [
+                r for r in repos if r["owner"]["login"].lower() != OWNER.lower()
+            ]
+            extra, _ = activity_by_day(org_repos)
+        except Exception as e:
+            log(e)
+        merged = []
+        extra_total = 0
+        for date, n in cal_days:
+            e = extra.get(date, 0)
+            merged.append(max(n, e))
+            extra_total += max(0, e - n)
+        d["total"] = cal["totalContributions"] + extra_total
+        d["current"], d["longest"] = streaks(merged)
+        d["days"] = merged[-30:]
     except Exception as e:
         log(e)
 
@@ -397,11 +497,12 @@ def langs_svg(d):
 
 
 def streak_svg(d):
-    out = head("Contribution Streak")
+    org = KIND == "org"
+    out = head("Commit Streak" if org else "Contribution Streak")
     out += '<rect x="24" y="52" width="447" height="1" fill="#FFFFFF" fill-opacity=".06"/>'
     out += (
         f'<text x="24" y="88" class="big">{fmt(d["total"])}</text>'
-        f'<text x="24" y="104" class="l">CONTRIBUTIONS</text>'
+        f'<text x="24" y="104" class="l">{"COMMITS (1 YR)" if org else "CONTRIBUTIONS"}</text>'
         f'<text x="200" y="88" class="big">{fmt(d["longest"])}</text>'
         f'<text x="200" y="104" class="l">LONGEST STREAK</text>'
     )
@@ -495,10 +596,9 @@ def main():
     cards = {
         "stats.svg": stats_svg,
         "langs.svg": langs_svg,
+        "streak.svg": streak_svg,
         "achievements.svg": ach_svg,
     }
-    if KIND == "user":
-        cards["streak.svg"] = streak_svg
 
     for name, fn in cards.items():
         try:
