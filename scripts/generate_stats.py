@@ -1,614 +1,221 @@
-import json
-import math
 import os
-import sys
-import time
-import urllib.request
-from html import escape
+import json
+import requests
+from datetime import datetime
 
+GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
 OWNER = os.environ.get("STATS_OWNER", "manit6752025")
 KIND = os.environ.get("STATS_KIND", "user")
-TOKEN = os.environ.get("GITHUB_TOKEN", "")
-EXTRA_ORGS = [
-    o.strip()
-    for o in os.environ.get("STATS_EXTRA_ORGS", "NetCore-Technologies").split(",")
-    if o.strip()
-]
-OUT = os.environ.get("STATS_OUT", "stats")
-TITLE = os.environ.get(
-    "STATS_TITLE", "Manit's GitHub Stats" if KIND == "user" else OWNER + " Stats"
-)
-CACHE = os.path.join(OUT, "cache.json")
-API = "https://api.github.com"
-PALETTE = ["#00D4FF", "#6C3BFF", "#3FA9FF", "#9B6BFF", "#00A6A6", "#B38CFF"]
+OUT_DIR = os.environ.get("STATS_OUT", "stats")
+ORG_NAME = "NetCore-Technologies"
 
-DEFAULT = {
-    "commits": 0,
-    "stars": 0,
-    "repos": 0,
-    "followers": 0,
-    "prs": 0,
-    "merged": 0,
-    "issues": 0,
-    "forks": 0,
-    "issues_open": 0,
-    "total": 0,
-    "current": 0,
-    "longest": 0,
-    "days": [0] * 30,
-    "langs": [["Python", 100]],
+HEADERS = {
+    "Authorization": f"Bearer {GITHUB_TOKEN}",
+    "Accept": "application/vnd.github+json"
 }
 
-CSS = """
-text{font-family:'JetBrains Mono','Fira Code','Segoe UI',monospace}
-.t{fill:#00D4FF;font-size:15px;font-weight:700}
-.l{fill:#9AA0B4;font-size:11.5px}
-.v{fill:#FFFFFF;font-size:14px;font-weight:700}
-.big{fill:#FFFFFF;font-size:30px;font-weight:800}
-.row{opacity:0;animation:in .7s ease-out forwards}
-.pulse{animation:pulse 2.2s ease-in-out infinite}
-.bar{transform-box:fill-box;transform-origin:left center;transform:scaleX(0);animation:grow 1.3s cubic-bezier(.2,.8,.2,1) forwards}
-.spin{transform-box:fill-box;transform-origin:center;animation:spin 14s linear infinite}
-.cur{animation:blink 1s steps(1) infinite}
-.ring{stroke-dashoffset:var(--c);animation:ring 1.8s ease-out .4s forwards}
-.lap{stroke-dasharray:30 70;animation:lap 5s linear infinite}
-.scan{animation:scan 4s linear infinite}
-.sw{animation:sweep 5s linear infinite}
-.flame{transform-box:fill-box;transform-origin:center bottom;animation:flame 1.2s ease-in-out infinite}
-.pop{opacity:0;transform-box:fill-box;transform-origin:center;animation:pop .6s cubic-bezier(.2,1.4,.4,1) forwards}
-.draw{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 2.5s ease-out .5s forwards}
-@keyframes in{from{opacity:0;transform:translateX(-16px)}to{opacity:1;transform:translateX(0)}}
-@keyframes pulse{0%,100%{opacity:.45}50%{opacity:1}}
-@keyframes grow{to{transform:scaleX(1)}}
-@keyframes spin{to{transform:rotate(360deg)}}
-@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
-@keyframes ring{to{stroke-dashoffset:var(--o)}}
-@keyframes lap{to{stroke-dashoffset:-100}}
-@keyframes scan{from{transform:translateY(-4px)}to{transform:translateY(320px)}}
-@keyframes sweep{from{transform:translateX(-140px)}to{transform:translateX(900px)}}
-@keyframes float{0%{transform:translateY(0);opacity:0}15%{opacity:.9}100%{transform:translateY(-260px);opacity:0}}
-@keyframes flame{0%,100%{transform:scale(1,1)}50%{transform:scale(1.12,.92)}}
-@keyframes pop{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:scale(1)}}
-@keyframes draw{to{stroke-dashoffset:0}}
-"""
+os.makedirs(OUT_DIR, exist_ok=True)
 
-DEFS = """<defs>
-<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#090A0F"/><stop offset=".6" stop-color="#14213D"/><stop offset="1" stop-color="#241466"/></linearGradient>
-<linearGradient id="ac" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#00D4FF"/><stop offset="1" stop-color="#6C3BFF"/></linearGradient>
-<linearGradient id="sw" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".08"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
-<filter id="gl" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-</defs>"""
+def api_get(url):
+    res = requests.get(url, headers=HEADERS)
+    if res.status_code == 200:
+        return res.json()
+    return {}
 
+def api_graphql(query, variables):
+    res = requests.post("https://api.github.com/graphql", headers=HEADERS, json={"query": query, "variables": variables})
+    if res.status_code == 200:
+        return res.json().get("data", {})
+    return {}
 
-def log(e):
-    print("stats warning:", e, getattr(e, "url", ""), file=sys.stderr)
-
-
-def call(url, body=None):
-    headers = {"User-Agent": "stats-bot", "Accept": "application/vnd.github+json"}
-    if TOKEN:
-        headers["Authorization"] = "Bearer " + TOKEN
-    data = None
-    if body is not None:
-        data = json.dumps(body).encode()
-        headers["Content-Type"] = "application/json"
-    last = None
-    for attempt in range(3):
-        try:
-            req = urllib.request.Request(url, data=data, headers=headers)
-            with urllib.request.urlopen(req, timeout=25) as r:
-                return json.loads(r.read().decode())
-        except Exception as e:
-            last = e
-            time.sleep(2 * (attempt + 1))
-    raise last
-
-
-def load_cache():
-    merged = dict(DEFAULT)
-    try:
-        with open(CACHE, encoding="utf-8") as f:
-            merged.update(json.load(f))
-    except Exception:
-        pass
-    return merged
-
-
-def streaks(counts):
-    longest = run = 0
-    for n in counts:
-        run = run + 1 if n > 0 else 0
-        longest = max(longest, run)
-    seq = list(counts)
-    if seq and seq[-1] == 0:
-        seq = seq[:-1]
-    cur = 0
-    for n in reversed(seq):
-        if n > 0:
-            cur += 1
-        else:
-            break
-    return cur, longest
-
-
-def paged(url):
-    items = []
-    sep = "&" if "?" in url else "?"
-    for page in range(1, 11):
-        batch = call(f"{url}{sep}per_page=100&page={page}")
-        items += batch
-        if len(batch) < 100:
-            break
-    return items
-
-
-def day_key(ts):
-    return time.strftime("%Y-%m-%d", time.gmtime(ts))
-
-
-def commit_activity(full_name):
-    url = f"{API}/repos/{full_name}/stats/commit_activity"
-    headers = {"User-Agent": "stats-bot", "Accept": "application/vnd.github+json"}
-    if TOKEN:
-        headers["Authorization"] = "Bearer " + TOKEN
-    for attempt in range(4):
-        try:
-            req = urllib.request.Request(url, headers=headers)
-            with urllib.request.urlopen(req, timeout=25) as r:
-                body = r.read().decode()
-                if r.status == 204:
-                    return []
-                if r.status == 200 and body.strip():
-                    return json.loads(body)
-        except Exception as e:
-            log(e)
-            return None
-        time.sleep(3 * (attempt + 1))
-    return None
-
-
-def activity_by_day(repos):
-    cutoff = day_key(time.time() - 370 * 86400)
-    series = {}
-    done = 0
-    for r in repos:
-        if r.get("fork"):
-            continue
-        if (r.get("pushed_at") or "")[:10] < cutoff:
-            continue
-        weeks = commit_activity(r["full_name"])
-        if weeks is None:
-            continue
-        done += 1
-        for w in weeks:
-            for i, n in enumerate(w.get("days", [])):
-                if n:
-                    k = day_key(w["week"] + i * 86400)
-                    series[k] = series.get(k, 0) + n
-    return series, done
-
-
-def last_days(series, n=365):
-    now = time.time()
-    keys = [day_key(now - i * 86400) for i in range(n - 1, -1, -1)]
-    return keys, [series.get(k, 0) for k in keys]
-
-
-def my_commits(repos):
-    total = 0
-    mine = OWNER.lower()
-    for r in repos:
-        if r.get("fork"):
-            continue
-        try:
-            people = paged(f"{API}/repos/{r['full_name']}/contributors?anon=1")
-        except Exception as e:
-            log(e)
-            continue
-        for p in people:
-            who = (p.get("login") or "").lower()
-            if who == mine or p.get("type") == "Anonymous":
-                total += p.get("contributions", 0)
-    return total
-
-
-def collect_repos():
-    if KIND == "user":
-        sources = [f"{API}/users/{OWNER}/repos?type=owner"]
-        sources += [f"{API}/orgs/{o}/repos?type=all" for o in EXTRA_ORGS]
-    else:
-        sources = [f"{API}/orgs/{OWNER}/repos?type=all"]
-    found = {}
-    for url in sources:
-        try:
-            for r in paged(url):
-                found.setdefault(r["full_name"], r)
-        except Exception as e:
-            log(e)
-    if KIND == "user" and TOKEN:
-        mine = {OWNER.lower()} | {o.lower() for o in EXTRA_ORGS}
-        try:
-            for r in paged(
-                f"{API}/user/repos?affiliation=owner,organization_member&visibility=all"
-            ):
-                if r["owner"]["login"].lower() in mine:
-                    found.setdefault(r["full_name"], r)
-        except Exception as e:
-            log(e)
-    return list(found.values())
-
-
-def refresh(d):
-    path = "users" if KIND == "user" else "orgs"
-    try:
-        info = call(f"{API}/{path}/{OWNER}")
-        d["followers"] = info.get("followers", d["followers"])
-        if KIND == "user":
-            for org in EXTRA_ORGS:
-                try:
-                    d["followers"] += call(f"{API}/orgs/{org}").get("followers", 0)
-                except Exception as e:
-                    log(e)
-    except Exception as e:
-        log(e)
-
-    repos = []
-    try:
-        repos = collect_repos()
-        if repos:
-            d["repos"] = sum(1 for r in repos if not r.get("private"))
-            d["stars"] = sum(r.get("stargazers_count", 0) for r in repos)
-            d["forks"] = sum(r.get("forks_count", 0) for r in repos)
-            d["issues_open"] = sum(r.get("open_issues_count", 0) for r in repos)
-    except Exception as e:
-        log(e)
-
-    counts = {}
-    own = sorted(
-        (x for x in repos if not x.get("fork")),
-        key=lambda x: -x.get("stargazers_count", 0),
-    )
-    for r in own[:40]:
-        try:
-            for k, v in call(r["languages_url"]).items():
-                counts[k] = counts.get(k, 0) + v
-        except Exception as e:
-            log(e)
-    if counts:
-        total = sum(counts.values())
-        top = sorted(counts.items(), key=lambda kv: -kv[1])[:6]
-        d["langs"] = [[k, round(v * 100 / total, 1)] for k, v in top]
-
-    if KIND != "user":
-        total_commits = 0
-        for r in repos:
-            if r.get("fork"):
-                continue
-            try:
-                people = paged(f"{API}/repos/{r['full_name']}/contributors?anon=1")
-                total_commits += sum(p.get("contributions", 0) for p in people)
-            except Exception as e:
-                log(e)
-        d["commits"] = max(d["commits"], total_commits)
-        try:
-            res = call(f"{API}/search/issues?q=org:{OWNER}+type:pr+is:merged&per_page=1")
-            d["merged"] = max(d["merged"], res.get("total_count", 0))
-        except Exception as e:
-            log(e)
-        try:
-            series, done = activity_by_day(repos)
-            if done:
-                _, counts = last_days(series)
-                d["total"] = sum(counts)
-                d["current"], d["longest"] = streaks(counts)
-                d["days"] = counts[-30:]
-        except Exception as e:
-            log(e)
-        return
-
-    try:
-        res = call(f"{API}/search/commits?q=author:{OWNER}&per_page=1")
-        d["commits"] = max(d["commits"], res.get("total_count", 0))
-    except Exception as e:
-        log(e)
-
-    try:
-        d["commits"] = max(d["commits"], my_commits(repos))
-    except Exception as e:
-        log(e)
-
-    try:
-        res = call(f"{API}/search/issues?q=author:{OWNER}+type:pr+is:merged&per_page=1")
-        d["merged"] = max(d["merged"], res.get("total_count", 0))
-    except Exception as e:
-        log(e)
-
-    try:
-        q = "query($l:String!){user(login:$l){contributionsCollection{totalIssueContributions totalPullRequestContributions contributionCalendar{totalContributions weeks{contributionDays{contributionCount date}}}}}}"
-        res = call(API + "/graphql", {"query": q, "variables": {"l": OWNER}})
-        c = res["data"]["user"]["contributionsCollection"]
-        cal = c["contributionCalendar"]
-        cal_days = [
-            (x["date"], x["contributionCount"])
-            for w in cal["weeks"]
-            for x in w["contributionDays"]
-        ]
-        d["prs"] = c["totalPullRequestContributions"]
-        d["issues"] = c["totalIssueContributions"]
-        extra = {}
-        try:
-            org_repos = [
-                r for r in repos if r["owner"]["login"].lower() != OWNER.lower()
-            ]
-            extra, _ = activity_by_day(org_repos)
-        except Exception as e:
-            log(e)
-        merged = []
-        extra_total = 0
-        for date, n in cal_days:
-            e = extra.get(date, 0)
-            merged.append(max(n, e))
-            extra_total += max(0, e - n)
-        d["total"] = cal["totalContributions"] + extra_total
-        d["current"], d["longest"] = streaks(merged)
-        d["days"] = merged[-30:]
-    except Exception as e:
-        log(e)
-
-
-def fmt(n):
-    try:
-        return f"{int(n):,}"
-    except Exception:
-        return str(n)
-
-
-def grade(sc):
-    for g, t in (("S", 8000), ("A+", 3000), ("A", 1500), ("B+", 700), ("B", 300)):
-        if sc >= t:
-            return g
-    return "C"
-
-
-def score(d):
-    if KIND == "org":
-        return (
-            d["stars"] * 8
-            + d["forks"] * 4
-            + d["followers"] * 4
-            + d["repos"] * 10
-        )
-    return (
-        d["commits"]
-        + d["stars"] * 8
-        + d["followers"] * 4
-        + d["prs"] * 3
-        + d["repos"] * 2
-    )
-
-
-def stat_rows(d):
-    if KIND == "org":
-        return [
-            ("Public repos", d["repos"]),
-            ("Stars earned", d["stars"]),
-            ("Total commits", d["commits"]),
-            ("Followers", d["followers"]),
-            ("Merged PRs", d["merged"]),
-            ("Open issues", d["issues_open"]),
-        ]
-    return [
-        ("Total commits", d["commits"]),
-        ("Stars earned", d["stars"]),
-        ("Public repos", d["repos"]),
-        ("Followers", d["followers"]),
-        ("Merged PRs", d["merged"]),
-        ("Issues (12 mo)", d["issues"]),
-    ]
-
-
-def head(text):
-    x = 24 + len(text) * 9.2 + 4
-    return (
-        f'<text x="24" y="34" class="t">{escape(text)}</text>'
-        f'<rect class="cur" x="{x:.0f}" y="21" width="8" height="15" fill="#00D4FF"/>'
-    )
-
-
-def frame(w, h, body):
-    dots = "".join(
-        f'<circle cx="{(i * 53 + 17) % w}" cy="{h - 4}" r="{1.2 + i % 3 * .6:.1f}" '
-        f'fill="{PALETTE[i % 2]}" '
-        f'style="animation:float {3 + i % 4}s linear {i * .45:.2f}s infinite"/>'
-        for i in range(14)
-    )
-    return (
-        f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}">'
-        f"<style>{CSS}</style>{DEFS}"
-        f'<clipPath id="c"><rect width="{w}" height="{h}" rx="14"/></clipPath>'
-        f'<rect x=".5" y=".5" width="{w - 1}" height="{h - 1}" rx="14" fill="url(#bg)"/>'
-        f'<g clip-path="url(#c)">{dots}'
-        f'<rect class="scan" x="0" y="0" width="{w}" height="2" fill="#00D4FF" opacity=".18"/>'
-        f'<rect class="sw" x="0" y="0" width="140" height="{h}" fill="url(#sw)"/>'
-        f"{body}</g>"
-        f'<rect x=".5" y=".5" width="{w - 1}" height="{h - 1}" rx="14" fill="none" stroke="#6C3BFF" stroke-opacity=".4"/>'
-        f'<rect class="lap" pathLength="100" x=".5" y=".5" width="{w - 1}" height="{h - 1}" rx="14" fill="none" stroke="url(#ac)" stroke-width="2" filter="url(#gl)"/>'
-        f"</svg>"
-    )
-
-
-def stats_svg(d):
-    rows = stat_rows(d)
-    top = max([v for _, v in rows] + [1])
-    out = head(TITLE)
-    for i, (k, v) in enumerate(rows):
-        y = 64 + i * 24
-        wb = max(4, 176 * math.log10(v + 1) / math.log10(top + 1))
-        dl = i * 0.12
-        out += (
-            f'<g class="row" style="animation-delay:{dl:.2f}s">'
-            f'<text x="24" y="{y}" class="l">{escape(k)}</text>'
-            f'<text x="220" y="{y}" class="v" text-anchor="end">{fmt(v)}</text>'
-            f'<rect x="232" y="{y - 9}" width="176" height="8" rx="4" fill="#FFFFFF" fill-opacity=".06"/>'
-            f'<rect class="bar" x="232" y="{y - 9}" width="{wb:.1f}" height="8" rx="4" fill="url(#ac)" style="animation-delay:{dl + 0.2:.2f}s"/>'
-            f"</g>"
-        )
-    sc = score(d)
-    frac = max(min(sc / 8000, 1), 0.05)
-    c = 2 * math.pi * 50
-    o = c * (1 - frac)
-    out += (
-        f'<g transform="translate(430,105)">'
-        f'<circle r="50" fill="none" stroke="#FFFFFF" stroke-opacity=".06" stroke-width="8"/>'
-        f'<circle class="ring" r="50" fill="none" stroke="url(#ac)" stroke-width="8" stroke-linecap="round" '
-        f'stroke-dasharray="{c:.1f}" style="--c:{c:.1f};--o:{o:.1f};transform:rotate(-90deg);transform-box:fill-box;transform-origin:center"/>'
-        f'<text y="-6" text-anchor="middle" class="l">RANK</text>'
-        f'<text y="22" text-anchor="middle" class="big">{grade(sc)}</text>'
-        f"</g>"
-    )
-    return frame(495, 210, out)
-
-
-def langs_svg(d):
-    langs = d["langs"]
-    out = head("Most Used Languages")
-    out += '<rect x="24" y="52" width="447" height="10" rx="5" fill="#FFFFFF" fill-opacity=".06"/>'
-    out += '<g clip-path="url(#c)">'
-    cum = 0.0
-    for i, (name, pct) in enumerate(langs):
-        wd = pct * 4.47
-        out += (
-            f'<rect x="{24 + cum * 4.47:.1f}" y="52" width="{wd:.1f}" height="10" '
-            f'fill="{PALETTE[i % len(PALETTE)]}"/>'
-        )
-        cum += pct
-    out += "</g>"
-    for i, (name, pct) in enumerate(langs):
-        x = 24 + (i % 2) * 225
-        y = 100 + (i // 2) * 34
-        out += (
-            f'<g class="row" style="animation-delay:{i * 0.1:.2f}s">'
-            f'<circle cx="{x + 6}" cy="{y - 4}" r="5" fill="{PALETTE[i % len(PALETTE)]}"/>'
-            f'<text x="{x + 18}" y="{y}" class="l">{escape(str(name))}</text>'
-            f'<text x="{x + 200}" y="{y}" class="v" text-anchor="end">{pct}%</text>'
-            f"</g>"
-        )
-    return frame(495, 210, out)
-
-
-def streak_svg(d):
-    org = KIND == "org"
-    out = head("Commit Streak" if org else "Contribution Streak")
-    out += '<rect x="24" y="52" width="447" height="1" fill="#FFFFFF" fill-opacity=".06"/>'
-    out += (
-        f'<text x="24" y="88" class="big">{fmt(d["total"])}</text>'
-        f'<text x="24" y="104" class="l">{"COMMITS (1 YR)" if org else "CONTRIBUTIONS"}</text>'
-        f'<text x="200" y="88" class="big">{fmt(d["longest"])}</text>'
-        f'<text x="200" y="104" class="l">LONGEST STREAK</text>'
-    )
-    frac = max(min(d["current"] / max(d["longest"], 1), 1), 0.06)
-    c = 2 * math.pi * 36
-    o = c * (1 - frac)
-    out += (
-        f'<g transform="translate(400,80)">'
-        f'<circle r="36" fill="none" stroke="#FFFFFF" stroke-opacity=".06" stroke-width="6"/>'
-        f'<circle class="ring" r="36" fill="none" stroke="url(#ac)" stroke-width="6" stroke-linecap="round" '
-        f'stroke-dasharray="{c:.1f}" style="--c:{c:.1f};--o:{o:.1f};transform:rotate(-90deg);transform-box:fill-box;transform-origin:center"/>'
-        f'<text y="0" text-anchor="middle" class="v">{fmt(d["current"])}</text>'
-        f'<text y="14" text-anchor="middle" class="l" style="font-size:7px">CURRENT STREAK</text>'
-        f"</g>"
-    )
-    days = d["days"] if len(d["days"]) > 1 else [0, 0]
-    m = max(days + [1])
-    step = 447 / (len(days) - 1)
-    pts = " ".join(
-        f"{24 + i * step:.1f},{192 - n / m * 34:.1f}" for i, n in enumerate(days)
-    )
-    out += (
-        f'<polyline class="draw" points="{pts}" fill="none" stroke="url(#ac)" stroke-width="2" stroke-linejoin="round"/>'
-    )
-    return frame(495, 210, out)
-
-
-def hexpts(cx, cy, r):
-    return " ".join(
-        f"{cx + r * math.cos(math.radians(60 * k - 30)):.1f},{cy + r * math.sin(math.radians(60 * k - 30)):.1f}"
-        for k in range(6)
-    )
-
-
-def ach_svg(d):
-    if KIND == "org":
-        items = [
-            ("REPOS", d["repos"]),
-            ("STARS", d["stars"]),
-            ("COMMITS", d["commits"]),
-            ("FOLLOWERS", d["followers"]),
-            ("MERGED", d["merged"]),
-            ("ISSUES", d["issues_open"]),
-        ]
-    else:
-        items = [
-            ("COMMITS", d["commits"]),
-            ("STARS", d["stars"]),
-            ("REPOS", d["repos"]),
-            ("FOLLOWERS", d["followers"]),
-            ("STREAK", d["longest"]),
-            ("MERGED", d["merged"]),
-        ]
-    out = head("Achievements")
-    for i, (label, val) in enumerate(items):
-        cx = 52 + i * 78
-        cy = 110
-        color = PALETTE[i % len(PALETTE)]
-        out += (
-            f'<g class="pop" style="animation-delay:{i * 0.1:.2f}s">'
-            f'<polygon points="{hexpts(cx, cy, 26)}" fill="{color}" fill-opacity=".12" '
-            f'stroke="{color}" stroke-opacity=".5" stroke-width="1.5"/>'
-            f'<text x="{cx}" y="{cy + 2}" text-anchor="middle" class="v">{fmt(val)}</text>'
-            f'<text x="{cx}" y="{cy + 42}" text-anchor="middle" class="l" style="font-size:8px">{label}</text>'
-            f"</g>"
-        )
-    return frame(495, 210, out)
-
-
-def write(name, svg):
-    try:
-        with open(os.path.join(OUT, name), "w", encoding="utf-8") as f:
-            f.write(svg)
-    except Exception as e:
-        log(e)
-
-
-def main():
-    os.makedirs(OUT, exist_ok=True)
-    d = load_cache()
-    try:
-        refresh(d)
-    except Exception as e:
-        log(e)
-    try:
-        with open(CACHE, "w", encoding="utf-8") as f:
-            json.dump(d, f)
-    except Exception as e:
-        log(e)
-
-    cards = {
-        "stats.svg": stats_svg,
-        "langs.svg": langs_svg,
-        "streak.svg": streak_svg,
-        "achievements.svg": ach_svg,
+# --- Data Fetching ---
+def get_user_stats(username):
+    user = api_get(f"https://api.github.com/users/{username}")
+    repos = api_get(f"https://api.github.com/users/{username}/repos?per_page=100")
+    
+    stars = sum(r.get("stargazers_count", 0) for r in repos) if isinstance(repos, list) else 0
+    followers = user.get("followers", 0)
+    public_repos = user.get("public_repos", 0)
+    
+    # PRs & Issues (Search API)
+    prs = api_get(f"https://api.github.com/search/issues?q=author:{username}+type:pr+is:merged&per_page=1").get("total_count", 0)
+    issues = api_get(f"https://api.github.com/search/issues?q=author:{username}+type:issue+is:closed&per_page=1").get("total_count", 0)
+    
+    # Commits
+    personal_commits = api_get(f"https://api.github.com/search/commits?q=author:{username}&per_page=1").get("total_count", 0)
+    org_commits = api_get(f"https://api.github.com/search/commits?q=author:{username}+org:{ORG_NAME}&per_page=1").get("total_count", 0)
+    
+    return {
+        "commits": personal_commits + org_commits if KIND == "user" else personal_commits,
+        "stars": stars,
+        "repos": public_repos,
+        "followers": followers,
+        "prs": prs,
+        "issues": issues
     }
 
-    for name, fn in cards.items():
-        try:
-            write(name, fn(d))
-        except Exception as e:
-            log(e)
+def get_org_stats(org):
+    org_data = api_get(f"https://api.github.com/orgs/{org}")
+    repos = api_get(f"https://api.github.com/orgs/{org}/repos?per_page=100")
+    
+    stars = sum(r.get("stargazers_count", 0) for r in repos) if isinstance(repos, list) else 0
+    followers = org_data.get("followers", 0)
+    public_repos = org_data.get("public_repos", 0)
+    
+    commits = api_get(f"https://api.github.com/search/commits?q=org:{org}&per_page=1").get("total_count", 0)
+    prs = api_get(f"https://api.github.com/search/issues?q=org:{org}+type:pr+is:merged&per_page=1").get("total_count", 0)
+    issues = api_get(f"https://api.github.com/search/issues?q=org:{org}+type:issue+is:closed&per_page=1").get("total_count", 0)
+    
+    return {
+        "commits": commits, "stars": stars, "repos": public_repos,
+        "followers": followers, "prs": prs, "issues": issues
+    }
 
+def get_languages(username, is_org=False):
+    repos = api_get(f"https://api.github.com/{'orgs' if is_org else 'users'}/{username}/repos?per_page=100")
+    langs = {}
+    for repo in repos if isinstance(repos, list) else []:
+        l_data = api_get(repo["languages_url"])
+        for lang, bytes_count in l_data.items():
+            langs[lang] = langs.get(lang, 0) + bytes_count
+    
+    total = sum(langs.values()) or 1
+    sorted_langs = sorted(langs.items(), key=lambda x: x[1], reverse=True)[:6]
+    return [(lang, round((count / total) * 100, 1)) for lang, count in sorted_langs]
 
-try:
-    main()
-except Exception as e:
-    log(e)
-    sys.exit(0)
+def get_streak(username):
+    query = """
+    query($login: String!) {
+      user(login: $login) {
+        contributionsCollection {
+          totalCommitContributions
+          contributionCalendar {
+            totalContributions
+            weeks { contributionDays { contributionCount } }
+          }
+        }
+      }
+    }
+    """
+    data = api_graphql(query, {"login": username})
+    try:
+        collection = data["user"]["contributionsCollection"]
+        total = collection["contributionCalendar"]["totalContributions"]
+        days = [d["contributionCount"] for w in collection["contributionCalendar"]["weeks"] for d in w["contributionDays"]]
+        current, longest, temp = 0, 0, 0
+        for d in days:
+            if d > 0:
+                temp += 1
+                longest = max(longest, temp)
+            else:
+                temp = 0
+        for d in reversed(days):
+            if d > 0: current += 1
+            else: break
+        return total, longest, current
+    except:
+        return 0, 0, 0
+
+# --- SVG Generation ---
+COLORS = {
+    "bg": "#090A0F", "card_bg": "#0d1117", "border": "#00D4FF", 
+    "text": "#c9d1d9", "accent": "#6C3BFF", "subtext": "#8b949e"
+}
+
+def make_stats_svg(stats, title, filename):
+    svg = f'''<svg width="450" height="200" xmlns="http://www.w3.org/2000/svg">
+    <rect width="100%" height="100%" fill="{COLORS['bg']}" rx="10" stroke="{COLORS['border']}" stroke-width="2"/>
+    <text x="20" y="30" fill="{COLORS['border']}" font-family="sans-serif" font-size="18" font-weight="bold">{title}</text>
+    <g transform="translate(20, 60)" font-family="sans-serif" font-size="14" fill="{COLORS['text']}">
+        <text y="0">Total commits</text><text x="150" y="0" font-weight="bold">{stats['commits']:,}</text>
+        <text y="25">Stars earned</text><text x="150" y="25" font-weight="bold">{stats['stars']:,}</text>
+        <text y="50">Public repos</text><text x="150" y="50" font-weight="bold">{stats['repos']:,}</text>
+        <text y="75">Followers</text><text x="150" y="75" font-weight="bold">{stats['followers']:,}</text>
+        <text y="100">Merged PRs</text><text x="150" y="100" font-weight="bold">{stats['prs']:,}</text>
+        <text y="125">Issues (closed)</text><text x="150" y="125" font-weight="bold">{stats['issues']:,}</text>
+    </g>
+    <circle cx="370" cy="80" r="45" fill="none" stroke="{COLORS['accent']}" stroke-width="4"/>
+    <text x="370" y="75" fill="{COLORS['text']}" font-family="sans-serif" font-size="12" text-anchor="middle">RANK</text>
+    <text x="370" y="95" fill="{COLORS['text']}" font-family="sans-serif" font-size="24" font-weight="bold" text-anchor="middle">S</text>
+    </svg>'''
+    with open(f"{OUT_DIR}/{filename}", "w") as f: f.write(svg)
+
+def make_langs_svg(langs, title, filename):
+    colors = ["#00D4FF", "#6C3BFF", "#A855F7", "#34D399", "#F87171", "#FBBF24"]
+    blocks = ""
+    y = 60
+    for i, (lang, pct) in enumerate(langs):
+        c = colors[i % len(colors)]
+        blocks += f'''<circle cx="25" cy="{y-4}" r="6" fill="{c}"/>
+        <text x="40" y="{y}" fill="{COLORS['text']}" font-family="sans-serif" font-size="14">{lang}</text>
+        <text x="200" y="{y}" fill="{COLORS['text']}" font-family="sans-serif" font-size="14" font-weight="bold">{pct}%</text>'''
+        y += 30
+    svg = f'''<svg width="450" height="200" xmlns="http://www.w3.org/2000/svg">
+    <rect width="100%" height="100%" fill="{COLORS['bg']}" rx="10" stroke="{COLORS['border']}" stroke-width="2"/>
+    <text x="20" y="30" fill="{COLORS['border']}" font-family="sans-serif" font-size="18" font-weight="bold">{title}</text>
+    {blocks}
+    </svg>'''
+    with open(f"{OUT_DIR}/{filename}", "w") as f: f.write(svg)
+
+def make_streak_svg(total, longest, current, title, filename):
+    svg = f'''<svg width="450" height="200" xmlns="http://www.w3.org/2000/svg">
+    <rect width="100%" height="100%" fill="{COLORS['bg']}" rx="10" stroke="{COLORS['border']}" stroke-width="2"/>
+    <text x="20" y="30" fill="{COLORS['border']}" font-family="sans-serif" font-size="18" font-weight="bold">{title}</text>
+    <text x="30" y="80" fill="{COLORS['text']}" font-family="sans-serif" font-size="28" font-weight="bold">{total:,}</text>
+    <text x="30" y="100" fill="{COLORS['subtext']}" font-family="sans-serif" font-size="12">CONTRIBUTIONS</text>
+    <text x="180" y="80" fill="{COLORS['text']}" font-family="sans-serif" font-size="28" font-weight="bold">{longest}</text>
+    <text x="180" y="100" fill="{COLORS['subtext']}" font-family="sans-serif" font-size="12">LONGEST STREAK</text>
+    <circle cx="370" cy="80" r="45" fill="none" stroke="{COLORS['accent']}" stroke-width="4"/>
+    <text x="370" y="75" fill="{COLORS['text']}" font-family="sans-serif" font-size="20" font-weight="bold" text-anchor="middle">{current}</text>
+    <text x="370" y="95" fill="{COLORS['subtext']}" font-family="sans-serif" font-size="10" text-anchor="middle">CURRENT STREAK</text>
+    </svg>'''
+    with open(f"{OUT_DIR}/{filename}", "w") as f: f.write(svg)
+
+def make_achievements_svg(stats, streak, title, filename):
+    hexes = [
+        (stats['commits'], "COMMITS"), (stats['stars'], "STARS"), 
+        (stats['repos'], "REPOS"), (stats['followers'], "FOLLOWERS"),
+        (streak, "STREAK"), (stats['prs'], "MERGED")
+    ]
+    blocks = ""
+    x = 60
+    for val, label in hexes:
+        blocks += f'''<polygon points="{x},80 {x+25},65 {x+50},80 {x+50},110 {x+25},125 {x},110" fill="{COLORS['card_bg']}" stroke="{COLORS['accent']}" stroke-width="2"/>
+        <text x="{x+25}" y="95" fill="{COLORS['text']}" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle">{val}</text>
+        <text x="{x+25}" y="145" fill="{COLORS['subtext']}" font-family="sans-serif" font-size="10" text-anchor="middle">{label}</text>'''
+        x += 60
+    svg = f'''<svg width="450" height="200" xmlns="http://www.w3.org/2000/svg">
+    <rect width="100%" height="100%" fill="{COLORS['bg']}" rx="10" stroke="{COLORS['border']}" stroke-width="2"/>
+    <text x="20" y="30" fill="{COLORS['border']}" font-family="sans-serif" font-size="18" font-weight="bold">{title}</text>
+    <g transform="translate(0, 20)">{blocks}</g>
+    </svg>'''
+    with open(f"{OUT_DIR}/{filename}", "w") as f: f.write(svg)
+
+# --- Main ---
+if __name__ == "__main__":
+    print(f"Generating stats for: {OWNER} (Kind: {KIND})")
+    
+    if KIND == "user":
+        stats = get_user_stats(OWNER)
+        langs = get_languages(OWNER, is_org=False)
+        total, longest, current = get_streak(OWNER)
+        make_stats_svg(stats, "Manit's GitHub Stats", "stats.svg")
+        make_langs_svg(langs, "Most Used Languages", "langs.svg")
+        make_streak_svg(total, longest, current, "Contribution Streak", "streak.svg")
+        make_achievements_svg(stats, current, "Achievements", "achievements.svg")
+        
+        # Save cache for badges
+        with open(f"{OUT_DIR}/cache.json", "w") as f:
+            json.dump({"followers": stats['followers'], "repos": stats['repos'], "stars": stats['stars']}, f)
+            
+    else:
+        stats = get_org_stats(OWNER)
+        langs = get_languages(OWNER, is_org=True)
+        # Org streak uses the owner's contributions within the org (as requested)
+        total, longest, current = get_streak("manit6752025") 
+        make_stats_svg(stats, f"{OWNER.split('-')[0]} Stats", f"{OUT_DIR}/stats.svg")
+        make_langs_svg(langs, f"{OWNER.split('-')[0]} Languages", f"{OUT_DIR}/langs.svg")
+        make_streak_svg(total, longest, current, f"{OWNER.split('-')[0]} Streak", f"{OUT_DIR}/streak.svg")
+        make_achievements_svg(stats, current, f"{OWNER.split('-')[0]} Achievements", f"{OUT_DIR}/achievements.svg")
+    
+    print("SVGs generated successfully.")
