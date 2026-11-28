@@ -1,0 +1,39 @@
+{
+ "repos": {
+  "NetCore-Technologies/.github": {
+   "all": 68,
+   "mine": 54,
+   "pushed": "2026-11-28T01:13:58Z"
+  },
+  "NetCore-Technologies/QuantumGrid-OS": {
+   "all": 2486,
+   "mine": 2278,
+   "pushed": "2026-11-28T03:24:42Z"
+  },
+  "NetCore-Technologies/boxr": {
+   "all": 1148,
+   "mine": 1091,
+   "pushed": "2026-11-25T11:45:27Z"
+  },
+  "NetCore-Technologies/wifi-analyzer-pro": {
+   "all": 968,
+   "mine": 942,
+   "pushed": "2026-11-24T10:46:04Z"
+  },
+  "manit6752025/AXIOM-AI": {
+   "all": 3423,
+   "mine": 3296,
+   "pushed": "2026-11-28T01:05:45Z"
+  },
+  "manit6752025/manit6752025": {
+   "all": 460,
+   "mine": 158,
+   "pushed": "2026-11-28T03:29:35Z"
+  }
+ },
+ "totals": {
+  "NetCore-Technologies": 4670,
+  "__user_all__": 8124,
+  "manit6752025": 3454
+ }
+}
