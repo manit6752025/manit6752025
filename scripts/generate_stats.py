@@ -14,6 +14,8 @@ EXTRA_ORGS = [
     for o in os.environ.get("STATS_EXTRA_ORGS", "NetCore-Technologies").split(",")
     if o.strip()
 ]
+USER = os.environ.get("STATS_USER", "manit6752025")
+MERGE_ALL = os.environ.get("STATS_MERGE_ALL", "1") == "1"
 OUT = os.environ.get("STATS_OUT", "stats")
 TITLE = os.environ.get(
     "STATS_TITLE", "Manit's GitHub Stats" if KIND == "user" else OWNER + " Stats"
@@ -194,9 +196,9 @@ def last_days(series, n=365):
     return keys, [series.get(k, 0) for k in keys]
 
 
-def my_commits(repos):
+def my_commits(repos, who=None):
     total = 0
-    mine = OWNER.lower()
+    mine = (who or OWNER).lower()
     for r in repos:
         if r.get("fork"):
             continue
@@ -205,11 +207,31 @@ def my_commits(repos):
         except Exception as e:
             log(e)
             continue
+        own = r["owner"]["login"].lower() == mine
         for p in people:
-            who = (p.get("login") or "").lower()
-            if who == mine or p.get("type") == "Anonymous":
+            login = (p.get("login") or "").lower()
+            if own:
+                if login == mine or p.get("type") == "Anonymous":
+                    total += p.get("contributions", 0)
+            else:
                 total += p.get("contributions", 0)
     return total
+
+
+def user_calendar():
+    try:
+        q = "query($l:String!){user(login:$l){contributionsCollection{contributionCalendar{totalContributions weeks{contributionDays{contributionCount date}}}}}}"
+        res = call(API + "/graphql", {"query": q, "variables": {"l": USER}})
+        cal = res["data"]["user"]["contributionsCollection"]["contributionCalendar"]
+        days = [
+            (x["date"], x["contributionCount"])
+            for w in cal["weeks"]
+            for x in w["contributionDays"]
+        ]
+        return days, cal["totalContributions"]
+    except Exception as e:
+        log(e)
+        return [], 0
 
 
 def collect_repos():
@@ -289,15 +311,46 @@ def refresh(d):
                 total_commits += sum(p.get("contributions", 0) for p in people)
             except Exception as e:
                 log(e)
-        d["commits"] = max(d["commits"], total_commits, branch_total())
+        combined = 0
+        everything = 0
+        if MERGE_ALL:
+            try:
+                personal = paged(f"{API}/users/{USER}/repos?type=owner")
+                combined = my_commits(personal + repos, USER)
+            except Exception as e:
+                log(e)
+            try:
+                res = call(f"{API}/search/commits?q=author:{USER}&per_page=1")
+                combined = max(combined, res.get("total_count", 0))
+            except Exception as e:
+                log(e)
+            everything = branch_total(True)
+        d["commits"] = max(d["commits"], total_commits, combined, everything, branch_total())
         try:
             res = call(f"{API}/search/issues?q=org:{OWNER}+type:pr+is:merged&per_page=1")
             d["merged"] = max(d["merged"], res.get("total_count", 0))
         except Exception as e:
             log(e)
+        if MERGE_ALL:
+            try:
+                res = call(f"{API}/search/issues?q=author:{USER}+type:pr+is:merged&per_page=1")
+                d["merged"] = max(d["merged"], res.get("total_count", 0))
+            except Exception as e:
+                log(e)
         try:
             series, done = activity_by_day(repos)
-            if done:
+            cal_days, cal_total = user_calendar() if MERGE_ALL else ([], 0)
+            if cal_days:
+                merged_days = []
+                extra_total = 0
+                for date, n in cal_days:
+                    e = series.get(date, 0)
+                    merged_days.append(max(n, e))
+                    extra_total += max(0, e - n)
+                d["total"] = cal_total + extra_total
+                d["current"], d["longest"] = streaks(merged_days)
+                d["days"] = merged_days[-30:]
+            elif done:
                 _, counts = last_days(series)
                 d["total"] = sum(counts)
                 d["current"], d["longest"] = streaks(counts)
@@ -358,12 +411,12 @@ def refresh(d):
         log(e)
 
 
-def branch_total():
+def branch_total(everything=False):
     path = os.environ.get("STATS_BRANCH_JSON", "stats/branch_commits.json")
     try:
         with open(path, encoding="utf-8") as f:
             totals = json.load(f).get("totals", {})
-        key = "__user_all__" if KIND == "user" else OWNER
+        key = "__user_all__" if (KIND == "user" or everything) else OWNER
         return int(totals.get(key, 0))
     except Exception:
         return 0
@@ -510,7 +563,7 @@ def langs_svg(d):
 
 
 def streak_svg(d):
-    org = KIND == "org"
+    org = KIND == "org" and not MERGE_ALL
     out = head("Commit Streak" if org else "Contribution Streak")
     out += '<rect x="24" y="52" width="447" height="1" fill="#FFFFFF" fill-opacity=".06"/>'
     out += (
@@ -623,7 +676,7 @@ ORG_TROPHIES = [
     ("REPOS", "repos", REPO_STEPS),
     ("FORKS", "forks", SMALL_STEPS),
     ("STREAK", "longest", STREAK_STEPS),
-    ("COMMITS 1Y", "total", YEAR_STEPS),
+    ("CONTRIBS" if MERGE_ALL else "COMMITS 1Y", "total", YEAR_STEPS),
 ]
 
 
