@@ -586,16 +586,16 @@ def ach_svg(d):
 
 
 RANKS = ["SSS", "SS", "S", "AAA", "AA", "A", "B", "C"]
-RANK_COLORS = {
-    "SSS": "#FFD166",
-    "SS": "#FFB703",
-    "S": "#00D4FF",
-    "AAA": "#3FA9FF",
-    "AA": "#6C3BFF",
-    "A": "#9B6BFF",
-    "B": "#8A93B5",
-    "C": "#6B7280",
-    "?": "#4B5563",
+RANK_OPACITY = {
+    "SSS": 1,
+    "SS": 1,
+    "S": 1,
+    "AAA": 0.95,
+    "AA": 0.9,
+    "A": 0.85,
+    "B": 0.7,
+    "C": 0.55,
+    "?": 0.4,
 }
 COUNT_STEPS = [20000, 10000, 5000, 2500, 1000, 500, 100, 1]
 SMALL_STEPS = [500, 250, 100, 50, 25, 10, 3, 1]
@@ -657,14 +657,16 @@ def trophies_svg(d):
     for i, (label, key, steps) in enumerate(items):
         value = d.get(key, 0)
         name = rank_for(value, steps)
-        color = RANK_COLORS[name]
+        color = PALETTE[i % len(PALETTE)] if name != "?" else "#4B5563"
+        glow = ' filter="url(#gl)"' if name in ("SSS", "SS", "S") else ""
         cx = 24 + slot * (i + 0.5)
         out += (
             f'<g class="pop" style="animation-delay:{i * 0.08:.2f}s">'
-            f"{cup(round(cx), 58, color, name)}"
+            f'<g opacity="{RANK_OPACITY[name]}">'
+            f"<g{glow}>{cup(round(cx), 58, color, name)}</g>"
             f'<text x="{cx:.0f}" y="122" text-anchor="middle" class="v">{fmt(value)}</text>'
             f'<text x="{cx:.0f}" y="140" text-anchor="middle" class="l" style="font-size:8.5px">{label}</text>'
-            f"</g>"
+            f"</g></g>"
         )
     return frame(w, h, out)
 
