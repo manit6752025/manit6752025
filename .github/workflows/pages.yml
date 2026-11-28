@@ -1,34 +1,71 @@
-name: Deploy site to GitHub Pages
+name: Refresh stats
 
 on:
-  push:
-    branches: [main]
+  schedule:
+    - cron: "0 */1 * * *"
   workflow_dispatch:
+  push:
+    paths:
+      - scripts/generate_stats.py
+      - scripts/count_branch_commits.py
+      - .github/workflows/metrics.yml
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
-  group: pages
+  group: refresh-stats
   cancel-in-progress: true
 
 jobs:
-  deploy:
+  refresh:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+    timeout-minutes: 30
+    env:
+      GITHUB_TOKEN: ${{ secrets.STATS_TOKEN || secrets.GITHUB_TOKEN }}
+      STATS_EXTRA_ORGS: NetCore-Technologies
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Set up Pages
-        uses: actions/configure-pages@v5
-      - name: Upload site
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: site
-      - name: Deploy
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - uses: actions/checkout@v4
+
+      - name: Delete old stat cards
+        run: |
+          mkdir -p stats/org
+          find stats -type f -name '*.svg' -delete
+
+      - name: Count commits across every repo and branch
+        continue-on-error: true
+        run: python3 scripts/count_branch_commits.py
+
+      - name: Generate user cards
+        continue-on-error: true
+        run: python3 scripts/generate_stats.py
+
+      - name: Generate NetCore org cards
+        continue-on-error: true
+        env:
+          STATS_OWNER: NetCore-Technologies
+          STATS_KIND: org
+          STATS_OUT: stats/org
+        run: python3 scripts/generate_stats.py
+
+      - name: Check every card was rebuilt
+        run: |
+          for f in stats/stats.svg stats/langs.svg stats/streak.svg stats/achievements.svg stats/trophies.svg stats/org/stats.svg stats/org/langs.svg stats/org/streak.svg stats/org/achievements.svg stats/org/trophies.svg; do
+            test -s "$f" || { echo "Missing $f"; exit 1; }
+          done
+
+      - name: Stamp README and publish
+        run: |
+          git config user.name "Manit Arora"
+          git config user.email "manit6752025@gmail.com"
+          git add -A stats
+          if git diff --cached --quiet -- stats; then
+            echo "Cards unchanged, nothing to publish"
+            exit 0
+          fi
+          version=$(date +%s)
+          sed -E -i "s#(stats/[A-Za-z/]+\.svg)(\?v=[0-9]+)?#\1?v=${version}#g" README.md
+          git add README.md
+          git commit -m "refresh stats"
+          git pull --rebase origin main
+          git push
