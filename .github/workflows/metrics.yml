@@ -7,6 +7,7 @@ on:
   push:
     paths:
       - scripts/generate_stats.py
+      - scripts/count_branch_commits.py
       - .github/workflows/metrics.yml
 
 permissions:
@@ -19,6 +20,7 @@ concurrency:
 jobs:
   refresh:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     env:
       GITHUB_TOKEN: ${{ secrets.STATS_TOKEN || secrets.GITHUB_TOKEN }}
       STATS_EXTRA_ORGS: NetCore-Technologies
@@ -29,6 +31,10 @@ jobs:
         run: |
           mkdir -p stats/org
           find stats -type f -name '*.svg' -delete
+
+      - name: Count commits across every repo and branch
+        continue-on-error: true
+        run: python3 scripts/count_branch_commits.py
 
       - name: Generate user cards
         continue-on-error: true
@@ -44,7 +50,7 @@ jobs:
 
       - name: Check every card was rebuilt
         run: |
-          for f in stats/stats.svg stats/langs.svg stats/streak.svg stats/achievements.svg stats/org/stats.svg stats/org/langs.svg stats/org/streak.svg stats/org/achievements.svg; do
+          for f in stats/stats.svg stats/langs.svg stats/streak.svg stats/achievements.svg stats/trophies.svg stats/org/stats.svg stats/org/langs.svg stats/org/streak.svg stats/org/achievements.svg stats/org/trophies.svg; do
             test -s "$f" || { echo "Missing $f"; exit 1; }
           done
 
@@ -52,14 +58,24 @@ jobs:
         run: |
           git config user.name "Manit Arora"
           git config user.email "manit6752025@gmail.com"
-          git add -A stats
-          if git diff --cached --quiet -- stats; then
-            echo "Cards unchanged, nothing to publish"
-            exit 0
-          fi
-          version=$(date +%s)
-          sed -E -i "s#(stats/[A-Za-z/]+\.svg)(\?v=[0-9]+)?#\1?v=${version}#g" README.md
-          git add README.md
-          git commit -m "refresh stats"
-          git pull --rebase origin main
-          git push
+          cp -r stats /tmp/stats-new
+          for attempt in 1 2 3 4; do
+            git fetch origin main
+            git reset --hard origin/main
+            rm -rf stats
+            cp -r /tmp/stats-new stats
+            git add -A stats
+            if git diff --cached --quiet -- stats; then
+              echo "Cards unchanged, nothing to publish"
+              exit 0
+            fi
+            version=$(date +%s)
+            sed -E -i "s#(stats/[A-Za-z/]+\.svg)(\?v=[0-9]+)?#\1?v=${version}#g" README.md
+            git add README.md
+            git commit -m "refresh stats"
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            sleep 5
+          done
+          exit 1
