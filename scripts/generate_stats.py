@@ -289,7 +289,7 @@ def refresh(d):
                 total_commits += sum(p.get("contributions", 0) for p in people)
             except Exception as e:
                 log(e)
-        d["commits"] = max(d["commits"], total_commits)
+        d["commits"] = max(d["commits"], total_commits, branch_total())
         try:
             res = call(f"{API}/search/issues?q=org:{OWNER}+type:pr+is:merged&per_page=1")
             d["merged"] = max(d["merged"], res.get("total_count", 0))
@@ -316,6 +316,8 @@ def refresh(d):
         d["commits"] = max(d["commits"], my_commits(repos))
     except Exception as e:
         log(e)
+
+    d["commits"] = max(d["commits"], branch_total())
 
     try:
         res = call(f"{API}/search/issues?q=author:{OWNER}+type:pr+is:merged&per_page=1")
@@ -354,6 +356,17 @@ def refresh(d):
         d["days"] = merged[-30:]
     except Exception as e:
         log(e)
+
+
+def branch_total():
+    path = os.environ.get("STATS_BRANCH_JSON", "stats/branch_commits.json")
+    try:
+        with open(path, encoding="utf-8") as f:
+            totals = json.load(f).get("totals", {})
+        key = "__user_all__" if KIND == "user" else OWNER
+        return int(totals.get(key, 0))
+    except Exception:
+        return 0
 
 
 def fmt(n):
@@ -572,6 +585,90 @@ def ach_svg(d):
     return frame(495, 210, out)
 
 
+RANKS = ["SSS", "SS", "S", "AAA", "AA", "A", "B", "C"]
+RANK_COLORS = {
+    "SSS": "#FFD166",
+    "SS": "#FFB703",
+    "S": "#00D4FF",
+    "AAA": "#3FA9FF",
+    "AA": "#6C3BFF",
+    "A": "#9B6BFF",
+    "B": "#8A93B5",
+    "C": "#6B7280",
+    "?": "#4B5563",
+}
+COUNT_STEPS = [20000, 10000, 5000, 2500, 1000, 500, 100, 1]
+SMALL_STEPS = [500, 250, 100, 50, 25, 10, 3, 1]
+PR_STEPS = [1000, 500, 250, 100, 50, 25, 10, 1]
+REPO_STEPS = [100, 60, 40, 25, 15, 8, 3, 1]
+STREAK_STEPS = [365, 200, 100, 60, 30, 14, 7, 2]
+YEAR_STEPS = [5000, 3000, 2000, 1000, 500, 250, 100, 1]
+
+USER_TROPHIES = [
+    ("COMMITS", "commits", COUNT_STEPS),
+    ("STARS", "stars", SMALL_STEPS),
+    ("FOLLOWERS", "followers", SMALL_STEPS),
+    ("MERGED PRS", "merged", PR_STEPS),
+    ("ISSUES", "issues", SMALL_STEPS),
+    ("REPOS", "repos", REPO_STEPS),
+    ("STREAK", "longest", STREAK_STEPS),
+    ("CONTRIBS", "total", YEAR_STEPS),
+    ("PR ACTIVITY", "prs", PR_STEPS),
+]
+ORG_TROPHIES = [
+    ("COMMITS", "commits", COUNT_STEPS),
+    ("STARS", "stars", SMALL_STEPS),
+    ("FOLLOWERS", "followers", SMALL_STEPS),
+    ("MERGED PRS", "merged", PR_STEPS),
+    ("REPOS", "repos", REPO_STEPS),
+    ("FORKS", "forks", SMALL_STEPS),
+    ("STREAK", "longest", STREAK_STEPS),
+    ("COMMITS 1Y", "total", YEAR_STEPS),
+]
+
+
+def rank_for(value, steps):
+    for name, step in zip(RANKS, steps):
+        if value >= step:
+            return name
+    return "?"
+
+
+def cup(cx, y, color, label):
+    return (
+        f'<path d="M{cx - 15},{y} H{cx + 15} V{y + 10} C{cx + 15},{y + 22} {cx + 7},{y + 28} {cx},{y + 28} '
+        f'C{cx - 7},{y + 28} {cx - 15},{y + 22} {cx - 15},{y + 10} Z" fill="{color}" fill-opacity=".16" '
+        f'stroke="{color}" stroke-width="1.6" stroke-linejoin="round"/>'
+        f'<path d="M{cx - 15},{y + 4} H{cx - 21} C{cx - 21},{y + 13} {cx - 18},{y + 16} {cx - 12},{y + 17}" '
+        f'fill="none" stroke="{color}" stroke-width="1.6" stroke-linecap="round"/>'
+        f'<path d="M{cx + 15},{y + 4} H{cx + 21} C{cx + 21},{y + 13} {cx + 18},{y + 16} {cx + 12},{y + 17}" '
+        f'fill="none" stroke="{color}" stroke-width="1.6" stroke-linecap="round"/>'
+        f'<rect x="{cx - 2}" y="{y + 28}" width="4" height="8" fill="{color}" fill-opacity=".7"/>'
+        f'<rect x="{cx - 10}" y="{y + 36}" width="20" height="4" rx="1.5" fill="{color}"/>'
+        f'<text x="{cx}" y="{y + 15}" text-anchor="middle" style="fill:{color};font-size:9px;font-weight:800">{label}</text>'
+    )
+
+
+def trophies_svg(d):
+    items = USER_TROPHIES if KIND == "user" else ORG_TROPHIES
+    w, h = 990, 172
+    slot = (w - 48) / len(items)
+    out = head("Trophies")
+    for i, (label, key, steps) in enumerate(items):
+        value = d.get(key, 0)
+        name = rank_for(value, steps)
+        color = RANK_COLORS[name]
+        cx = 24 + slot * (i + 0.5)
+        out += (
+            f'<g class="pop" style="animation-delay:{i * 0.08:.2f}s">'
+            f"{cup(round(cx), 58, color, name)}"
+            f'<text x="{cx:.0f}" y="122" text-anchor="middle" class="v">{fmt(value)}</text>'
+            f'<text x="{cx:.0f}" y="140" text-anchor="middle" class="l" style="font-size:8.5px">{label}</text>'
+            f"</g>"
+        )
+    return frame(w, h, out)
+
+
 def write(name, svg):
     try:
         with open(os.path.join(OUT, name), "w", encoding="utf-8") as f:
@@ -598,6 +695,7 @@ def main():
         "langs.svg": langs_svg,
         "streak.svg": streak_svg,
         "achievements.svg": ach_svg,
+        "trophies.svg": trophies_svg,
     }
 
     for name, fn in cards.items():
